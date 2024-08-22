@@ -237,8 +237,9 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
             //
             // _menuDragHelper.MouseDown(control);
             // _menuDragHelper.Update(0f);
-            //
-            // args.Handle();
+
+            // This Handle here is what prevents always inserting and allows InteractUsing on items in storage.
+            args.Handle();
         }
         else if (args.Function == ContentKeyFunctions.SaveItemLocation)
         {

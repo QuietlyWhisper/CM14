@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/106c92cdf232ebc12c9d7a2feb23956c6755496f/icons/obj/items/items.dmi",
+  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/106c92cdf232ebc12c9d7a2feb23956c6755496f/icons/obj/items/items.dmi , modified by Hyenh#6078(313846233099927552)",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,15 @@
   "states": [
     {
       "name": "phoronrglass"
+    },
+	{
+      "name": "phoronrglass_2"
+    },
+	{
+      "name": "phoronrglass_3"
+    },
+	{
+      "name": "phoronrglass_4"
     }
   ]
 }

@@ -20,47 +20,72 @@
   id: CMSheetGlassBase
   abstract: true
   components:
+  - type: Stack
+    count: 50
+  - type: Sprite
+    sprite: _RMC14/Objects/Materials/Sheets/glass.rsi
   - type: Item
     size: Normal
+    sprite: _RMC14/Objects/Materials/Sheets/glass.rsi
+  - type: Appearance
 
 - type: entity
   parent: CMSheetGlassBase
   id: CMSheetGlass
   name: glass
   description: Glass is a non-crystalline solid, made out of silicate, the primary constituent of sand. It is valued for its transparency, albeit it is not too resistant to damage.
-  suffix: "Full"
+  suffix: Filled
   components:
   - type: Material
   - type: PhysicalComposition
     materialComposition:
       CMGlass: 100
-  - type: Sprite
-    sprite: _RMC14/Objects/Materials/Sheets/glass.rsi
-    state: glass
-  - type: Item
-    sprite: _RMC14/Objects/Materials/Sheets/glass.rsi
-    heldPrefix: glass
   - type: Stack
     stackType: CMGlass
     count: 50
+    baseLayer: base
+    layerStates:
+      - glass
+      - glass_2
+      - glass_3
+      - glass_4
   - type: Construction
     graph: CMGlass
     node: SheetGlass
+  - type: Sprite
+    layers:
+      - state: glass_4
+        map: ["base"]
 
 - type: entity
   parent: CMSheetGlass
-  id: CMSheetGlass25
-  suffix: "25"
+  id: CMSheetGlass10
+  suffix: "10"
   components:
+   - type: Sprite
+     state: glass_2
+   - type: Stack
+     stackType: CMGlass
+     count: 10
+
+- type: entity
+  parent: CMSheetGlass
+  id: CMSheetGlass30
+  suffix: "30"
+  components:
+  - type: Sprite
+    state: glass_3
   - type: Stack
     stackType: CMGlass
-    count: 25
+    count: 30
 
 - type: entity
   parent: CMSheetGlass
   id: CMSheetGlass1
-  suffix: "1"
+  suffix: Single
   components:
+  - type: Sprite
+    state: glass
   - type: Stack
     stackType: CMGlass
     count: 1
@@ -96,31 +121,54 @@
       CMReinforcedGlass: 100
   - type: Sprite
     sprite: _RMC14/Objects/Materials/Sheets/reinf_glass.rsi
-    state: rglass
+    layers:
+      - state: rglass_4
+        map: ["base"]
   - type: Item
     sprite: _RMC14/Objects/Materials/Sheets/reinf_glass.rsi
     heldPrefix: rglass
   - type: Stack
     stackType: CMGlassReinforced
     count: 50
+    baseLayer: base
+    layerStates:
+        - rglass
+        - rglass_2
+        - rglass_3
+        - rglass_4
   - type: Construction
     graph: CMGlass
     node: SheetGlassReinforced
 
 - type: entity
   parent: CMSheetGlassReinforced
-  id: CMSheetGlassReinforced25
-  suffix: "25"
+  id: CMSheetGlassReinforced10
+  suffix: "10"
   components:
+  - type: Sprite
+    state: rglass_2
   - type: Stack
     stackType: CMGlassReinforced
-    count: 25
+    count: 10
+
+- type: entity
+  parent: CMSheetGlassReinforced
+  id: CMSheetGlassReinforced30
+  suffix: "30"
+  components:
+  - type: Sprite
+    state: rglass_3
+  - type: Stack
+    stackType: CMGlassReinforced
+    count: 30
 
 - type: entity
   parent: CMSheetGlassReinforced
   id: CMSheetGlassReinforced1
   suffix: "1"
   components:
+  - type: Sprite
+    state: rglass
   - type: Stack
     stackType: CMGlassReinforced
     count: 1
@@ -156,28 +204,51 @@
       CMPhoronGlass: 100
   - type: Sprite
     sprite: _RMC14/Objects/Materials/Sheets/phoron_glass.rsi
-    state: phoronglass
+    layers:
+      - state: phoronglass_4
+        map: ["base"]
   - type: Item
     sprite: _RMC14/Objects/Materials/Sheets/phoron_glass.rsi
     heldPrefix: phoronglass
   - type: Stack
     stackType: CMGlassPhoron
     count: 50
+    baseLayer: base
+    layerStates:
+        - phoronglass
+        - phoronglass_2
+        - phoronglass_3
+        - phoronglass_4
 
 - type: entity
   parent: CMSheetGlassPhoron
-  id: CMSheetGlassPhoron25
-  suffix: "25"
+  id: CMSheetGlassPhoron10
+  suffix: "10"
   components:
+  - type: Sprite
+    state: phoronglass_2
   - type: Stack
     stackType: CMGlassPhoron
-    count: 25
+    count: 10
+
+- type: entity
+  parent: CMSheetGlassPhoron
+  id: CMSheetGlassPhoron30
+  suffix: "30"
+  components:
+  - type: Sprite
+    state: phoronglass_3
+  - type: Stack
+    stackType: CMGlassPhoron
+    count: 30
 
 - type: entity
   parent: CMSheetGlassPhoron
   id: CMSheetGlassPhoron1
   suffix: "1"
   components:
+  - type: Sprite
+    state: phoronglass
   - type: Stack
     stackType: CMGlassPhoron
     count: 1
@@ -213,28 +284,51 @@
       CMPhoronGlassReinforced: 100
   - type: Sprite
     sprite: _RMC14/Objects/Materials/Sheets/phoron_reinf_glass.rsi
-    state: phoronrglass
+    layers:
+      - state: phoronrglass_4
+        map: ["base"]
   - type: Item
     sprite: _RMC14/Objects/Materials/Sheets/phoron_reinf_glass.rsi
     heldPrefix: phoronrglass
   - type: Stack
     stackType: CMGlassPhoronReinforced
     count: 50
+    baseLayer: base
+    layerStates:
+        - phoronrglass
+        - phoronrglass_2
+        - phoronrglass_3
+        - phoronrglass_4
 
 - type: entity
   parent: CMSheetGlassPhoronReinforced
-  id: CMSheetGlassPhoronReinforced25
-  suffix: "25"
+  id: CMSheetGlassPhoronReinforced10
+  suffix: "10"
   components:
+  - type: Sprite
+    state: phoronrglass_2
   - type: Stack
     stackType: CMGlassPhoronReinforced
-    count: 25
+    count: 10
+
+- type: entity
+  parent: CMSheetGlassPhoronReinforced
+  id: CMSheetGlassPhoronReinforced30
+  suffix: "30"
+  components:
+  - type: Sprite
+    state: phoronrglass_3
+  - type: Stack
+    stackType: CMGlassPhoronReinforced
+    count: 30
 
 - type: entity
   parent: CMSheetGlassPhoronReinforced
   id: CMSheetGlassPhoronReinforced1
   suffix: "1"
   components:
+  - type: Sprite
+    state: phoronrglass
   - type: Stack
     stackType: CMGlassPhoronReinforced
     count: 1

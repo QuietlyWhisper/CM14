@@ -2,8 +2,9 @@
   parent:
   - CMXenoUndeveloped
   - CMXenoFlammable
-  id: CMXenoParasite # TODO RMC14 slowly die off weeds
+  id: CMXenoParasiteBase # TODO RMC14 slowly die off weeds
   name: Parasite
+  suffix: Base
   components:
   - type: GhostRole
     name: cm-job-name-xeno-parasite
@@ -23,7 +24,6 @@
     actionIds:
     - ActionXenoRest
     - ActionXenoWatch
-    - ActionXenoHide
     - ActionXenoLeap
     tier: 0
     hudOffset: 0,0.4
@@ -34,7 +34,6 @@
   - type: XenoPlasma
     maxPlasma: 10
     plasmaRegenOnWeeds: 0.1
-  - type: XenoHide
   - type: Fixtures
     fixtures:
       fix1:
@@ -94,3 +93,48 @@
     icon:
       sprite: _RMC14/Interface/map_blips.rsi
       state: parasite
+
+- type: entity
+  parent: CMXenoParasiteBase
+  id: CMXenoParasite
+  suffix: Normal
+  components:
+  - type: Xeno
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoWatch
+    - ActionXenoHide
+    - ActionXenoLeap
+  - type: XenoHide
+  - type: XenoEvolution
+    strains:
+    - RMCXenoParasiteObserver
+
+- type: entity
+  parent: CMXenoParasiteBase
+  id: RMCXenoParasiteObserver # Observer Strain
+  suffix: Observer
+  components:
+  - type: Xeno
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoWatch
+    - ActionXenoLeap
+    - ActionXenoZoom 
+  - type: XenoZoom
+  - type: XenoStrain
+    name: rmc-xeno-observer-name
+    description: rmc-xeno-observer-description
+    popup: rmc-xeno-observer-popup
+
+
+
+
+
+
+
+
+
+
+
+

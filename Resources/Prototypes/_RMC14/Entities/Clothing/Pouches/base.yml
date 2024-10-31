@@ -45,6 +45,7 @@
       tags:
       - Pouch
       - ThrowingKnife
+  - type: RMCStorageEjectHand
 
 
 - type: entity

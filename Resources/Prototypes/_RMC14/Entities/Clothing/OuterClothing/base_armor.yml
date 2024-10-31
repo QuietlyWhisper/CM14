@@ -188,6 +188,7 @@
     leaderRsi:
       sprite: _RMC14/Objects/Clothing/OuterClothing/Armor/armor_overlays.rsi
       state: sql-armor
+  - type: RMCStorageEjectHand
 
 - type: entity
   parent: RMCBaseMarineArmor

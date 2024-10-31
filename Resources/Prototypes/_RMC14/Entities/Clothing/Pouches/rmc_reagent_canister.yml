@@ -27,6 +27,7 @@
           - PressurizedCanister
         insertOnInteract: true
   - type: RMCStorageEjectHand
+    enabled: true
   - type: RMCRefillSolutionOnStore
 
 - type: entity

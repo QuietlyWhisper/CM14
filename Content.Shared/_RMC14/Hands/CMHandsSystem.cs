@@ -9,6 +9,7 @@ using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._RMC14.Hands;
 
@@ -82,7 +83,8 @@ public sealed class CMHandsSystem : EntitySystem
             return;
 
         var user = args.User;
-        args.Verbs.Add(new AlternativeVerb
+
+        AlternativeVerb unequipVerb = new()
         {
             Text = "Unequip",
             Act = () =>
@@ -93,7 +95,28 @@ public sealed class CMHandsSystem : EntitySystem
                     _hands.TryPickupAnyHand(user, ent.Owner);
                 }
             },
-        });
+        };
+
+        args.Verbs.Add(unequipVerb);
+
+        AlternativeVerb switchStorageVerb = new()
+        {
+            Text = "Switch Storage Drawing Method",
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/flip.svg.192dpi.png")),
+            Priority = -2,
+            Act = () =>
+            {
+                ent.Comp.Enabled = !ent.Comp.Enabled;
+                Dirty(ent);
+
+                if (ent.Comp.Enabled)
+                    _popup.PopupClient(Loc.GetString("rmc-storage-hand-eject-enabled", ("storage", ent.Owner)), user, user, PopupType.Medium);
+                else
+                    _popup.PopupClient(Loc.GetString("rmc-storage-hand-eject-disabled", ("storage", ent.Owner)), user, user, PopupType.Medium);
+            },
+        };
+
+        args.Verbs.Add(switchStorageVerb);
     }
 
     public bool IsPickupByAllowed(Entity<WhitelistPickupByComponent?> item, Entity<WhitelistPickupComponent?> user)
@@ -136,11 +159,14 @@ public sealed class CMHandsSystem : EntitySystem
 
     public bool TryStorageEjectHand(EntityUid user, EntityUid item)
     {
-        if (!HasComp<RMCStorageEjectHandComponent>(item) ||
+        if (!TryComp<RMCStorageEjectHandComponent>(item, out RMCStorageEjectHandComponent? storageEject) ||
             !TryComp(item, out StorageComponent? storage))
         {
             return false;
         }
+
+        if (!storageEject.Enabled)
+            return false;
 
         if (!_rmcStorage.TryGetLastItem((item, storage), out var last))
         {

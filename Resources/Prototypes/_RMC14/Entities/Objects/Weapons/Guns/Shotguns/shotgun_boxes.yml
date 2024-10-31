@@ -22,6 +22,7 @@
   - type: CMStorageVisualizer
     storageEmpty: empty
   - type: RMCStorageEjectHand
+    enabled: true
 
 - type: Tag
   id: RMCBoxShotgunShells

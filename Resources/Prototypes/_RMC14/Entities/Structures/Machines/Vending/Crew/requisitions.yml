@@ -146,7 +146,9 @@
         amount: 2
       - id: RMCBeltHolsterRevolver
         amount: 5
-      #- id: M276 M82F Holster Rig
+       - id: RMCBeltHolsterFlareGun
+        amount: 2
+      #- id: M276 M40 Grenade Rig
       #  amount: 2
       - id: RMCM276ShotgunShellLoadingRig
         amount: 10

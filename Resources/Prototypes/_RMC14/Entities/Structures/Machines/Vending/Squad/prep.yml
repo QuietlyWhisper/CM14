@@ -184,8 +184,8 @@
         amount: 15
       - id: RMCBeltHolsterSMGPouch
         amount: 10
-#      - id: M276 Pattern M82F Holster Rig
-#        amount: 5
+      - id: RMCBeltHolsterFlareGun
+        amount: 5
       - id: CMBeltKnifeFilled
         name: M276 Knife Rig (Full)
         amount: 15

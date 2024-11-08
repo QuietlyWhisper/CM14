@@ -788,3 +788,49 @@
     - id: RMCSpeedLoaderMateba
       amount: 5
     - id: RMCWeaponRevolverMateba
+
+- type: entity
+  parent: CMBeltMarine
+  id: RMCBeltHolsterFlareGun
+  name: M276 pattern M82F flare gun holster rig
+  description: The M276 is the standard load-bearing equipment of the USCM. It consists of a modular belt with various clips. This version is for the M82F flare gun.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Belt/holster_flaregun.rsi
+    layers:
+    - sprite: _RMC14/Objects/Weapons/Guns/gun_underlays.rsi
+      state: m82f
+      offset: -0.0625, 0.0
+      map: [ "enum.CMHolsterLayers.Fill" ]
+      visible: false
+    - state: icon
+    - state: half
+      map: [ "openLayer" ]
+    - state: full
+      map: [ "closedLayer" ]
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Belt/holster_flaregun.rsi
+    slots:
+    - suitStorage
+    - belt
+  - type: Storage
+    grid:
+    - 0,0,19,3 # 20 flares
+    whitelist:
+      tags:
+      # - RMCM82FFlareGun
+      - Sidearm # TODO: replace this with the line above once the flare gun gets added
+      - Flare
+  - type: FixedItemSizeStorage
+  - type: LimitedStorage
+    limits:
+    - popup: rmc-storage-limit-one-gun
+      whitelist:
+        tags:
+        #- RMCM82FFlareGun
+        - Sidearm # TODO: replace this with the line above once the flare gun gets added
+  - type: CMHolster
+    whitelist:
+      tags:
+      #- RMCM82FFlareGun
+      - Sidearm # TODO: replace this with the line above once the flare gun gets added

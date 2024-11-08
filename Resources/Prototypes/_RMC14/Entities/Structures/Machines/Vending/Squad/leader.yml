@@ -238,11 +238,14 @@
         recommended: true
       - id: CMBeltMedicBag
       - id: CMBeltMedical
+      - id: RMCBeltSmgMags
+    #- id: CMM276M44HolsterRig
+      - id: RMCBeltHolsterFlareGun
       - id: RMCBeltHolsterPistol
       - id: RMCBeltHolsterRevolver
       - id: RMCBeltHolsterSMG
       - id: RMCBeltHolsterSMGPouch
-    #- id: RMCBeltHolsterFlareGun
+      - id: RMCBeltHolsterFlareGun
       - id: RMCM276ShotgunShellLoadingRig
       - id: CMBeltUtilityFilled
       - id: RMCBeltGrenade

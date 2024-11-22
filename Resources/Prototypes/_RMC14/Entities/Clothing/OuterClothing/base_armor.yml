@@ -18,6 +18,15 @@
   - type: Clothing
     equipSound:
       path: /Audio/_RMC14/Machines/armor_equip.ogg
+  - type: Foldable
+    unfoldVerbText : "rmc-untuck"
+    foldVerbText: "rmc-tuck"
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedHideLayers:
+    - Tail
+    unfoldedHideLayers: []
+  - type: HideLayerClothing
 
 - type: entity
   abstract: true

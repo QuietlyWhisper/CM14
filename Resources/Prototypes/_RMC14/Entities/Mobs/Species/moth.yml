@@ -9,6 +9,7 @@
     species: Moth
     hideLayersOnEquip:
     - HeadTop
+    - Tail
   - type: MothAccent
   - type: ZombieAccentOverride
     accent: zombieMoth

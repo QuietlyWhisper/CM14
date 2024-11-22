@@ -10,6 +10,7 @@
     hideLayersOnEquip:
     - Hair
     - HeadTop
+    - Tail
   - type: Sprite
     drawdepth: Mobs
   - type: Vocal

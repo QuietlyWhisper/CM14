@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: CMWeaponPistolBase
   id: CMWeaponPistolMK80
   name: MK80 pistol
@@ -13,7 +13,7 @@
       types:
         Blunt: 8
   - type: Gun
-    shotsPerBurst: 3
+    shotsPerBurst: 5
     availableModes:
     - SemiAuto
     - Burst
@@ -27,12 +27,12 @@
     recoilUnwielded: 2
     scatterWielded: 10
     scatterUnwielded: 10
-    baseFireRate: 2
+    baseFireRate: 2.5
     burstScatterMult: 4
     modifiers:
       Burst:
-        fireDelay: 0.1665
-        maxScatterModifier: 10
+        fireDelay: 0.1225
+        maxScatterModifier: 7
         useBurstScatterMult: true
         unwieldedScatterMultiplier: 2
         shotsToMaxScatter: 6
@@ -73,6 +73,7 @@
       rmc-aslot-barrel: 0.685, 0.125
       rmc-aslot-rail: -0.125, 0.215
       rmc-aslot-underbarrel: 0.284, -0.19
+ # - type: OnShootTriggerAmmoTimer
   - type: Tag
     tags:
     - Sidearm
@@ -120,10 +121,27 @@
   id: RCMBulletPistol9mmSquashHead
   name: bullet (9mm Squash-Head)
   components:
+ # - type: TriggerOnCollide
+ #   fixtureID: projectile
   - type: Projectile
     damage:
       types:
         Piercing: 45
+        Structural: 20
+    soundHit:
+      collection: ExplosiveBulletImpact #references unique soundcollection w/ explosive hitreg
+  #The following codes the explosion visual effects of the bullets.
+  #Should be as small as possible while still being visible in bulk.
+  #Other lines commented out are part of this system, still in dev. 
+  #- type: ExplodeOnTrigger
+  #- type: Explosive
+  #  explosionType: RMC
+  #  maxIntensity: 5
+  #  intensitySlope: 5
+  #  totalIntensity: 1
+  #  maxTileBreak: 0
+  #- type: CMExplosionEffect
+  #- type: IgnorePredictionHide
   - type: RMCProjectileDamageFalloff
     thresholds:
     - range: 22
@@ -133,6 +151,8 @@
       falloff: 5
   - type: CMArmorPiercing
     amount: 30
+    
+
 
 - type: Tag
   id: CMMagazinePistolMK80

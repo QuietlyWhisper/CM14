@@ -27,3 +27,16 @@
   - "/Audio/Weapons/Guns/Hits/energy_metal1.ogg"
   - "/Audio/Weapons/Guns/Hits/energy_metal2.ogg"
 
+
+- type: soundCollection # Temporary soundlibrary for unique MK80 bullet impacts - reflects HESH explosive munitions nature. 
+  id: ExplosiveBulletImpact
+  files:
+  - "/Audio/Effects/explosion_small3.ogg"
+  - "/Audio/Effects/explosion_small1.ogg"
+  - "/Audio/Effects/RMC_MK80-Xenohit1.ogg"
+  - "/Audio/Effects/RMC_MK80-Xenohit3.ogg"
+  - "/Audio/Weapons/Guns/Hits/bullet_hit.ogg" #testing repeated calls reducing chances of explosion sound during active fire
+  - "/Audio/Weapons/Guns/Hits/bullet_hit.ogg"
+  - "/Audio/Weapons/Guns/Hits/bullet_hit.ogg"
+  - "/Audio/Weapons/Guns/Hits/bullet_hit.ogg"
+  - "/Audio/Weapons/Guns/Hits/bullet_hit.ogg"

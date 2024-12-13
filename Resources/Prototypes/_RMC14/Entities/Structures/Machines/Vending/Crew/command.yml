@@ -480,6 +480,11 @@
       - id: CMSmartGunOperatorEquipmentCaseBelt # TODO RMC14 Port M56C Smart Protag Gun
         name: Commander's Smartgun
         recommended: true # TODO RMC14 Make choices: colour the options brown
+    - name: Commander's Secondary
+      choices: { CMSecondary: 1 }
+      entries:
+      - id: RMCMagnumAutomaticBeltFilled
+      - id: RMCMatebaBeltFilled
     - name: Primary Ammunition
       entries:
       - id: CMMagazineRifleM54C # TODO RMC14 Port MK1 Pulse Rifle
@@ -500,10 +505,10 @@
         points: 15
     #   - id: CMMagazineMatebaAP  # TODO RMC14 Port More Sidearm Ammo
     #     points: 20
-    #   - id: CMMagazineDesertEagle
-    #     points: 15
-    #   - id: CMMagazineDesertEagleAP
-    #     points: 20
+      - id: CMMagazinePistolMagnumAutomaticHI
+        points: 15
+      - id: CMMagazinePistolMagnumAutomaticHIAP
+        points: 20
     - name: Shotgun Ammunition
       entries:
       - id: RMCBoxShotgunBuckshot

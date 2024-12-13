@@ -991,3 +991,66 @@
 
 - type: Tag
   id: RMCBeltSOCOM
+
+- type: entity
+  parent: CMBeltBaseStorage
+  id: RMCMagnumAutomaticBelt
+  name: M276 pattern Magnum Automatic holster rig
+  description: The M276 is the standard load-bearing equipment of the UNMC. It consists of a modular belt with various clips. This version is for the powerful Magnum Automatic, along with six small pouches for magazines.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Belt/holster_pistol.rsi
+    layers:
+    - state: icon
+    - sprite: _RMC14/Objects/Weapons/Guns/gun_underlays.rsi
+      state: m1984 # TODO RMC14 per-gun underlay
+      map: [ "enum.CMHolsterLayers.Fill" ]
+      visible: false
+    - state: icon
+    - state: half
+      map: [ "openLayer" ]
+    - state: full
+      map: [ "closedLayer" ]
+  - type: Clothing
+    slots:
+    - suitStorage
+    - belt
+    sprite: _RMC14/Objects/Clothing/Belt/holster_pistol.rsi
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,13,1 # 7 slots
+    blacklist:
+      tags:
+      - CMFirstAidKit # TODO RMC14
+  #      - EngineerKit # TODO RMC14
+  - type: Tag
+    tags:
+    - RMCMagnumAutomaticHolster
+  - type: FixedItemSizeStorage
+  - type: CMHolster
+    whitelist:
+      components:
+      - Gun
+  - type: LimitedStorage
+    limits:
+    - popup: rmc-storage-limit-one-gun
+      whitelist:
+        components:
+        - Gun
+
+- type: Tag
+  id: RMCMagnumAutomaticHolster
+
+- type: entity
+  parent: RMCMagnumAutomaticBelt
+  id: RMCMagnumAutomaticBeltFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMMagazinePistolMagnumAutomaticHI
+      amount: 4
+    - id: CMMagazinePistolMagnumAutomaticHIAP
+      amount: 2
+    - id: CMWeaponPistolCOMagnumAutomatic

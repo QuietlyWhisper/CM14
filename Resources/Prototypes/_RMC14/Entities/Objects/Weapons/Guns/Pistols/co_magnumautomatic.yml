@@ -1,0 +1,179 @@
+- type: entity
+  parent: CMWeaponPistolBase
+  id: CMWeaponPistolCOMagnumAutomatic
+  name: Vintage Magnum Automatic
+  description: A bulky 50 caliber pistol with a serious kick. Hand crafted from the finest blacksteel with an ivory grip bolted together with gold studs. Very elegant.
+  components:
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_DE50.ogg
+  - type: RMCSelectiveFire
+    scatterWielded: 5
+    scatterUnwielded: 8
+    baseFireRate: 1.43
+    burstScatterMult: 7
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/magnumautomaticvintage.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/magnumautomaticvintage.rsi
+  - type: RMCWeaponAccuracy
+    accuracyMultiplier: 7.2
+    accuracyMultiplierUnwielded: 3.9
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_88m4_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_88m4_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - CMMagazinePistolMagnumAutomaticHI
+          - CMMagazinePistolMagnumAutomaticHIAP
+        startingItem: CMMagazinePistolMagnumAutomaticHI
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentBarrelCharger
+          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentRecoilCompensator
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentLaserSight
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.75, 0.070
+      rmc-aslot-rail: 0.090, 0.125
+      rmc-aslot-underbarrel: 0.312, -0.25
+
+- type: entity
+  parent: CMBaseMagazinePistol
+  id: CMMagazinePistolMagnumAutomaticHI
+  name: High Impact Magnum Automatic Magazine (.50AE)
+  components:
+  - type: Tag
+    tags:
+    - CMMagazinePistol
+    - CMMagazinePistolMagnumAutomaticHI
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgePistolHI50AE
+    proto: CMCartridgePistolHI50AE
+    capacity: 7
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/magnumautomatic.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: CMCartridgePistolHI50AE
+  name: cartridge (High Impact .50AE)
+  parent: CMCartridgePistolBase
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridgePistolHI50AE
+  - type: CartridgeAmmo
+    proto: CMBulletPistolHI50AE
+
+- type: entity
+  parent: CMBulletBase
+  id: CMBulletPistolHI50AE
+  name: bullet (HI50AE)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 84
+  - type: CMArmorPiercing
+    amount: 5
+  - type: RMCStunOnHit
+    maxRange: 4
+    stunTime: 1
+  - type: RMCProjectileAccuracy
+    accuracy: 90
+
+- type: entity
+  parent: CMBaseMagazinePistol
+  id: CMMagazinePistolMagnumAutomaticHIAP
+  name: High Impact Armor-Piercing Magnum Automatic Magazine (.50AE)
+  components:
+  - type: Tag
+    tags:
+    - CMMagazinePistol
+    - CMMagazinePistolMagnumAutomaticHIAP
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgePistolHIAP50AE
+    proto: CMCartridgePistolHIAP50AE
+    capacity: 7
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/magnumautomatic.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: CMCartridgePistolHIAP50AE
+  name: cartridge (High Impact Armor-Piercing .50AE)
+  parent: CMCartridgePistolBase
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridgePistolHIAP50AE
+  - type: CartridgeAmmo
+    proto: CMBulletPistolHIAP50AE
+
+- type: entity
+  parent: CMBulletBase
+  id: CMBulletPistolHIAP50AE
+  name: bullet (HIAP50AE)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 63
+  - type: CMArmorPiercing
+    amount: 50
+  - type: RMCStunOnHit
+    maxRange: 4
+    stunTime: 1
+  - type: RMCProjectileAccuracy
+    accuracy: 90
+
+- type: Tag
+  id: CMMagazinePistolMagnumAutomaticHI
+
+- type: Tag
+  id: CMCartridgePistolHI50AE
+
+- type: Tag
+  id: CMMagazinePistolMagnumAutomaticHIAP
+
+- type: Tag
+  id: CMCartridgePistolHIAP50AE
+
+

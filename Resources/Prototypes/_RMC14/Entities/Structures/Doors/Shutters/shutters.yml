@@ -72,6 +72,7 @@
     idleLoad: 1
     activeLoad: 20
     channel: Environment
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCShutterBaseIndestructible

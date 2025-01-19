@@ -1,5 +1,6 @@
 ﻿using Content.Shared._RMC14.Marines.Skills;
 using Content.Shared.Inventory;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -32,5 +33,14 @@ public sealed partial class NightVisionItemComponent : Component
     public bool Green;
 
     [DataField, AutoNetworkedField]
+    public bool Mesons;
+
+    [DataField, AutoNetworkedField]
     public bool BlockScopes;
+
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? SoundOn = new SoundPathSpecifier("/Audio/_RMC14/Handling/toggle_nv1.ogg");
+
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? SoundOff = new SoundPathSpecifier("/Audio/_RMC14/Handling/toggle_nv2.ogg");
 }

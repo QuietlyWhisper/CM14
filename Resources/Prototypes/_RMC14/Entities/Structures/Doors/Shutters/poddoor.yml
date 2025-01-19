@@ -43,6 +43,7 @@
   - type: StaticPrice
     price: 280
   - type: RMCPodDoor
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent:

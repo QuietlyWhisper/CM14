@@ -26,6 +26,7 @@
         enum.OpenableVisuals.Layer:
           True: { state: open }
           False: { state: closed }
+  - type: RMCMesonsNonviewable
 
 - type: entity
   abstract: true

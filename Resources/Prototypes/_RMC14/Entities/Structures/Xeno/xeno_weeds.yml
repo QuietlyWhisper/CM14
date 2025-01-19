@@ -25,6 +25,7 @@
         hard: false
   - type: XenoWeeds
     level: 1
+  - type: RMCMesonsNonviewable
   - type: Clickable
   - type: XenoWeedsSpreading
   - type: Sprite

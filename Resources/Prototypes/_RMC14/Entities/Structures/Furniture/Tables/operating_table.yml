@@ -35,3 +35,4 @@
   - type: BuckleClimbable
   - type: Corrodible
     isCorrodible: false
+  - type: RMCMesonsNonviewable

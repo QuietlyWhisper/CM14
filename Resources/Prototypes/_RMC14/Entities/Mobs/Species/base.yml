@@ -278,3 +278,5 @@
       - Xeno
   - type: RMCPickupDroppedItems
   - type: CommendationReceiver
+  - type: RMCMesonsNonviewable
+    xenoVisible: true

@@ -11,6 +11,7 @@
   - type: Sprite
     sprite: _RMC14/Structures/Furniture/chairs.rsi
     state: chair
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: CMSeatBase

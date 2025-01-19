@@ -66,6 +66,8 @@
   - type: XenoFruit
     consumeDelay: 2
     canConsumeAtFull: true
+  - type: RMCMesonsNonviewable
+    xenoVisible: true
 
 - type: entity
   parent: XenoFruitBase

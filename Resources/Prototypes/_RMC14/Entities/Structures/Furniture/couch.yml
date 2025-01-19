@@ -15,6 +15,7 @@
   - type: Sprite
     sprite: _RMC14/Structures/Furniture/couch.rsi
     state: couch_mid
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCCouchMid

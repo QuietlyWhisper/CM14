@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Furniture/water_cooler.rsi
-    state: water_cooler    
+    state: water_cooler
   - type: Fixtures
     fixtures:
       fix1:
@@ -51,7 +51,8 @@
     solution: tank
   - type: StaticPrice
     price: 500
-    
+  - type: RMCMesonsNonviewable
+
 - type: entity
   parent: RMCWaterCooler
   id: RMCWaterCoolerStacks

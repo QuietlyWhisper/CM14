@@ -97,6 +97,7 @@
   - type: PowerLoaderGrabbable
     virtualRight: RMCVirtualCrateRight
     virtualLeft: RMCVirtualCrateLeft
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: BaseStructureDynamic

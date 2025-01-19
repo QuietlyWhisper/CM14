@@ -97,6 +97,7 @@
   - type: Corrodible
     isCorrodible: false
     structure: true
+  - type: RMCMesonsNonviewable
 
 - type: entity
   abstract: true

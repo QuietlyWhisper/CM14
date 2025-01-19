@@ -293,6 +293,8 @@
       - Marine
   - type: BlockIdExamine
   - type: NoStunOnExit
+  - type: RMCMesonsNonviewable
+    xenoVisible: true
 
 - type: entity
   abstract: true

@@ -19,6 +19,7 @@
         - WallLayer
   - type: Corrodible
     isCorrodible: false
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: CMMemorialBase

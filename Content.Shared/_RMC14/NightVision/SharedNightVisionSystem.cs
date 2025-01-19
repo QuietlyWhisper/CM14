@@ -227,10 +227,12 @@ public abstract class SharedNightVisionSystem : EntitySystem
         if (item.Comp.User == user && item.Comp.Toggleable)
         {
             DisableNightVisionItem(item, item.Comp.User);
+            _audio.PlayLocal(item.Comp.SoundOff, item.Owner, user);
             return;
         }
 
         EnableNightVisionItem(item, user);
+        _audio.PlayLocal(item.Comp.SoundOn, item.Owner, user);
     }
 
     private void EnableNightVisionItem(Entity<NightVisionItemComponent> item, EntityUid user)
@@ -255,6 +257,7 @@ public abstract class SharedNightVisionSystem : EntitySystem
                 nightVision = EnsureComp<NightVisionComponent>(user);
                 nightVision.State = NightVisionState.Full;
                 nightVision.Green = item.Comp.Green;
+                nightVision.Mesons = item.Comp.Mesons;
                 nightVision.BlockScopes = item.Comp.BlockScopes;
                 Dirty(user, nightVision);
             }
@@ -264,6 +267,7 @@ public abstract class SharedNightVisionSystem : EntitySystem
                 {
                     State = NightVisionState.Full,
                     Green = item.Comp.Green,
+                    Mesons = item.Comp.Mesons,
                     BlockScopes = item.Comp.BlockScopes,
                 };
 
@@ -271,7 +275,6 @@ public abstract class SharedNightVisionSystem : EntitySystem
                 Dirty(user, nightVision);
             }
         }
-
 
         _actions.SetToggled(item.Comp.Action, true);
     }

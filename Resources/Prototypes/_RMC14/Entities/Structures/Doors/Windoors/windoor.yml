@@ -66,6 +66,7 @@
   - type: RMCDropshipBlocked
   - type: AccessReader
     containerAccessProvider: null
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: BaseSecureWindoor

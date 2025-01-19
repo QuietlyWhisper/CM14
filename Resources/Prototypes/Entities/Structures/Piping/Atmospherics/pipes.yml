@@ -62,6 +62,7 @@
     bodyType: static
   - type: StaticPrice
     price: 30
+  - type: RMCMesonsNonviewable
 
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 

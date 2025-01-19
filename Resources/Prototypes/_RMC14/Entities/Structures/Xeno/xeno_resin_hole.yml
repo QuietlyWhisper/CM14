@@ -60,6 +60,7 @@
           Acid2: {state: trapacid2}
           Acid3: {state: trapacid3}
   - type: Appearance
+  - type: RMCMesonsNonviewable
   - type: XenoResinHole
   - type: Damageable
     damageContainer: StructuralXeno

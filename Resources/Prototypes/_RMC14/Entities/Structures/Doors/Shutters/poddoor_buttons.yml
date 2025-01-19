@@ -21,3 +21,4 @@
   - type: WallMount
     arc: 360
   - type: RMCDoorButton
+  - type: RMCMesonsNonviewable

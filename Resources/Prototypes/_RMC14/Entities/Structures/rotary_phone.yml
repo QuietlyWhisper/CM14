@@ -37,6 +37,7 @@
           Ear: { state: rotary_phone_ear }
   - type: WallMount
     arc: 360
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCRotaryPhone

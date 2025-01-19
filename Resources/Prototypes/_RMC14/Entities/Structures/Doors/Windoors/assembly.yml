@@ -47,6 +47,7 @@
   - type: Construction
     graph: CMWindoor
     node: assembly
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: CMWindoorAssembly

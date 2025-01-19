@@ -44,3 +44,4 @@
       params:
         variation: 0.250
         volume: -5
+  - type: RMCMesonsNonviewable

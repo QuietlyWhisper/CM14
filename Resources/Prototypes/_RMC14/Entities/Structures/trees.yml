@@ -51,6 +51,7 @@
             variation: 0.05
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCBaseTree

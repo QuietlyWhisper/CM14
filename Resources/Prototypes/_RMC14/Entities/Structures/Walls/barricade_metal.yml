@@ -62,6 +62,7 @@
     interfaces:
       enum.RMCConstructionUpgradeUiKey.Key:
         type: RMCConstructionUpgradeBui
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCBarricadeUpgradeBase

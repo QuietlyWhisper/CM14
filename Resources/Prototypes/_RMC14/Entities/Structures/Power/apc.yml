@@ -126,6 +126,7 @@
           NotCharging: { state: display-lack }
           Charging: { state: display-full }
           FullCharge: { state: display-charging }
+  - type: RMCMesonsNonviewable
 
 # APC under construction
 - type: entity

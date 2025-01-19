@@ -26,6 +26,7 @@
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,1.5"
   - type: DeleteOnExplosion
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCContainerBase

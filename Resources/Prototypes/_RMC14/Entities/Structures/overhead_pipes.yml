@@ -17,3 +17,4 @@
     state: intact-scrubbers
   - type: Anchorable
   - type: Clickable
+  - type: RMCMesonsNonviewable

@@ -19,3 +19,4 @@
   - type: PlacementReplacement
     key: ladders
   - type: Ladder
+  - type: RMCMesonsNonviewable

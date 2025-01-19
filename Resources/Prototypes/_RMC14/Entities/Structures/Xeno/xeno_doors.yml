@@ -47,6 +47,7 @@
     noAirWhenFullyAirBlocked: false
   - type: RadiationBlocker
     resistance: 3
+  - type: RMCMesonsNonviewable
   - type: Occluder
   - type: Damageable
     damageContainer: StructuralXeno

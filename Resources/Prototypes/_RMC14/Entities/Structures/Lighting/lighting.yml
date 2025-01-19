@@ -36,6 +36,7 @@
     blacklist:
       components:
       - Xeno
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: CMLightFixtureAlwaysPowered

@@ -58,6 +58,7 @@
     sound:
       path: /Audio/Ambience/Objects/gas_vent.ogg
   - type: Weldable
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: GasUnaryBase
@@ -119,3 +120,4 @@
     sound:
       path: /Audio/Ambience/Objects/gas_vent.ogg
   - type: Weldable
+  - type: RMCMesonsNonviewable

@@ -52,3 +52,4 @@
   - type: Construction
     graph: BarricadeWoodGraph
     node: nodeWood
+  - type: RMCMesonsNonviewable

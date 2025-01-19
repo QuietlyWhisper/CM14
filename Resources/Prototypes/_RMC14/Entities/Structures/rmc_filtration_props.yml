@@ -22,6 +22,7 @@
     sprite: _RMC14/Structures/Filtration/96x96.rsi
     state: filtration
   - type: Clickable
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCFiltration
@@ -65,7 +66,7 @@
   id: RMCFiltrationSedimentation
   name: sedimentation filter
   description: A water filter specifically designed to capture and remove sediment, such as sand, silt, dirt, and rust, from water without removing the nutritious minerals for that crisp, clean taste every time.
-  components:  
+  components:
   - type: Sprite
     sprite: _RMC14/Structures/Filtration/96x96.rsi
     state: sedimentation

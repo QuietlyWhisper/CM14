@@ -46,6 +46,8 @@
   - type: XenoEgg
   - type: Damageable
     damageContainer: StructuralXeno
+  - type: RMCMesonsNonviewable
+    xenoVisible: true
   - type: Destructible
     thresholds:
     - trigger:
@@ -149,3 +151,4 @@
   - type: RequireProjectileTarget
   - type: WhitelistPickupBy
   - type: DestroyedXenoEgg
+  - type: RMCMesonsNonviewable

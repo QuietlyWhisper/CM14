@@ -53,3 +53,4 @@
     blacklist:
       components:
       - Xeno
+  - type: RMCMesonsNonviewable

@@ -14,6 +14,7 @@
     state: medlink_green_clamped # TODO RMC14 change states dynamically
     drawdepth: FloorObjects
   - type: CMMedicalSupplyLink
+  - type: RMCMesonsNonviewable
 
 
 - type: entity

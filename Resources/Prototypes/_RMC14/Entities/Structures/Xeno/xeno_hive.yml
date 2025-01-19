@@ -40,6 +40,8 @@
     description: roles-lesser-drone-description
     raffle:
       settings: short
+  - type: RMCMesonsNonviewable
+    xenoVisible: true
   - type: GhostRoleMobSpawner
     availableTakeovers: 2
     deleteOnSpawn: false
@@ -70,6 +72,8 @@
     sprite: _RMC14/Structures/Xenos/hive_core.rsi
     state: core
     color: '#FFFFFFAA'
+  - type: RMCMesonsNonviewable
+    xenoVisible: true
   - type: InteractionOutline
   - type: Clickable
   - type: Damageable

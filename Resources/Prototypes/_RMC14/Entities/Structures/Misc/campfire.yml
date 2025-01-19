@@ -13,3 +13,4 @@
   - type: Construction
     graph: RMCCampfire
     node: start
+  - type: RMCMesonsNonviewable

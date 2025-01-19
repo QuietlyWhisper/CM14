@@ -37,6 +37,7 @@
           Loaded: { state: obc_loaded }
           Unloaded: { state: obc_unloaded }
           Chambered: { state: obc_chambered }
+  - type: RMCMesonsNonviewable
 
 - type: entity
   id: RMCOrbitalCannonFuel

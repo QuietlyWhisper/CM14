@@ -14,6 +14,7 @@
     drawdepth: OverMobs
     sprite: _RMC14/Structures/landing_signs.rsi
   - type: AnimationPlayer
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCBaseLandingSign

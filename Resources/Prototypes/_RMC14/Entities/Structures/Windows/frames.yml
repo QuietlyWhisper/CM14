@@ -52,6 +52,7 @@
   - type: ReceiverXenoClaws
     maxHealth: 600
     hitsToDestroy: 3
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCBaseWindowFrame

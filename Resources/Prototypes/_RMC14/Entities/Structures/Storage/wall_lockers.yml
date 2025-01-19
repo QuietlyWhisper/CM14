@@ -17,6 +17,7 @@
     enteringRange: 0.03
   - type: AccessReader
     access: [["CMAccessCommand"]]
+  - type: RMCMesonsNonviewable
 
 - type: entity
   id: CMLockerCMDCabinetFilled

@@ -41,6 +41,7 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
+  - type: RMCMesonsNonviewable
 
 - type: entity
   abstract: true

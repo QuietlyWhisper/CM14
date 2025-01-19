@@ -33,6 +33,7 @@
     node: Tan
   - type: DamageMultiplierFlags
     flags: Breaching
+  - type: RMCMesonsNonviewable
 
 # Reinforced
 - type: entity

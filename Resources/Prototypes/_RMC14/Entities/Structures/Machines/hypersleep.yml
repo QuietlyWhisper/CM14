@@ -54,6 +54,7 @@
       components:
       - Xeno
   - type: NoStunOnExit
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: CMHyperSleepChamber

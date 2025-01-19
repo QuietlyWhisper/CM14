@@ -50,6 +50,7 @@
           SeventyFive: { state: "on-75" }
           Hundred: { state: "on-100" }
           Overloaded: { state: "overloaded" }
+  - type: RMCMesonsNonviewable
 
 - type: entity
   parent: RMCGeneratorFusion

@@ -121,3 +121,32 @@
           Two: { state: white_2 }
           Three: { state: white_3 }
           Four: { state: white_4 }
+
+- type: entity
+  parent: RMCTileFire
+  id: RMCTileFireBlue
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "base" ]
+      state: blue_4
+  - type: PointLight
+    color: "#00b8ff"
+  - type: RMCIgniteOnCollide
+    duration: 40
+    intensity: 40
+  - type: TileFire
+    id: RMCTileFireBlue
+    duration: 40
+    intensity: 40
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.666
+    sprintSpeedModifier: 0.666
+  - type: GenericVisualizer
+    visuals:
+      enum.TileFireLayers.Base:
+        base:
+          One: { state: blue_1 }
+          Two: { state: blue_2 }
+          Three: { state: blue_3 }
+          Four: { state: blue_4 }

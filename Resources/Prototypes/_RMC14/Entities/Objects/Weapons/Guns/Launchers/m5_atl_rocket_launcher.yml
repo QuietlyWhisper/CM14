@@ -213,4 +213,73 @@
     - range: 6
       falloff: 10
 
-# TODO RMC14 84mm WP
+# RMC14 84mm WP
+
+- type: entity
+  id: RMCRocket84mmWhitePhosphorous
+  name: 84mm white-phosphorous rocket
+  parent: RMCRocket84mm
+  description: Rocket tube loaded with WP warhead. On hit disperses X-Variant Napthal (blue flames) in a 4-meter radius circle, ignoring cover.
+  components:
+  - type: CartridgeAmmo
+    proto: RMCProjectileRocket84mmWhitePhosphorous
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Explosives/m5spec.rsi
+    layers:
+    - state: m5_84mm_wp
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: m5_84mm_wp
+    suffix: false
+  - type: IgnorePredictionHide
+
+- type: entity
+  id: RMCProjectileRocket84mmWhitePhosphorous
+  name: 84mm white-phosphorous rocket
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TriggerOnCollide
+    fixtureID: projectile # no parent entity from BaseBulletTrigger because it has Clickable
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: false
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.15,0.15,0.15"
+          # Bigger than bullets. Rectangle won't work since AABB shapes don't rotate. This should help significantly with explosion consistency.
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+        restitution: 0.0
+        density: 20
+  - type: PointLight
+    radius: 3.5
+    color: blue
+    energy: 0.5
+  - type: Projectile
+    impactEffect: BulletImpactEffect
+    damage:
+      types:
+        Heat: 90
+    maxFixedRange: 7 # 8 tiles
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/m5spec_projectiles.rsi
+    layers:
+    - state: m5_84mm_wp
+  - type: IgnorePredictionHide
+  - type: RMCProjectileAccuracy
+    accuracy: 125
+    thresholds:
+    - range: 6
+      falloff: 10
+  - type: TileFireOnTrigger
+    spawn: RMCTileFireBlue
+    range: 3
+  - type: SpawnOnTerminate
+    spawn: RMCSmoke
+    projectileAdjust: false

@@ -289,8 +289,8 @@
         crate: RMCCrateM5DemoSpecHighExplosive
       - cost: 3000
         crate: RMCCrateM5DemoSpecAntiArmor
-#      - cost: 3000
-#        crate: RMCCrateM5DemoSpecWhitePhosphorous
+      - cost: 3000
+        crate: RMCCrateM5DemoSpecWhitePhosphorous
       - cost: 4000
         crate: RMCCrateMagazineM4SPRCustomMixed
       - cost: 3000

@@ -45,13 +45,15 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateM5DemoSpecMixed
-  name: M5-ATL Mixed Crate (HE x2, AP x1) # TODO RMC14 replace 1 HE with WP
+  name: M5-ATL Mixed Crate (HE x1, AP x1, WP x1)
   components:
   - type: StorageFill
     contents:
     - id: RMCRocket84mm
-      amount: 2
+      amount: 1
     - id: RMCRocket84mmAntiArmor
+      amount: 1
+    - id: RMCRocket84mmWhitePhosphorous
       amount: 1
 
 - type: entity
@@ -74,16 +76,16 @@
     - id: RMCRocket84mmAntiArmor
       amount: 3
 
-# TODO RMC14 M5 84mm White Phosphorous
-#- type: entity
-#  parent: RMCCrateAmmo
-#  id: RMCCrateM5DemoSpecWhitePhosphorous
-#  name: M5-ATL White Phosphorous Crate (HE x3)
-#  components:
-#  - type: StorageFill
-#    contents:
-#    - id: RMCRocket84mmWhitePhosphorous
-#      amount: 3
+
+- type: entity
+  parent: RMCCrateAmmo
+  id: RMCCrateM5DemoSpecWhitePhosphorous
+  name: M5-ATL White Phosphorous Crate (HE x3)
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCRocket84mmWhitePhosphorous
+      amount: 3
 
 - type: entity
   parent: RMCCrateAmmo

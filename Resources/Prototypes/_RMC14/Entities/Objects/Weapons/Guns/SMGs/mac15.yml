@@ -1,0 +1,164 @@
+- type: entity
+  parent: CMBaseWeaponSMG
+  name: MAC-15 submachine gun
+  id: WeaponSMGMAC15 # TODO RMC14 10% chance to have an underbarrel grenade launcher
+  description: A cheap, reliable design and manufacture make this ubiquitous submachinegun useful despite the age.
+  suffix: Filled
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/SMGs/mac15.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-0
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/SMGs/mac15.rsi
+  - type: Gun
+    shotsPerBurst: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: RMCSelectiveFire
+    baseFireModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    recoilWielded: 0
+    recoilUnwielded: 0
+    scatterWielded: 12
+    scatterUnwielded: 10
+    baseFireRate: 10
+    burstScatterMult: 3
+    modifiers:
+      Burst:
+        fireDelay: 0.0666
+        maxScatterModifier: 10
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 8
+      FullAuto:
+        maxScatterModifier: 16
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 70 
+  - type: RMCWeaponAccuracy
+    accuracyMultiplier: 1
+    accuracyMultiplierUnwielded: 1
+  - type: MagazineAmmoProvider
+    autoEject: false
+    soundAutoEject: null
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: CMMagazineSMGMAC15
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/smg_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/smg_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - CMMagazineSMGMAC15
+          - CMMagazineSMGMAC15Ext
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentBarrelCharger
+          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentRecoilCompensator
+          - RMCAttachmentSuppressor
+          - RMCM5Bayonet
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentMagneticHarness
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+          - RMCAttachmentS42xTelescopicMiniscope
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentFlashlightGrip
+          - RMCAttachmentGyroscopicStabilizer
+          - RMCAttachmentLaserSight
+          - RMCAttachmentBipod
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.84, 0
+      rmc-aslot-rail: 0.032, 0.09
+      rmc-aslot-underbarrel: 0.45, -0.31
+  - type: GunDamageModifier
+    multiplier: 0.9
+
+- type: entity
+  parent: BaseMagazineRifle
+  id: CMMagazineSMGMAC15
+  name: MAC-15 magazine (9mm)
+  description: A 9mm magazine for the MAC-15.
+  components:
+  - type: Tag
+    tags:
+    - CMMagazineSmg
+    - CMMagazineSMGMAC15
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridge9mmSMGMAC15
+    proto: CMCartridge9mmSMGMAC15
+    capacity: 25
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/mac15.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+    zeroOnlyOnEmpty: true
+  - type: Appearance
+
+- type: entity
+  parent: CMMagazineSMGMAC15
+  id: CMMagazineSMGMAC15Ext
+  name: MAC-15 extended magazine (9mm)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 50
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/mac15e.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - CMMagazineSmg
+    - CMMagazineSMGMAC15Ext
+
+- type: entity
+  parent: CMCartridge9mmSMG
+  id: CMCartridge9mmSMGMAC15
+  description: A 9mm cartridge for the mac-15 submachinegun.
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridge9mmSMGMAC15
+  - type: CartridgeAmmo
+    proto: Bullet10x20mm
+
+- type: Tag
+  id: CMMagazineSMGMAC15
+
+- type: Tag
+  id: CMCartridge9mmSMGMAC15
+
+- type: Tag
+  id: CMMagazineSMGMAC15Ext

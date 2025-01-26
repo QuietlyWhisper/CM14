@@ -1,0 +1,180 @@
+- type: entity
+  parent: CMBaseWeaponRifle
+  name: MAR-40 Assault Rifle
+  id: WeaponRifleMAR40
+  description: A cheap, reliable assault rifle chambered in 7.62x39mm. Commonly found in the hands of criminals or mercenaries, or in the hands of the UPP or CLF.
+  suffix: Filled
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Rifles/mar40.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-0
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/Rifles/mar40.rsi
+  - type: Gun
+    shotsPerBurst: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_mar40.ogg
+  - type: RMCSelectiveFire
+    baseFireModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    recoilUnwielded: 4
+    scatterWielded: 8
+    scatterUnwielded: 20
+    baseFireRate: 2
+    burstScatterMult: 3
+    modifiers:
+      Burst:
+        fireDelay: 0.1665
+        maxScatterModifier: 10
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 4
+      FullAuto:
+        maxScatterModifier: 13
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 15
+  - type: MagazineAmmoProvider
+    autoEject: false
+    soundAutoEject: null
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: CMMagazineRifleMAR40
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_mar40_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_mar40_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - CMMagazineRifleMAR40
+          - CMMagazineRifleMAR40Ext
+  - type: RMCWeaponAccuracy
+    accuracyMultiplier: 1
+    accuracyMultiplierUnwielded: 0.65
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentBarrelCharger
+          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentSuppressor
+          - RMCM5Bayonet
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentMagneticHarness
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentBipod
+          - RMCAttachmentFlashlightGrip
+          - RMCAttachmentGyroscopicStabilizer
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.75, 0.00
+      rmc-aslot-rail: -0.23, 0.091
+      rmc-aslot-underbarrel: 0.35, -0.3
+
+- type: entity
+  parent: CMMagazineRifleBase
+  id: CMMagazineRifleMAR40
+  name: MAR magazine (7.62x39mm)
+  description: A 7.62x39mm magazine for the MAR series of firearms.
+  components:
+  - type: Tag
+    tags:
+    - CMMagazineRifle
+    - CMMagazineRifleMAR40
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgeRifleMAR40
+    proto: CMCartridgeRifleMAR40
+    capacity: 40
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/mar40.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Appearance
+
+- type: entity
+  parent: CMMagazineRifleMAR40
+  id: CMMagazineRifleMAR40Ext
+  name: MAR extended magazine (7.62x39mm)
+  description: A 7.62x39mm MAR magazine, this one carries more rounds than the average magazine.
+  components:
+  - type: Tag
+    tags:
+    - CMMagazineRifle
+    - CMMagazineRifleMAR40Ext
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgeRifleMAR40
+    proto: CMCartridgeRifleMAR40
+    capacity: 60
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/mar40e.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: CMBaseCartridgeRifle
+  id: CMCartridgeRifleMAR40
+  name: Cartridge (7.62x39mm)
+  description: A 7.62x39mm rifle cartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridgeRifleMAR40
+  - type: CartridgeAmmo
+    proto: BulletRifleMAR40
+
+- type: entity
+  parent: BulletRifle10x24mm
+  id: BulletRifleMAR40
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 55
+
+- type: Tag
+  id: CMMagazineRifleMAR40
+
+- type: Tag
+  id: CMCartridgeRifleMAR40
+
+- type: Tag
+  id: CMMagazineRifleMAR40Ext

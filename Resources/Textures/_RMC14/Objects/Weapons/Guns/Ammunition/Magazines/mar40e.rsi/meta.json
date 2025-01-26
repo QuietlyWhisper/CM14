@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/0ef24bde18ace14dea68fe274523857144e3a480/icons/obj/items/weapons/guns/ammo_by_faction/colony.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "mag-1"
+    },
+    {
+      "name": "base"
+    }
+  ]
+}

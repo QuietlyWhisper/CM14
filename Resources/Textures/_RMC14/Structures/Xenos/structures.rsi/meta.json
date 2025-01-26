@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/cmss13-devs/cmss13/blob/master/icons/obj/structures/alien/structures.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "resin_spike",
+      "directions": 8
+    },
+    {
+      "name": "acid_pillar"
+    },
+    {
+      "name": "acid_pillar_idle",
+      "delays": [
+        [
+          4,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.6
+        ]
+      ]
+    },
+    {
+      "name": "acid_pillar_attack",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.2
+        ]
+      ]
+    }
+  ]
+}

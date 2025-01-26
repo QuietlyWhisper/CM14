@@ -46,4 +46,7 @@ public sealed partial class XenoConstructionComponent : Component
 
     [DataField, AutoNetworkedField]
     public bool CanUpgrade;
+
+    [DataField, AutoNetworkedField]
+    public Dictionary<EntProtoId, int> XenoStructureSlots = new() { };
 }

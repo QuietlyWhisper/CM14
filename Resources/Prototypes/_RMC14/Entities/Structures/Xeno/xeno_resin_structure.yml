@@ -1,0 +1,45 @@
+- type: entity
+  id: XenoResinSpike
+  name: Resin Spikes
+  description: Resin that harms any tallhosts when they walk over it.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/structures.rsi
+    state: resin_spike
+  - type: Clickable
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    fixedRotation: false
+  - type: Flammable
+    fireSpread: false
+    damage:
+      types:
+        Heat: 3
+  - type: Damageable
+    damageContainer: StructuralXeno
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 45
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: XenoFriendly
+  - type: RMCNightVisionVisible
+    priority: -1
+  - type: Corrodible
+    isCorrodible: false
+  - type: XenoConstruct
+    destroyWeeds: false
+  - type: DamageOnStep
+    cooldown: 3
+    damage:
+      types:
+        Piercing: 8
+  - type: XenoConstructLimited
+  - type: RequireProjectileTarget

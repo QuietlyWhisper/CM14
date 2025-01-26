@@ -11,3 +11,14 @@
   - type: Tag
     tags:
     - HideContextMenu
+
+- type: entity
+  id: RMCEffectXenoBuildAlert
+  parent: RMCEffectAlert
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _RMC14/Effects/alert.rsi
+    noRot: true
+    state: alert_greyscale
+    color: purple

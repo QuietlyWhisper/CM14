@@ -1,7 +1,8 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Shared._RMC14.Atmos;
 using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Damage;
+using Content.Shared._RMC14.Damage.Event;
 using Content.Shared._RMC14.Marines;
 using Content.Shared._RMC14.Medical.Scanner;
 using Content.Shared._RMC14.NightVision;
@@ -64,6 +65,7 @@ public sealed class XenoSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!;
     [Dependency] private readonly XenoPlasmaSystem _xenoPlasma = default!;
+    [Dependency] private readonly EntityManager _entities = default!;
 
     private static readonly ProtoId<DamageTypePrototype> HeatDamage = "Heat";
 
@@ -109,6 +111,7 @@ public sealed class XenoSystem : EntitySystem
         SubscribeLocalEvent<XenoComponent, MeleeHitEvent>(OnXenoMeleeHit);
         SubscribeLocalEvent<XenoComponent, HiveChangedEvent>(OnHiveChanged);
         SubscribeLocalEvent<XenoComponent, RMCIgniteEvent>(OnXenoIgnite);
+        SubscribeLocalEvent<XenoComponent, ValidateDamageOnStepperEvent>(OnXenoStepOnSharp);
 
         Subs.CVar(_config, RMCCVars.CMXenoDamageDealtMultiplier, v => _xenoDamageDealtMultiplier = v, true);
         Subs.CVar(_config, RMCCVars.CMXenoDamageReceivedMultiplier, v => _xenoDamageReceivedMultiplier = v, true);
@@ -257,6 +260,20 @@ public sealed class XenoSystem : EntitySystem
 
             _damageable.TryChangeDamage(held, damage, true);
             _hands.TryDrop(ent, held);
+        }
+    }
+
+    private void OnXenoStepOnSharp(Entity<XenoComponent> ent, ref ValidateDamageOnStepperEvent args)
+    {
+        if (args.Cancelled)
+        {
+            return;
+        }
+
+        var steppedEnt = _entities.GetEntity(args.SteppedEntity);
+        if (HasComp<XenoFriendlyComponent>(steppedEnt) && _hive.FromSameHive(steppedEnt, ent.Owner))
+        {
+            args.Cancel();
         }
     }
 

@@ -121,6 +121,9 @@
     - DoorXenoResinThick
     canOrderConstruction:
     - HiveCoreXenoConstructionNode
+    - HiveEggMorpherXenoConstructionNode
+    - HiveClusterXenoConstructionNode
+    - HiveRecoveryNodeXenoConstructionNode
     canUpgrade: true
   - type: XenoPlasma
     plasma: 1000
@@ -163,6 +166,9 @@
     - XenoWeedsSource
     canOrderConstruction:
     - HiveCoreXenoConstructionNode
+    - HiveEggMorpherXenoConstructionNode
+    - HiveClusterXenoConstructionNode
+    - HiveRecoveryNodeXenoConstructionNode
   - type: XenoPlasma
     plasma: 800
     maxPlasma: 800

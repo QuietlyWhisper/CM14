@@ -768,6 +768,13 @@ public sealed class CMDistressSignalRuleSystem : GameRuleSystem<CMDistressSignal
     private void OnMapInit(Entity<XenoEvolutionGranterComponent> ent, ref MapInitEvent args)
     {
         CheckRoundShouldEnd();
+        var hive = _hive.GetHive(ent.Owner);
+        if (hive is null)
+        {
+            return;
+        }
+
+        _hive.SetHiveQueen(ent.Owner, hive.Value);
     }
 
     private void ReloadPrototypes()

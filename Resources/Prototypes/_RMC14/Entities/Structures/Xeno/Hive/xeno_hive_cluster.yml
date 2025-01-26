@@ -1,0 +1,56 @@
+- type: entity
+  id: HiveClusterXeno
+  parent: BaseHiveStructure
+  name: Hive Cluster
+  description: A large clump of gooey mass. It rhythmically pulses, as if its pumping something into the weeds below...
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_cluster.rsi
+    state: hive_cluster_idle
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: XenoWeeds
+    range: 7
+    spawns: XenoHiveWeeds
+    level: 3
+    blockOtherWeeds: true
+  - type: ReplaceWeedSourceOnWeeding
+    replacementPairs:
+      RMCCommunicationsTower: HivePylonXeno
+  - type: XenoWeedsSpreading
+  - type: HiveConstructionLimited
+    id: HiveClusterXeno
+
+
+- type: entity
+  id: HiveClusterXenoConstructionNode
+  parent: BaseHiveStructureNode
+  name: Hive Cluster
+  description: A large clump of gooey mass. Looks like a marker for something.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/hive_cluster.rsi
+    state: hive_cluster_idle
+    color: '#FFFFFFAA'
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: HiveConstructionNode
+    initialPlasmaCost: 400
+    plasmaCost: 300
+    spawn: HiveClusterXeno
+  - type: HiveConstructionLimited
+    id: HiveClusterXeno
+  - type: WarpPoint
+    location: hive cluster

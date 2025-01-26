@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/e9ea97c1887d8b144e3e66d959a428c79f58c196/icons/mob/xenos/structures48x48.dmi",
+    "size": {
+      "x": 48,
+      "y": 48
+    },
+    "states": [
+    {
+    "name": "hive_cluster_idle",
+    "delays": [
+        [
+        1,
+        1,
+        1
+        ]
+    ]
+    },
+    {
+        "name": "hive_cluster"
+    }]
+}

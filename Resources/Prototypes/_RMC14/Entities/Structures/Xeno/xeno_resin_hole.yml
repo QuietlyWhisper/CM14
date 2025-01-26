@@ -85,5 +85,5 @@
   - type: Corrodible
     isCorrodible: false
   - type: XenoConstruct
-    destroyWeeds: false
+    destroyWeedNodes: false
   - type: RequireProjectileTarget

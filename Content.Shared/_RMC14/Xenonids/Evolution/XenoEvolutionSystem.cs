@@ -282,6 +282,14 @@ public sealed class XenoEvolutionSystem : EntitySystem
     private void OnGranterEvolved(Entity<XenoEvolutionGranterComponent> ent, ref NewXenoEvolvedEvent args)
     {
         _xenoAnnounce.AnnounceSameHive(ent.Owner, Loc.GetString("rmc-new-queen"));
+
+        var hive = _xenoHive.GetHive(ent.Owner);
+        if (hive is null)
+        {
+            return;
+        }
+
+        _xenoHive.SetHiveQueen(ent.Owner, hive.Value);
     }
 
     private void OnOvipositorChanged(ref XenoOvipositorChangedEvent ev)

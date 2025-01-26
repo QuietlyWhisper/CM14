@@ -2,6 +2,7 @@
 
 xeno-ui-reserve-parasites-title = Reserve Parasites
 xeno-ui-reserve-parasites-apply-button-text = Apply
+xeno-reserve-parasites-verb = Reserve Parasites
 
 xeno-ui-find-parasite-title = Find Parasite
 xeno-ui-find-parasite-spawn-button = Take Parasite

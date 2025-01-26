@@ -1,4 +1,4 @@
-﻿using Content.Server._RMC14.Damage;
+using Content.Server._RMC14.Damage;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Events;
 using Content.Shared._RMC14.Dropship;
@@ -18,7 +18,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._RMC14.Xenonids.Construction;
 
-public sealed class XenoHiveCoreSystem : SharedXenoHiveCoreSystem
+public sealed class XenoPylonSystem : SharedXenoPylonSystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly XenoEvolutionSystem _evolution = default!;
@@ -63,7 +63,7 @@ public sealed class XenoHiveCoreSystem : SharedXenoHiveCoreSystem
     {
         _hive.SetSameHive(args.Spawner, xeno.Owner);
 
-        if (TryComp(args.Spawner, out HiveCoreComponent? core))
+        if (TryComp(args.Spawner, out HivePylonComponent? core))
             core.LiveLesserDrones.Add(xeno);
     }
 
@@ -77,7 +77,7 @@ public sealed class XenoHiveCoreSystem : SharedXenoHiveCoreSystem
         ent.Comp.Core = args.Spawner;
     }
 
-    private void UpdateGhostRoles(Entity<HiveCoreComponent, GhostRoleMobSpawnerComponent> coreEnt)
+    private void UpdateGhostRoles(Entity<HivePylonComponent, GhostRoleMobSpawnerComponent> coreEnt)
     {
         var (uid, core, spawner) = coreEnt;
         for (var i = core.LiveLesserDrones.Count - 1; i >= 0; i--)
@@ -127,7 +127,7 @@ public sealed class XenoHiveCoreSystem : SharedXenoHiveCoreSystem
         // TODO RMC14 30 second delay to grabbing the next lesser drone role
         // TODO RMC14 hive specific
         var time = _timing.CurTime;
-        var query = EntityQueryEnumerator<HiveCoreComponent>();
+        var query = EntityQueryEnumerator<HivePylonComponent>();
         while (query.MoveNext(out var uid, out var core))
         {
             if (TryComp(uid, out GhostRoleMobSpawnerComponent? spawner))

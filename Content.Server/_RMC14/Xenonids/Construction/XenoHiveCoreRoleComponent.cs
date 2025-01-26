@@ -1,7 +1,7 @@
 ﻿namespace Content.Server._RMC14.Xenonids.Construction;
 
 [RegisterComponent]
-[Access(typeof(XenoHiveCoreSystem))]
+[Access(typeof(XenoPylonSystem))]
 public sealed partial class XenoHiveCoreRoleComponent : Component
 {
     [DataField]

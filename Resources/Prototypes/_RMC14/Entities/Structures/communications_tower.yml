@@ -5,7 +5,7 @@
   description: A static heavy-duty TC-3T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations. Will need to have extra communication frequencies programmed into it by multitool.
   components:
   - type: Transform
-    anchored: false
+    anchored: true
   - type: Clickable
   - type: InteractionOutline
   - type: Physics
@@ -25,6 +25,9 @@
     layers:
     - state: static1_broken
       map: [ "base" ]
+    - state: resin_idle
+      map: [ "resin" ]
+      visible: false
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: null
@@ -57,6 +60,10 @@
           Broken: { state: static1_broken }
           Off: { state: static1_off }
           On: { state: static1 }
+      enum.WeededEntityLayers.Layer:
+        resin:
+          True: {visible: true}
+          False: {visible: false}
   - type: MaxDamage
     max: 500
   - type: MarineMapTracked
@@ -73,6 +80,7 @@
     channel: Equipment
   - type: Corrodible
     isCorrodible: false
+  - type: XenoWeedable
   - type: InteractedBlacklist
     blacklist:
       components:

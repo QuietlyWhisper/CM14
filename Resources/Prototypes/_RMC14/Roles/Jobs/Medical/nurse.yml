@@ -8,6 +8,8 @@
   - !type:TotalDepartmentsTimeRequirement
     group: CMDepartmentsHuman
     time: 3600 # 1 hour
+  - !type:AgeRequirement
+    requiredAge: 20
   ranks:
     RMCRankSergeant:
     - !type:RoleTimeRequirement

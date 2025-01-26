@@ -8,6 +8,8 @@
   - !type:DepartmentTimeRequirement
     department: CMMilitaryPolice
     time: 36000 # 10 hours
+  - !type:AgeRequirement
+    requiredAge: 27
   ranks:
     RMCRankGunnerySergeant:
     - !type:RoleTimeRequirement

@@ -4,6 +4,9 @@
   name: cm-job-name-cargotech
   description: cm-job-description-cargotech
   playTimeTracker: CMJobCargoTech
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 20
   ranks:
     RMCRankLanceCorporal:
     - !type:RoleTimeRequirement

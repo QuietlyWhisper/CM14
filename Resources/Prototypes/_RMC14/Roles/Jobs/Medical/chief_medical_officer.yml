@@ -8,6 +8,8 @@
   - !type:TotalJobsTimeRequirement
     group: CMJobsMedical
     time: 36000 # 10 hours
+  - !type:AgeRequirement
+    requiredAge: 20
   ranks:
     RMCRankFirstLT:
     - !type:RoleTimeRequirement

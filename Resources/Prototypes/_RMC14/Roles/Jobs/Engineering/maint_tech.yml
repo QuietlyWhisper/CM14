@@ -4,6 +4,9 @@
   name: cm-job-name-maint-tech
   description: cm-job-description-maint-tech
   playTimeTracker: CMJobMaintTech
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 20
   startingGear: CMGearMaintTech
   icon: "CMJobIconMaintTech"
   joinNotifyCrew: false

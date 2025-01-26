@@ -7,6 +7,8 @@
   - !type:TotalDepartmentsTimeRequirement
     group: CMDepartmentsHuman
     time: 36000 # 10 hours
+  - !type:AgeRequirement
+    requiredAge: 20
   ranks:
     RMCRankWeYaExecutiveSpecialist:
     - !type:RoleTimeRequirement

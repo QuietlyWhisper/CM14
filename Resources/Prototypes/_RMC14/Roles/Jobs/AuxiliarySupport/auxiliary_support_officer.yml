@@ -17,6 +17,8 @@
   - !type:DepartmentTimeRequirement
     department: CMAuxiliarySupport
     time: 18000 # 5 hours
+  - !type:AgeRequirement
+    requiredAge: 27
   ranks:
     RMCRankCaptain:
     - !type:RoleTimeRequirement

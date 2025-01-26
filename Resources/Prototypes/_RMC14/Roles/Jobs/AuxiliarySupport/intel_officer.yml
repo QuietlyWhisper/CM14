@@ -8,6 +8,8 @@
   - !type:DepartmentTimeRequirement
     department: CMSquad
     time: 18000 # 5 hours
+  - !type:AgeRequirement
+    requiredAge: 20
   ranks:
     RMCRankSecondLT: []
   startingGear: CMGearIntelOfficer

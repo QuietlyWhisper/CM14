@@ -11,6 +11,8 @@
   - !type:TotalDepartmentsTimeRequirement
     group: CMDepartmentsHuman
     time: 54000 # 15 hours
+  - !type:AgeRequirement
+    requiredAge: 25
   ranks:
     RMCRankSecondLT: []
   weight: 5

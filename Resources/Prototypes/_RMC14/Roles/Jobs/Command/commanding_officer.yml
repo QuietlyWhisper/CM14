@@ -23,6 +23,8 @@
   - !type:RoleTimeRequirement
     role: CMJobExecutiveOfficer
     time: 36000 #10 hrs
+  - !type:AgeRequirement
+    requiredAge: 30
   ranks:
     RMCRankColonel:
     - !type:RoleTimeRequirement

@@ -4,6 +4,9 @@
   name: cm-job-name-messtech
   description: cm-job-description-messtech
   playTimeTracker: CMJobMessTech
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 20
   startingGear: CMGearMessTech
   icon: "CMJobIconMessTech"
   joinNotifyCrew: false

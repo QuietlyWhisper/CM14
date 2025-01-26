@@ -8,6 +8,8 @@
   - !type:TotalJobsTimeRequirement
     group: CMJobsDropship
     time: 7200 # 2 hours
+  - !type:AgeRequirement
+    requiredAge: 20
   ranks:
     RMCRankSecondLT: []
   startingGear: CMGearPilotGunship

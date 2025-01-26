@@ -8,6 +8,8 @@
   - !type:DepartmentTimeRequirement
     department: CMSquad
     time: 36000 # 10 hours
+  - !type:AgeRequirement
+    requiredAge: 27
   ranks:
     RMCRankStaffSergeant:
     - !type:RoleTimeRequirement

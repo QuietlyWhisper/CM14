@@ -20,6 +20,8 @@
   - !type:DepartmentTimeRequirement
     department: CMCommand
     time: 18000 # 5 hours
+  - !type:AgeRequirement
+    requiredAge: 40
   ranks: # TODO Selectable Ranks for SEA
     RMCRankSergeantMajor:
     - !type:RoleTimeRequirement

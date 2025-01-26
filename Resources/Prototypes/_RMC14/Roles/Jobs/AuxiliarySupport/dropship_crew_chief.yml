@@ -11,6 +11,8 @@
   - !type:TotalJobsTimeRequirement
     group: CMJobsMedical
     time: 3600 # 1 hours
+  - !type:AgeRequirement
+    requiredAge: 20
   ranks:
     RMCRankStaffSergeant:
     - !type:RoleTimeRequirement

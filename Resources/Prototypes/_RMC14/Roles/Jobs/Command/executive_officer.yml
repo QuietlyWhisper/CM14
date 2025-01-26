@@ -8,6 +8,8 @@
   - !type:DepartmentTimeRequirement
     department: CMCommand
     time: 18000 # 5 hours
+  - !type:AgeRequirement
+    requiredAge: 35
   ranks:
     RMCRankCaptain: []
   weight: 5

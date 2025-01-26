@@ -11,6 +11,8 @@
   - !type:DepartmentTimeRequirement
     department: CMCommand
     time: 18000 # 5 hours
+  - !type:AgeRequirement
+    requiredAge: 27
   ranks:
     RMCRankFirstLT:
     - !type:RoleTimeRequirement

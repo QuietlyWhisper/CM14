@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/Zenith00000/cmss13/blob/8f421f6604f2dd7433bb5aa912649de3e98d6505/icons/obj/items/weapons/guns/ammo_by_faction/USCM/pistols.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "mag-1"
+    },
+    {
+      "name": "base"
+    },
+    {
+      "name": "overlay"
+    }
+  ]
+}

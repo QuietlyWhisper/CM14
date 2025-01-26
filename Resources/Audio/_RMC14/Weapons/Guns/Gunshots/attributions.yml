@@ -144,3 +144,7 @@
   copyright: "Taken from cmss13"
   source: "https://github.com/cmss13-devs/cmss13/blob/32730c731936c6737668ead7bde83a6cf296010f/sound/weapons/gun_m60.ogg"
 
+- files: ["gun_m10_auto_pistol.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from cmss13"
+  source: "https://github.com/Zenith00000/cmss13/blob/8f421f6604f2dd7433bb5aa912649de3e98d6505/sound/weapons/gun_m10_auto_pistol.ogg"

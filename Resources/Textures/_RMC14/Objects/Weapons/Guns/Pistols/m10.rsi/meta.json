@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/Zenith00000/cmss13/blob/8f421f6604f2dd7433bb5aa912649de3e98d6505/icons/obj/items/weapons/guns/guns_by_map/classic/guns_lefthand.dmi, https://github.com/Zenith00000/cmss13/blob/8f421f6604f2dd7433bb5aa912649de3e98d6505/icons/obj/items/weapons/guns/guns_by_map/classic/guns_obj.dmi, https://github.com/Zenith00000/cmss13/blob/8f421f6604f2dd7433bb5aa912649de3e98d6505/icons/obj/items/weapons/guns/guns_by_map/classic/guns_righthand.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "bolt-open"
+    },
+	{
+      "name": "mag-0"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "wielded-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "wielded-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    }
+  ]
+}

@@ -11,6 +11,7 @@
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="RMCAutoPunctuate" Text="{Loc 'rmc-ui-auto-punctuate'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCAutoEjectMagazines" Text="{Loc 'rmc-ui-auto-eject-magazines'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCGhostAppearanceFromDeadCharacter" Text="{Loc 'rmc-ui-ghost-appearance'}" Margin="0 0 0 5" />
                 <Label Text="{Loc 'ui-options-general-ui-style'}"
                        StyleClasses="LabelKeyText"/>
                 <ui:OptionDropDown Name="DropDownHudTheme" Title="{Loc 'ui-options-hud-theme'}" />

@@ -68,6 +68,7 @@
     damageContainers:
     - Biological
   - type: GhostColor
+  - type: RMCGhostAppearance
   # RMC - FindParasite Event
   - type: FindParasite
   - type: JoinXeno

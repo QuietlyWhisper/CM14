@@ -1,8 +1,8 @@
-﻿using Content.Server._RMC14.Rules;
+using Content.Server._RMC14.Rules;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Shared._RMC14.CCVar;
-using Content.Shared._RMC14.GhostColor;
+using Content.Shared._RMC14.GhostAppearance;
 using Content.Shared._RMC14.LinkAccount;
 using Content.Shared.Ghost;
 using Robust.Server.Player;

@@ -53,7 +53,7 @@
   equipment:
     # head: /obj/item/clothing/head/helmet/marine/veteran/pmc
     eyes: CMGlassesSecurity
-    back: CMBackpack # /obj/item/storage/backpack/lightpack
+    back: RMCSatchelLightpack
     gloves: RMCHandsVeteranPMC
     jumpsuit: RMCJumpsuitVeteranPMC
     # outerClothing: /obj/item/clothing/suit/storage/marine/veteran/pmc/light

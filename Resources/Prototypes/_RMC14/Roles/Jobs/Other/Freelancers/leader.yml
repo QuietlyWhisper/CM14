@@ -1,0 +1,67 @@
+
+# Freelancer Leader (Neutral faction, can be friendly, can be not. Depends on admin intentions)
+
+- type: entity
+  parent: MarkerBase
+  id: RMCSpawnerFreelancerLeader
+  name: Freelancer Leader spawner
+  suffix: Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _RMC14/Objects/Clothing/Uniforms/freelancer.rsi
+      state: icon
+  - type: ConditionalSpawner
+    prototypes:
+    - RMCRandomHumanoidFreelancerLeader
+
+- type: entity
+  id: RMCRandomHumanoidFreelancerLeader
+  name: Freelancer Leader ghost role
+  suffix: Role
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/freelancer.rsi
+    state: icon
+  - type: RandomHumanoidSpawner
+    settings: RMCFreelancerLeader
+
+- type: randomHumanoidSettings
+  parent: EventHumanoid
+  id: RMCFreelancerLeader
+  components:
+  - type: GhostRole
+    name: rmc-ghost-role-information-freelancer-leader-name
+    description: rmc-ghost-role-information-freelancer-standart-description
+    rules: ghost-role-information-freeagent-rules
+    raffle:
+      settings: short
+  - type: Loadout
+    prototypes: [ RMCGearFreelancerLeader ]
+  - type: Skills
+    skills:
+      RMCSkillFireman: 1
+      RMCSkillConstruction: 2
+      RMCSkillEngineer: 1
+      RMCSkillEndurance: 2
+      RMCSkillMedical: 2
+      RMCSkillCqc: 1
+      RMCSkillLeadership: 2
+      RMCSkillOverwatch: 1
+      RMCSkillJtac: 3
+  # TODO RMC14 add English, russian, Chinese and Japanese languages
+
+- type: startingGear
+  id: RMCGearFreelancerLeader
+  equipment:
+    head: RMCHeadBeretFreelancer
+    eyes: RMCGlassesMedicalHUDGlasses
+    belt: CMBeltMarine
+    back: RMCSatchelLightpack
+    gloves: RMCHandsVeteran
+    jumpsuit: RMCJumpsuitFreelancer
+    outerClothing: CMArmorFreelancer
+    shoes: RMCBootsSPPFilled
+    id: RMCIDCardFreelancer
+    ears: RMCHeadsetDistressDutch

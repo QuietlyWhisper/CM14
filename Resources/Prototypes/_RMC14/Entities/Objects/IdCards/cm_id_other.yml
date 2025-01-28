@@ -107,3 +107,11 @@
   components:
   - type: IdCard
     jobTitle: rmc-job-title-bureau-observer
+
+- type: entity
+  parent: CMIDCardBase
+  id: RMCIDCardFreelancer
+  name: ID card
+  components:
+  - type: IdCard
+    jobTitle: rmc-job-title-freelancer

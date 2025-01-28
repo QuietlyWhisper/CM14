@@ -58,7 +58,7 @@
   id: RMCGearPMCLeader
   equipment:
     # head: /obj/item/clothing/head/helmet/marine/veteran/pmc/leader
-    back: CMBackpack # /obj/item/storage/backpack/lightpack
+    back: RMCSatchelLightpack
     gloves: RMCHandsVeteranPMC
     jumpsuit: RMCJumpsuitVeteranPMCLeader
     # outerClothing: /obj/item/clothing/suit/storage/marine/veteran/pmc/leader

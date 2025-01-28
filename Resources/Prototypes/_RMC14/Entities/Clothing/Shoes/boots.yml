@@ -125,6 +125,18 @@
   description: These synth-leather boots seem high quality when first worn, but quickly detoriate, especially in the environments the corporate security members these are issued to operate in. Still, better than nothing.
 
 
+# SPP
+- type: entity
+  parent: CMBootsBrown
+  id: RMCBootsSPP
+  name: military combat boots
+
+- type: entity
+  parent: [RMCItemSlotM5Bayonet, RMCBootsSPP] # TODO RMC14 SPP Bayonet
+  id: RMCBootsSPPFilled
+  suffix: Filled
+
+
 # PMC
 - type: entity
   parent: CMBootsBlack

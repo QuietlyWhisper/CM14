@@ -1,0 +1,60 @@
+# Freelancer Medic (Neutral faction, can be friendly, can be not. Depends on admin intentions)
+
+- type: entity
+  parent: MarkerBase
+  id: RMCSpawnerFreelancerMedic
+  name: Freelancer Medic spawner
+  suffix: Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _RMC14/Objects/Clothing/Uniforms/freelancer.rsi
+      state: icon
+  - type: ConditionalSpawner
+    prototypes:
+    - RMCRandomHumanoidFreelancerMedic
+
+- type: entity
+  id: RMCRandomHumanoidFreelancerMedic
+  name: Freelancer Medic ghost role
+  suffix: Role
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/freelancer.rsi
+    state: icon
+  - type: RandomHumanoidSpawner
+    settings: RMCFreelancerMedic
+
+- type: randomHumanoidSettings
+  parent: EventHumanoid
+  id: RMCFreelancerMedic
+  components:
+  - type: GhostRole
+    name: rmc-ghost-role-information-freelancer-medic-name
+    description: rmc-ghost-role-information-freelancer-standard-description
+    rules: ghost-role-information-freeagent-rules
+    raffle:
+      settings: short
+  - type: Loadout
+    prototypes: [ RMCGearFreelancerMedic ]
+  - type: Skills
+    skills:
+      RMCSkillFireman: 1
+      RMCSkillConstruction: 2
+      RMCSkillEngineer: 1
+      RMCSkillEndurance: 2
+      RMCSkillMedical: 2
+      RMCSkillSurgery: 2
+
+- type: startingGear
+  id: RMCGearFreelancerMedic
+  equipment:
+    eyes: RMCGlassesMedicalHUDGlasses
+    back: RMCSatchelLightpack
+    gloves: RMCHandsVeteranPMC
+    jumpsuit: RMCJumpsuitFreelancer # TODO RMC14 add surg vest
+    outerClothing: CMArmorFreelancer
+    shoes: RMCBootsSPPFilled
+    id: RMCIDCardFreelancer
+    ears: RMCHeadsetDistressDutch

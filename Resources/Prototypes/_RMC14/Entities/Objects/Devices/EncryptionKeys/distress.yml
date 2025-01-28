@@ -14,3 +14,16 @@
     defaultChannel: Colony
   - type: Sprite
     state: cap_key
+
+- type: entity
+  parent: CMEncryptionKey
+  id: RMCEncryptionKeyDutch
+  name: dutch encryption Key
+  components:
+  - type: EncryptionKey
+    channels:
+    - MarineCommon # TODO RMC14 add Dutch channel
+    - Colony
+    defaultChannel: Colony
+  - type: Sprite
+    state: cap_key

@@ -46,3 +46,15 @@
       key_slots:
       - CMEncryptionKeyCommon
       - RMCEncryptionKeyLiaison
+
+# For Dutchs Dozen/Freelancer
+- type: entity
+  parent: CMHeadset
+  id: RMCHeadsetDistressDutch
+  name: Dutch's Dozen headset
+  description: A special headset used by small groups of trained operatives. Or terrorists.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - RMCEncryptionKeyDutch

@@ -319,3 +319,21 @@
           Ring: { state: ring }
           Ear: { state: ear }
   - type: Undisposable
+
+- type: entity
+  parent: CMSatchel
+  id: RMCSatchelLightpack #ERT pack
+  name: lightweight combat pack
+  description: A small, lightweight pack for expeditions and short-range operations.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Back/Satchels/Other/lightpack.rsi
+
+- type: entity
+  parent: RMCSatchelWelder
+  id: RMCSatchelLightpackWelder
+  name: lightweight technician welderpack
+  description: A small, lightweight pack for expeditions and short-range operations. Features a small fueltank for quick blowtorch refueling.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Back/Satchels/Other/lightpack_welder.rsi

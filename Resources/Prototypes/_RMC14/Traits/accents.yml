@@ -14,10 +14,10 @@
   category: SpeechTraits
   cost: 1
   components:
-    - type: MobsterAccent
+  - type: MobsterAccent
 
 - type: trait
-  id: French
+  id: FrenchAccent
   name: rmc-trait-french-accent-name
   description: rmc-trait-french-accent-desc
   category: SpeechTraits
@@ -26,7 +26,7 @@
     - type: FrenchAccent
 
 - type: trait
-  id: Spanish
+  id: SpanishAccent
   name: rmc-trait-spanish-accent-name
   description: rmc-trait-spanish-accent-desc
   category: SpeechTraits
@@ -43,3 +43,45 @@
   components:
   - type: ReplacementAccent
     accent: dwarf
+
+- type: trait
+  id: Accentless
+  name: trait-accentless-name
+  description: trait-accentless-desc
+  category: SpeechTraits
+  cost: 2
+  components:
+  - type: Accentless
+    removes:
+    - type: LizardAccent
+    - type: MothAccent
+    - type: ReplacementAccent
+      accent: dwarf
+
+- type: trait
+  id: SouthernAccent
+  name: trait-southern-name
+  description: trait-southern-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: SouthernAccent
+
+- type: trait
+  id: GermanAccent
+  name: trait-german-name
+  description: trait-german-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: GermanAccent
+
+- type: trait
+  id: ItalianAccent
+  name: trait-italian-name
+  description: trait-italian-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ReplacementAccent
+    accent: italian

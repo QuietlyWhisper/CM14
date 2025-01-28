@@ -1,7 +1,16 @@
 - type: trait
-  id: CMSnoring
+  id: Snoring
   name: trait-snoring-name
   description: trait-snoring-desc
-  category: RMCInconveniences
+  category: Quirks
   components:
-    - type: Snoring
+  - type: Snoring
+
+- type: trait
+  id: LightweightDrunk
+  name: trait-lightweight-name
+  description: trait-lightweight-desc
+  category: Quirks
+  components:
+  - type: LightweightDrunk
+    boozeStrengthMultiplier: 2

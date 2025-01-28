@@ -157,11 +157,19 @@
         - Paper
   - type: ContainerContainer
     containers:
+      entity_storage: !type:Container
       paper_label: !type:ContainerSlot
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: RMCLargeCrateTable
+        prob: 0.75
   - type: StaticPrice
     price: 50
   - type: ItemSlots
-
+  - type: Construction
+    graph: RMCLargeCrates
+    node: planks
 
 # Weldable
 - type: entity

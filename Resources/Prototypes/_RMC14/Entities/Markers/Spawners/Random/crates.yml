@@ -1,0 +1,17 @@
+- type: entityTable
+  id: RMCLargeCrateTable
+  table: !type:GroupSelector
+    children:
+    - id: CMMultitool
+    - id: CMCrowbar
+    - id: CMWirecutter
+    - id: CMWelder
+    - id: CMBeltUtilityFilled
+    - id: RMCPowerCellHigh
+    - id: RMCFlashlight
+    - id: DoorElectronics
+    - id: Igniter
+    - id: CMHealthAnalyzer
+    - id: FoodBoxDonkpocket
+    - id: CMBootsBlackFilled
+    - id: CMGrenadeSmoke

@@ -112,7 +112,17 @@
     drawdepth: FloorTiles
     layers:
     - state: weed0
-    - state: constructionnode
+    - state: constructionnode0
+  - type: RandomSprite
+    available:
+    - 1:
+        constructionnode0: ""
+    - 1:
+        constructionnode1: ""
+    - 1:
+        constructionnode2: ""
+    - 1:
+        constructionnode3: ""
   - type: Destructible
     thresholds:
     - trigger:
@@ -199,7 +209,7 @@
     drawdepth: FloorTiles
     layers:
     - state: hive_weed0
-    - state: constructionnode
+    - state: constructionnode0
   - type: Destructible
     thresholds:
     - trigger:

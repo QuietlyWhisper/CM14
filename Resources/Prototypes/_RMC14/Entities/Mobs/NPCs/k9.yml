@@ -1,0 +1,68 @@
+﻿- type: entity
+  parent:
+  - BaseMob
+  - MobDamageable
+  id: RMCMobK9
+  name: KAYNINE
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/k9.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: MobState
+  - type: MobThresholds
+    allowRevives: true
+    thresholds:
+      0: Alive
+      200: Dead
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      100: 0.85
+      150: 0.7
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Pullable
+  - type: Repairable
+    fuelCost: 5
+  - type: InteractionPopup
+    interactSuccessString: rmc-k9-interact-success
+    interactFailureString: rmc-k9-interact-success
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  parent: MarkerBase
+  id: RMCSpawnMobK9
+  name: KAYNINE spawner
+  suffix: RMC
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/k9.rsi
+    layers:
+    - state: alive
+    - sprite: Markers/cross.rsi
+      state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - RMCMobK9

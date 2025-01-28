@@ -14,3 +14,13 @@
     intensityPerUnit: 0.5 # 50+50 reagent for maximum explosion
     intensitySlope: 4
     maxTotalIntensity: 100
+    
+- type: reaction
+  id: EthylredoxrazineOxidation
+  reactants:
+    RMCEthanol:
+      amount: 1
+    CMEthylredoxrazine:
+      amount: 1
+  products:
+    Water: 2

@@ -3,6 +3,10 @@
   name: id-card-access-level-command
 
 - type: accessLevel
+  id: CMAccessSenior
+  name: id-card-access-level-senior
+
+- type: accessLevel
   id: CMAccessCMP
   name: cm-job-name-chief-mp
 

@@ -7,6 +7,14 @@
     access: [["CMAccessCommand"]]
 
 - type: entity
+  parent: CMAirlockCommand
+  id: CMAirlockSeniorLocked
+  suffix: Senior, Locked
+  components:
+  - type: AccessReader
+    access: [["CMAccessSenior"]]
+
+- type: entity
   parent: CMAirlockMaint
   id: CMAirlockMaintCommandLocked
   suffix: Command, Locked, Maint

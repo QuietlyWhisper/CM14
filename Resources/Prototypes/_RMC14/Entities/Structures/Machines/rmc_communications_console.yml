@@ -37,7 +37,7 @@
     key: enum.MarineCommunicationsComputerUI.Key
   - type: ActivatableUIRequiresAccess
   - type: AccessReader
-    access: [ [ "CMAccessCommand" ] ]
+    access: [ [ "CMAccessSenior" ] ]
   - type: UserInterface
     interfaces:
       enum.MarineCommunicationsComputerUI.Key:
@@ -63,7 +63,7 @@
     key: enum.MarineControlComputerUi.Key
   - type: ActivatableUIRequiresAccess
   - type: AccessReader
-    access: [ [ "CMAccessCommand" ] ]
+    access: [ [ "CMAccessSenior" ] ]
   - type: UserInterface
     interfaces:
       enum.MarineControlComputerUi.Key:

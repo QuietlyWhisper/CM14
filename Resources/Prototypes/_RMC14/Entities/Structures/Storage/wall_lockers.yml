@@ -19,7 +19,7 @@
       tags:
       - CommandTablet
   - type: AccessReader
-    access: [["CMAccessCommand"]]
+    access: [["CMAccessSenior"]]
 
 - type: entity
   id: CMLockerCMDCabinetFilled

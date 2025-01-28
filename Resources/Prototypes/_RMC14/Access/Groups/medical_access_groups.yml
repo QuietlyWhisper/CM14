@@ -5,6 +5,7 @@
   - CMAccessMedical
   - CMAccessResearch
   - CMAccessCommand
+  - CMAccessSenior
   - CMAccessChemistry
 
 - type: accessGroup

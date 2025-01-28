@@ -13,7 +13,8 @@
   - CMAccessCMO # chief medical officer
   - CMAccessCMP # chief MP
   - CMAccessCO # commanding officer
-  - CMAccessCommand # all command level doors, including bridge. May need to be split.
+  - CMAccessCommand # command level doors, including bridge
+  - CMAccessSenior # senior command access (CMO, ASO, CMP, XO, CO, SEA)
   - CMAccessCrewman # access for dropship maintenance doors
   - CMAccessChemistry # access for chem doors and chem machines
   - CMAccessDelta # Squad prep access
@@ -41,6 +42,7 @@
 # all ship-side access that is not CO
 # SEA uses this.
 # XO/EO Uses this.
+# SO uses this.
 - type: accessGroup
   id: MarineMain
   tags:
@@ -54,6 +56,7 @@
   - CMAccessCMO
   - CMAccessCMP
   - CMAccessCommand
+  - CMAccessSenior
   - CMAccessCrewman
   - CMAccessChemistry
   - CMAccessDelta

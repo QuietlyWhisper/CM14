@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   save: false
   parent: BaseMobSpecies
   id: CMBaseMobSpeciesOrganic
@@ -278,3 +278,5 @@
       - Xeno
   - type: RMCPickupDroppedItems
   - type: CommendationReceiver
+  - type: RMCArmorModifier
+    meleeArmorModifier: 5

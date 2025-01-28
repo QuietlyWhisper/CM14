@@ -12,7 +12,7 @@
         hard: false
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.4"
+          bounds: "-0.35,-0.35,0.35,0.35"
         mask:
         - MobMask
         layer:
@@ -43,10 +43,10 @@
         Asphyxiation: 3
     damage:
       types:
-        Heat: 17.5
+        Heat: 35
     barricadeDamage:
       types:
-        Heat: 11.5
+        Heat: 8.5
     whitelist:
       components:
       - Marine

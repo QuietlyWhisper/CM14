@@ -293,6 +293,7 @@
       - Marine
   - type: BlockIdExamine
   - type: NoStunOnExit
+  - type: RMCArmorModifier
 
 - type: entity
   abstract: true

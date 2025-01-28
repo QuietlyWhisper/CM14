@@ -21,6 +21,28 @@
     state: d_boxers
 
 - type: marking
+  id: RMCUnderwearBoxersJungle
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: j_boxers
+
+- type: marking
+  id: RMCUnderwearBoxersSnow
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: s_boxers
+
+- type: marking
   id: RMCUnderwearLowriders
   bodyPart: Underwear
   markingCategory: Underwear
@@ -30,6 +52,39 @@
   sprites:
   - sprite: _RMC14/Mobs/Customization/underwear.rsi
     state: c_lowriders
+
+- type: marking
+  id: RMCUnderwearLowridersDesert
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: d_lowriders
+
+- type: marking
+  id: RMCUnderwearLowridersJungle
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: j_lowriders
+
+- type: marking
+  id: RMCUnderwearLowridersSnow
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: s_lowriders
 
 - type: marking
   id: RMCUnderwearBriefs
@@ -43,6 +98,39 @@
     state: c_briefs
 
 - type: marking
+  id: RMCUnderwearBriefsDesert
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: d_briefs
+
+- type: marking
+  id: RMCUnderwearBriefsJungle
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: j_briefs
+
+- type: marking
+  id: RMCUnderwearBriefsSnow
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: s_briefs
+
+- type: marking
   id: RMCUnderwearSatin
   bodyPart: Underwear
   markingCategory: Underwear
@@ -54,7 +142,7 @@
     state: c_satin
 
 - type: marking
-  id: RMCUnderwearTanga
+  id: RMCUnderwearSatinDesert
   bodyPart: Underwear
   markingCategory: Underwear
   forcedColoring: true
@@ -62,4 +150,26 @@
   speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson, Avali, Vulpkanin, Rodentia]
   sprites:
   - sprite: _RMC14/Mobs/Customization/underwear.rsi
-    state: c_tanga
+    state: d_satin
+
+- type: marking
+  id: RMCUnderwearSatinJungle
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: j_satin
+
+- type: marking
+  id: RMCUnderwearSatinSnow
+  bodyPart: Underwear
+  markingCategory: Underwear
+  forcedColoring: true
+  RMCFollowSkinColor: false
+  speciesRestriction: [Human, Dwarf, Felinid, Arachnid, Reptilian, Diona, Moth, SlimePerson]
+  sprites:
+  - sprite: _RMC14/Mobs/Customization/underwear.rsi
+    state: s_satin

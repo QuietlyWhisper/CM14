@@ -24,10 +24,6 @@
       "directions": 4
     },
     {
-      "name": "c_tanga",
-      "directions": 4
-    },
-    {
       "name": "j_boxers",
       "directions": 4
     },
@@ -41,10 +37,6 @@
     },
     {
       "name": "j_satin",
-      "directions": 4
-    },
-    {
-      "name": "j_tanga",
       "directions": 4
     },
     {
@@ -64,10 +56,6 @@
       "directions": 4
     },
     {
-      "name": "s_tanga",
-      "directions": 4
-    },
-    {
       "name": "d_boxers",
       "directions": 4
     },
@@ -81,10 +69,6 @@
     },
     {
       "name": "d_satin",
-      "directions": 4
-    },
-    {
-      "name": "d_tanga",
       "directions": 4
     }
   ]

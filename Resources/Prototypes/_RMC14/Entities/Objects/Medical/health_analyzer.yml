@@ -15,7 +15,7 @@
     state: health
   - type: ActivatableUI
     key: enum.HealthScannerUIKey.Key
-    inHandsOnly: true
+    inHandsOnly: false
     requireActiveHand: false
   - type: UserInterface
     interfaces:

@@ -294,7 +294,7 @@
   desc: reagent-desc-cmepinephrine
   color: "#6bd43c"
   overdose: 10.5
-  worksOnTheDead: true
+  worksAfterDefibrillation: true
   metabolisms:
     Medicine:
       metabolismRate: 0.2

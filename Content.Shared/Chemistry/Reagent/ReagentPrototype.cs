@@ -125,6 +125,12 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public bool WorksOnTheDead;
 
+        /// <summary>
+        /// Should this reagent work after defibrillation?
+        /// </summary>
+        [DataField]
+        public bool WorksAfterDefibrillation;
+
         [DataField(serverOnly: true)]
         public FrozenDictionary<ProtoId<MetabolismGroupPrototype>, ReagentEffectsEntry>? Metabolisms;
 

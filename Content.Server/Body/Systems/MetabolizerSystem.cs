@@ -16,6 +16,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared._RMC14.Medical.Defibrillator;
 
 namespace Content.Server.Body.Systems
 {
@@ -182,21 +183,23 @@ namespace Content.Server.Body.Systems
                     if (!proto.Metabolisms.TryGetValue(group.Id, out var entry))
                         continue;
 
+                    // if it's possible for them to be dead, and they are,
+                    // then we shouldn't process any effects or remove reagents
+                    if (TryComp<MobStateComponent>(solutionEntityUid.Value, out var state))
+                    {
+                        if (!(HasComp<CMRecentlyDefibrillatedComponent>(solutionEntityUid.Value) && proto.WorksAfterDefibrillation)) // TODO change to PROPERTY_ELECTROGENETIC
+                        {
+                            if (!proto.WorksOnTheDead && _mobStateSystem.IsDead(solutionEntityUid.Value, state))
+                                continue;
+                        }
+                    }
+
                     var rate = entry.MetabolismRate * group.MetabolismRateModifier;
 
                     // Remove $rate, as long as there's enough reagent there to actually remove that much
                     mostToRemove = FixedPoint2.Clamp(rate, 0, quantity);
 
                     float scale = (float) mostToRemove / (float) rate;
-
-                    // if it's possible for them to be dead, and they are,
-                    // then we shouldn't process any effects, but should probably
-                    // still remove reagents
-                    if (TryComp<MobStateComponent>(solutionEntityUid.Value, out var state))
-                    {
-                        if (!proto.WorksOnTheDead && _mobStateSystem.IsDead(solutionEntityUid.Value, state))
-                            continue;
-                    }
 
                     var actualEntity = ent.Comp2?.Body ?? solutionEntityUid.Value;
                     var args = new EntityEffectReagentArgs(actualEntity, EntityManager, ent, solution, mostToRemove, proto, null, scale);

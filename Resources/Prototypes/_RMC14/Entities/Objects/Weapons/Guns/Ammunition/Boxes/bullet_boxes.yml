@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: BaseItem
   id: RMCBoxBulletsBase
@@ -49,6 +49,17 @@
     bulletType: RMCBoxBulletsRifle
 
 - type: entity
+  parent: RMCBoxBulletsRifle
+  id: RMCBoxBulletsRifleEmpty
+  components:
+  - type: Construction
+    graph: RMCBoxMagazine
+    node: RMCBoxBulletsRifleEmpty
+  - type: BulletBox
+    bulletType: RMCBoxBulletsRifle
+    amount: 0
+
+- type: entity
   parent: RMCBoxBulletsBase
   id: RMCBoxBulletsRifleAP
   name: rifle ammunition box (10x24mm AP)
@@ -72,6 +83,17 @@
           Full: { state: rounds_ap, visible: true }
   - type: BulletBox
     bulletType: RMCBoxBulletsRifleAP
+
+- type: entity
+  parent: RMCBoxBulletsRifleAP
+  id: RMCBoxBulletsRifleAPEmpty
+  components:
+  - type: Construction
+    graph: RMCBoxMagazine
+    node: RMCBoxBulletsRifleAPEmpty
+  - type: BulletBox
+    bulletType: RMCBoxBulletsRifleAP
+    amount: 0
 
 - type: entity
   parent: RMCBoxBulletsBase
@@ -99,6 +121,17 @@
     bulletType: RMCBoxBulletsSMG
 
 - type: entity
+  parent: RMCBoxBulletsSMG
+  id: RMCBoxBulletsSMGEmpty
+  components:
+  - type: Construction
+    graph: RMCBoxMagazine
+    node: RMCBoxBulletsSMGEmpty
+  - type: BulletBox
+    bulletType: RMCBoxBulletsSMG
+    amount: 0
+
+- type: entity
   parent: RMCBoxBulletsBase
   id: RMCBoxBulletsSMGAP
   name: SMG ammunition box (10x20mm AP)
@@ -122,3 +155,14 @@
           Full: { state: rounds_ap, visible: true }
   - type: BulletBox
     bulletType: RMCBoxBulletsSMGAP
+
+- type: entity
+  parent: RMCBoxBulletsSMGAP
+  id: RMCBoxBulletsSMGAPEmpty
+  components:
+  - type: Construction
+    graph: RMCBoxMagazine
+    node: RMCBoxBulletsSMGAPEmpty
+  - type: BulletBox
+    bulletType: RMCBoxBulletsSMGAP
+    amount: 0

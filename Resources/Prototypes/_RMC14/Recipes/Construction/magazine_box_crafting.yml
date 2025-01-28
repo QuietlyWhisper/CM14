@@ -43,6 +43,34 @@
     state: base_m54
   objectType: Item
 
+- type: construction
+  parent: RMC
+  name: rifle ammunition box (10x24mm)
+  id: RMCBoxBulletsRifle
+  graph: RMCBoxMagazine
+  startNode: start
+  targetNode: RMCBoxBulletsRifleEmpty
+  category: construction-category-cm-box-magazine
+  description: A 10x24mm ammunition box. Used to refill M54C MK1, MK2, M4SPR and M54CE2 HAR magazines. It comes with a leather strap allowing to wear it on the back.
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
+    state: base_m54
+  objectType: Item
+
+- type: construction
+  parent: RMC
+  name: rifle ammunition box (10x24mm AP)
+  id: RMCBoxBulletsRifleAP
+  graph: RMCBoxMagazine
+  startNode: start
+  targetNode: RMCBoxBulletsRifleAPEmpty
+  category: construction-category-cm-box-magazine
+  description: A 10x24mm armor-piercing ammunition box. Used to refill M54C MK2, and M4SPR AP magazines. It comes with a leather strap allowing to wear it on the back.
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
+    state: base_m54
+  objectType: Item
+
 # M63
 - type: construction
   parent: RMC
@@ -81,6 +109,34 @@
   targetNode: RMCBoxMagazineSMGM63ExtEmpty
   category: construction-category-cm-box-magazine
   description: A magazine box that can contain extended M63 mags.
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
+    state: base_m63
+  objectType: Item
+
+- type: construction
+  parent: RMC
+  name: SMG HV ammunition box (10x20mm)
+  id: RMCBoxBulletsSMGEmpty
+  graph: RMCBoxMagazine
+  startNode: start
+  targetNode: RMCBoxBulletsSMGEmpty
+  category: construction-category-cm-box-magazine
+  description: A 10x20mm ammunition box. Used to refill M63 HV and extended magazines. It comes with a leather strap allowing to wear it on the back.
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
+    state: base_m63
+  objectType: Item
+
+- type: construction
+  parent: RMC
+  name: SMG HV ammunition box (10x20mm AP)
+  id: RMCBoxBulletsSMGAPEmpty
+  graph: RMCBoxMagazine
+  startNode: start
+  targetNode: RMCBoxBulletsSMGAPEmpty
+  category: construction-category-cm-box-magazine
+  description: A 10x20mm armor-piercing ammunition box. Used to refill M63 AP magazines. It comes with a leather strap allowing to wear it on the back.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m63
@@ -429,6 +485,16 @@
       - material: RMCSheetCardboard
         amount: 1
         doAfter: 0.25
+    - to: RMCBoxBulletsRifleEmpty
+      steps:
+      - material: RMCSheetCardboard
+        amount: 1
+        doAfter: 0.25
+    - to: RMCBoxBulletsRifleAPEmpty
+      steps:
+      - material: RMCSheetCardboard
+        amount: 1
+        doAfter: 0.25
 
     # M63
     - to: RMCBoxMagazineSMGM63Empty
@@ -442,6 +508,16 @@
         amount: 1
         doAfter: 0.25
     - to: RMCBoxMagazineSMGM63ExtEmpty
+      steps:
+      - material: RMCSheetCardboard
+        amount: 1
+        doAfter: 0.25
+    - to: RMCBoxBulletsSMGEmpty
+      steps:
+      - material: RMCSheetCardboard
+        amount: 1
+        doAfter: 0.25
+    - to: RMCBoxBulletsSMGAPEmpty
       steps:
       - material: RMCSheetCardboard
         amount: 1
@@ -594,6 +670,10 @@
     entity: RMCBoxMagazineRifleM54CAPEmpty
   - node: RMCBoxMagazineRifleM54CExtEmpty
     entity: RMCBoxMagazineRifleM54CExtEmpty
+  - node: RMCBoxBulletsRifleEmpty
+    entity: RMCBoxBulletsRifleEmpty
+  - node: RMCBoxBulletsRifleAPEmpty
+    entity: RMCBoxBulletsRifleAPEmpty
 
   # M63
   - node: RMCBoxMagazineSMGM63Empty
@@ -602,6 +682,10 @@
     entity: RMCBoxMagazineSMGM63APEmpty
   - node: RMCBoxMagazineSMGM63ExtEmpty
     entity: RMCBoxMagazineSMGM63ExtEmpty
+  - node: RMCBoxBulletsSMGEmpty
+    entity: RMCBoxBulletsSMGEmpty
+  - node: RMCBoxBulletsSMGAPEmpty
+    entity: RMCBoxBulletsSMGAPEmpty
 
   # M4SPR
   - node: RMCBoxMagazineRifleM4SPREmpty

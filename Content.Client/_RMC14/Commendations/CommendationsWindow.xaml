@@ -1,7 +1,7 @@
 ﻿<controls:CommendationsWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Commendations"
-    Title="Medals" MinSize="700 300">
+    Title="{Loc rmc-medals-window-title}" MinSize="700 300">
     <ScrollContainer HScrollEnabled="False" VScrollEnabled="True">
         <BoxContainer Name="Commendations" Access="Public" Orientation="Vertical" />
     </ScrollContainer>

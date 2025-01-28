@@ -4,10 +4,10 @@
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls">
     <BoxContainer Orientation="Vertical">
         <RichTextLabel Name="BudgetLabel" Access="Public" />
-        <Button Name="BackButton" Access="Public" Text="Back to all categories" StyleClasses="ButtonSquare" />
+        <Button Name="BackButton" Access="Public" Text="{Loc rmc-requisitions-back-to-categories}" StyleClasses="ButtonSquare" />
         <cc:HSeparator Color="#4972A1" Margin="0 5" />
         <LineEdit Name="SearchBar"
-            PlaceHolder="Search..."
+            PlaceHolder="{Loc rmc-requisitions-order-search-placeholder}"
             HorizontalExpand="True"
             Access="Public" />
         <cc:HSeparator Color="#4972A1" Margin="0 5" />

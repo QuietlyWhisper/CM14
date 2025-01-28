@@ -28,9 +28,9 @@ public sealed partial class OverwatchSquadView : Control
     {
         RobustXamlLoader.Load(this);
 
-        TabContainer.SetTabTitle(SquadMonitor, "Squad Monitor");
-        TabContainer.SetTabTitle(SupplyDrop, "Supply Drop");
-        TabContainer.SetTabTitle(OrbitalBombardment, "Orbital Bombardment");
+        TabContainer.SetTabTitle(SquadMonitor, Loc.GetString("rmc-overwatch-squad-view-squad-monitor-label"));
+        TabContainer.SetTabTitle(SupplyDrop, Loc.GetString("rmc-overwatch-squad-view-supply-drop-label"));
+        TabContainer.SetTabTitle(OrbitalBombardment, Loc.GetString("rmc-overwatch-squad-view-orbital-bombardment-label"));
 
         Longitude = UIExtensions.CreateDialSpinBox(buttons: false, minWidth: 100);
         LongitudeContainer.AddChild(Longitude);
@@ -193,14 +193,14 @@ public sealed partial class OverwatchSquadView : Control
         base.FrameUpdate(args);
 
         CrateStatus.Text = HasCrate
-            ? "[color=green][bold]Crate Loaded[/bold][/color]"
-            : "[color=red][bold]No crate loaded[/bold][/color]";
+            ? Loc.GetString("rmc-overwatch-squad-view-status-has-crate")
+            : Loc.GetString("rmc-overwatch-squad-view-status-no-crate");
 
         var time = IoCManager.Resolve<IGameTiming>().CurTime;
         var timeLeft = NextLaunchAt - time;
         if (timeLeft > TimeSpan.Zero)
         {
-            CrateStatus.Text = $"[color=#D3B400][bold]Cooldown - {(int)timeLeft.TotalSeconds} seconds[/bold][/color]";
+            CrateStatus.Text = Loc.GetString("rmc-dropship-navigation-in-flight", ("seconds", (int)timeLeft.TotalSeconds));
             LaunchButton.Disabled = true;
         }
         else
@@ -209,7 +209,7 @@ public sealed partial class OverwatchSquadView : Control
         }
 
         OrbitalStatus.Text = HasOrbital
-            ? "[color=green][bold]Ready[/bold][/color]"
-            : "[color=red][bold]Not ready[/bold][/color]";
+            ? Loc.GetString("rmc-overwatch-squad-view-status-ready")
+            : Loc.GetString("rmc-overwatch-squad-view-status-not-ready");
     }
 }

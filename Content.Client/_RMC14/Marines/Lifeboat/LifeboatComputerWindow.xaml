@@ -1,26 +1,26 @@
 ﻿<controls:LifeboatComputerWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Marines.Lifeboat"
-    Title="Confirm?" MinSize="400 200">
+    Title="{Loc rmc-lifeboat-window-title}" MinSize="400 200">
     <BoxContainer Orientation="Vertical">
-        <Label Text="Launch the lifeboat?" />
+        <Label Text="{Loc rmc-lifeboat-label}" />
         <BoxContainer Orientation="Horizontal">
             <Control HorizontalExpand="True" />
-            <Button Name="EmergencyLaunchButton" Access="Public" Text="Emergency Launch"
+            <Button Name="EmergencyLaunchButton" Access="Public" Text="{Loc rmc-lifeboat-emergency-launch}"
                     StyleClasses="OpenBoth" HorizontalExpand="True" SizeFlagsStretchRatio="3"
                     Margin="0 2" />
             <Control HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Control HorizontalExpand="True" />
-            <Button Name="NoButton" Access="Public" Text="No"
+            <Button Name="NoButton" Access="Public" Text="{Loc rmc-lifeboat-no}"
                     StyleClasses="OpenBoth" HorizontalExpand="True" SizeFlagsStretchRatio="3"
                     Margin="0 2" />
             <Control HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Control HorizontalExpand="True" />
-            <Button Name="YesButton" Access="Public" Text="Yes"
+            <Button Name="YesButton" Access="Public" Text="{Loc rmc-lifeboat-yes}"
                     StyleClasses="OpenBoth" HorizontalExpand="True" SizeFlagsStretchRatio="3"
                     Margin="0 2" />
             <Control HorizontalExpand="True" />

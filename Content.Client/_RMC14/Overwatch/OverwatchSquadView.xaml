@@ -11,23 +11,23 @@
             </PanelContainer.PanelOverride>
             <BoxContainer Orientation="Vertical">
                 <BoxContainer Orientation="Horizontal" Margin="5">
-                    <Label Name="OverwatchLabel" Access="Public" Text="Overwatch" />
+                    <Label Name="OverwatchLabel" Access="Public" Text="{Loc rmc-overwatch-squad-view-label}" />
                     <Control HorizontalExpand="True" />
-                    <Button Name="TacticalMapButton" Access="Public" Text="Tactical Map"
+                    <Button Name="TacticalMapButton" Access="Public" Text="{Loc rmc-overwatch-squad-view-tactical-map}"
                             StyleClasses="OpenBoth" />
                     <Button Name="OperatorButton" Access="Public" StyleClasses="OpenBoth" />
-                    <Button Name="StopOverwatchButton" Access="Public" Text="Stop Overwatch"
+                    <Button Name="StopOverwatchButton" Access="Public" Text="{Loc rmc-overwatch-squad-view-stop-overwatch}"
                             StyleClasses="OpenBoth" />
                 </BoxContainer>
                 <BoxContainer Name="MessageSquadContainer" Access="Public" Orientation="Vertical">
                     <ui:BlueHorizontalSeparator />
-                    <Button Name="MessageSquadButton" Access="Public" Text="Message Squad"
+                    <Button Name="MessageSquadButton" Access="Public" Text="{Loc rmc-overwatch-squad-view-message-squad}"
                             StyleClasses="OpenBoth" />
                 </BoxContainer>
             </BoxContainer>
         </PanelContainer>
         <BoxContainer Orientation="Vertical" Margin="0 10">
-            <Label Text="Squad Roles" />
+            <Label Text="{Loc rmc-overwatch-squad-view-squad-roles-label}" />
             <BoxContainer Orientation="Horizontal">
                 <BoxContainer Name="RolesContainer" Access="Public" Orientation="Horizontal" />
                 <Control HorizontalExpand="True" />
@@ -46,26 +46,26 @@
                                 <graphics:StyleBoxFlat BorderColor="#88C7FA" BorderThickness="0 0 0 1" />
                             </PanelContainer.PanelOverride>
                             <BoxContainer Orientation="Horizontal" Margin="5">
-                                <Label Text="Monitor" />
+                                <Label Text="{Loc rmc-overwatch-squad-view-monitor-label}" />
                                 <Control HorizontalExpand="True" />
                                 <Button Name="ShowLocationButton" Access="Public"
-                                        Text="Shown: all" StyleClasses="OpenBoth"
+                                        Text="{Loc rmc-overwatch-squad-view-show-location-all}" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#D3B400" MinWidth="165" />
                                 <Button Name="ShowDeadButton" Access="Public"
-                                        Text="Show dead" StyleClasses="OpenBoth"
+                                        Text="{Loc rmc-overwatch-squad-view-show-dead}" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#D3B400" MinWidth="105" />
                                 <Button Name="ShowHiddenButton" Access="Public"
-                                        Text="Hide hidden" StyleClasses="OpenBoth"
+                                        Text="{Loc rmc-overwatch-squad-view-hide-hidden}" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#D3B400" MinWidth="120" />
                                 <Button Name="TransferMarineButton" Access="Public"
-                                        Text="Transfer marine" StyleClasses="OpenBoth"
+                                        Text="{Loc rmc-overwatch-squad-view-transfer-marine}" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#D3B400" />
                             </BoxContainer>
                         </PanelContainer>
                         <BoxContainer Orientation="Vertical" Margin="5"
                                       VerticalExpand="True">
                             <LineEdit Name="SearchBar" Access="Public" HorizontalExpand="True" Margin="0 0 0 5"
-                                      PlaceHolder="Search..." />
+                                      PlaceHolder="{Loc rmc-overwatch-squad-view-search-bar-placeholder}" />
                             <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
                                 <BoxContainer Orientation="Horizontal">
                                     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
@@ -75,7 +75,7 @@
                                             </PanelContainer.PanelOverride>
                                             <BoxContainer Orientation="Horizontal">
                                                 <Control HorizontalExpand="True" />
-                                                <Label Text="Name" HorizontalAlignment="Center" />
+                                                <Label Text="{Loc rmc-overwatch-squad-view-name-header}" HorizontalAlignment="Center" />
                                                 <Control HorizontalExpand="True" />
                                             </BoxContainer>
                                         </PanelContainer>
@@ -88,7 +88,7 @@
                                             </PanelContainer.PanelOverride>
                                             <BoxContainer Orientation="Horizontal">
                                                 <Control HorizontalExpand="True" />
-                                                <Label Text="Role" HorizontalAlignment="Center" />
+                                                <Label Text="{Loc rmc-overwatch-squad-view-role-header}" HorizontalAlignment="Center" />
                                                 <Control HorizontalExpand="True" />
                                             </BoxContainer>
                                         </PanelContainer>
@@ -101,7 +101,7 @@
                                             </PanelContainer.PanelOverride>
                                             <BoxContainer Orientation="Horizontal">
                                                 <Control HorizontalExpand="True" />
-                                                <Label Text="State" HorizontalAlignment="Center" />
+                                                <Label Text="{Loc rmc-overwatch-squad-view-state-header}" HorizontalAlignment="Center" />
                                                 <Control HorizontalExpand="True" />
                                             </BoxContainer>
                                         </PanelContainer>
@@ -127,7 +127,7 @@
                                             </PanelContainer.PanelOverride>
                                             <BoxContainer Orientation="Horizontal">
                                                 <Control HorizontalExpand="True" />
-                                                <Label Text="SL Dist." HorizontalAlignment="Center" />
+                                                <Label Text="{Loc rmc-overwatch-squad-view-sl-dist-header}" HorizontalAlignment="Center" />
                                                 <Control HorizontalExpand="True" />
                                             </BoxContainer>
                                         </PanelContainer>
@@ -163,34 +163,34 @@
                             <PanelContainer.PanelOverride>
                                 <graphics:StyleBoxFlat BorderColor="#88C7FA" BorderThickness="0 0 0 1" />
                             </PanelContainer.PanelOverride>
-                            <Label Text="Supply Drop" />
+                            <Label Text="{Loc rmc-overwatch-squad-view-supply-drop-label}" />
                         </PanelContainer>
                         <BoxContainer Orientation="Horizontal" Margin="5"
                                       VerticalExpand="True">
                             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                                 <BoxContainer Orientation="Horizontal">
                                     <BoxContainer Name="LongitudeContainer" Access="Public" Orientation="Vertical">
-                                        <Label Text="LONGITUDE" />
+                                        <Label Text="{Loc rmc-overwatch-squad-view-longitude-label}" />
                                     </BoxContainer>
                                     <BoxContainer Name="LatitudeContainer" Access="Public" Orientation="Vertical">
-                                        <Label Text="LATITUDE" />
+                                        <Label Text="{Loc rmc-overwatch-squad-view-latitude-label}" />
                                     </BoxContainer>
                                     <BoxContainer Orientation="Vertical">
                                         <RichTextLabel Name="CrateStatus" Access="Public"
-                                                       Text="[color=red][bold]No crate loaded[/bold][/color]" />
-                                        <Label Text="STATUS" HorizontalAlignment="Center" />
+                                                       Text="{Loc rmc-overwatch-squad-view-status-no-crate}" />
+                                        <Label Text="{Loc rmc-overwatch-squad-view-status-label}" HorizontalAlignment="Center" />
                                     </BoxContainer>
                                 </BoxContainer>
-                                <Button Name="LaunchButton" Access="Public" Text="Launch"
+                                <Button Name="LaunchButton" Access="Public" Text="{Loc rmc-overwatch-squad-view-launch}"
                                         HorizontalExpand="True" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#D3B400" TextAlign="Center" />
-                                <Button Name="SaveButton" Access="Public" Text="Save"
+                                <Button Name="SaveButton" Access="Public" Text="{Loc rmc-overwatch-squad-view-save}"
                                         HorizontalExpand="True" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#D3B400" TextAlign="Center" />
                             </BoxContainer>
                             <ui:BlueHorizontalSeparator SetWidth="2" Margin="5 0" />
                             <BoxContainer Orientation="Vertical" HorizontalExpand="True" Visible="False">
-                                <Label Text="Max 3 stored coordinates. Will overwrite oldest first." />
+                                <Label Text="{Loc rmc-overwatch-squad-view-max-stored-coordinates}" />
                                 <BoxContainer Orientation="Horizontal">
                                     <BoxContainer Name="Longitudes" Access="Public" Orientation="Vertical" />
                                     <BoxContainer Name="Latitudes" Access="Public" Orientation="Vertical" />
@@ -213,34 +213,34 @@
                             <PanelContainer.PanelOverride>
                                 <graphics:StyleBoxFlat BorderColor="#88C7FA" BorderThickness="0 0 0 1" />
                             </PanelContainer.PanelOverride>
-                            <Label Text="Orbital Bombardment" />
+                            <Label Text="{Loc rmc-overwatch-squad-view-orbital-bombardment-label}" />
                         </PanelContainer>
                         <BoxContainer Orientation="Horizontal" Margin="5"
                                       VerticalExpand="True">
                             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                                 <BoxContainer Orientation="Horizontal">
                                     <BoxContainer Name="OrbitalLongitudeContainer" Access="Public" Orientation="Vertical">
-                                        <Label Text="LONGITUDE" />
+                                        <Label Text="{Loc rmc-overwatch-squad-view-longitude-label}" />
                                     </BoxContainer>
                                     <BoxContainer Name="OrbitalLatitudeContainer" Access="Public" Orientation="Vertical">
-                                        <Label Text="LATITUDE" />
+                                        <Label Text="{Loc rmc-overwatch-squad-view-latitude-label}" />
                                     </BoxContainer>
                                     <BoxContainer Orientation="Vertical">
                                         <RichTextLabel Name="OrbitalStatus" Access="Public"
-                                                       Text="[color=red][bold]No warhead loaded[/bold][/color]" />
-                                        <Label Text="STATUS" HorizontalAlignment="Center" />
+                                                       Text="{Loc rmc-overwatch-squad-view-status-no-warhead}" />
+                                        <Label Text="{Loc rmc-overwatch-squad-view-status-label}" HorizontalAlignment="Center" />
                                     </BoxContainer>
                                 </BoxContainer>
-                                <Button Name="OrbitalFireButton" Access="Public" Text="Fire"
+                                <Button Name="OrbitalFireButton" Access="Public" Text="{Loc rmc-overwatch-squad-view-fire}"
                                         HorizontalExpand="True" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#BB1F1D" TextAlign="Center" />
-                                <Button Name="OrbitalSaveButton" Access="Public" Text="Save"
+                                <Button Name="OrbitalSaveButton" Access="Public" Text="{Loc rmc-overwatch-squad-view-save}"
                                         HorizontalExpand="True" StyleClasses="OpenBoth"
                                         ModulateSelfOverride="#D3B400" TextAlign="Center" />
                             </BoxContainer>
                             <ui:BlueHorizontalSeparator SetWidth="2" Margin="5 0" />
                             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                                <Label Text="Max 3 stored coordinates. Will overwrite oldest first." />
+                                <Label Text="{Loc rmc-overwatch-squad-view-max-stored-coordinates}" />
                                 <BoxContainer Orientation="Horizontal">
                                     <BoxContainer Name="OrbitalLongitudes" Access="Public" Orientation="Vertical" />
                                     <BoxContainer Name="OrbitalLatitudes" Access="Public" Orientation="Vertical" />

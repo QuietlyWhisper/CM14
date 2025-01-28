@@ -2,30 +2,30 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Marines.Announce"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
-    Title="Groundside Operations"
+    Title="{Loc rmc-groundside-operations-title}"
     MinSize="400 350">
     <BoxContainer Orientation="Vertical" Margin="5">
         <BoxContainer Orientation="Horizontal">
-            <Label Text="Planet: " />
+            <Label Text="{Loc rmc-groundside-operations-planet}" />
             <Label Name="PlanetName" Access="Public" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <Label Text="Operation: " />
+            <Label Text="{Loc rmc-groundside-operations-operation}" />
             <Label Name="OperationName" Access="Public" />
         </BoxContainer>
         <cc:HSeparator Color="#4972A1" Margin="0 5" />
-        <Button Name="MedalButton" Access="Public" Text="Give a medal" StyleClasses="OpenBoth" />
-        <Button Name="TacticalMapButton" Access="Public" Text="Tactical Map" StyleClasses="OpenBoth" />
-        <Button Name="OverwatchButton" Access="Public" Text="Overwatch" StyleClasses="OpenBoth" />
+        <Button Name="MedalButton" Access="Public" Text="{Loc rmc-groundside-operations-give-medal}" StyleClasses="OpenBoth" />
+        <Button Name="TacticalMapButton" Access="Public" Text="{Loc rmc-groundside-operations-tactical-map}" StyleClasses="OpenBoth" />
+        <Button Name="OverwatchButton" Access="Public" Text="{Loc rmc-groundside-operations-overwatch}" StyleClasses="OpenBoth" />
         <cc:HSeparator Color="#4972A1" Margin="0 5" />
         <Button Name="EchoButton" Access="Public" Text="Designate Echo Squad" StyleClasses="OpenBoth" />
         <cc:HSeparator Name="EchoSeparator" Access="Public" Color="#4972A1" Margin="0 5" />
         <BoxContainer Name="LandingZonesSection" Access="Public" Orientation="Vertical">
-            <Label Text="Designate Primary LZ" />
+            <Label Text="{Loc rmc-groundside-operations-designate-primary-lz}" />
             <BoxContainer Name="LandingZonesContainer" Access="Public" Orientation="Vertical" />
             <cc:HSeparator Color="#4972A1" Margin="0 5" />
         </BoxContainer>
         <TextEdit Name="Text" Access="Public" HorizontalExpand="True" VerticalExpand="True" />
-        <Button Name="Send" Access="Public" Text="Send" HorizontalExpand="True" />
+        <Button Name="Send" Access="Public" Text="{Loc rmc-groundside-operations-send}" HorizontalExpand="True" />
     </BoxContainer>
 </controls:MarineCommunicationsComputerWindow>

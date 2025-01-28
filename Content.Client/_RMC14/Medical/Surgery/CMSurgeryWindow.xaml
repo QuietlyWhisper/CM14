@@ -6,11 +6,11 @@
     MinSize="400 400">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 10">
-            <Button Name="PartsButton" Access="Public" Text="&lt; Parts"
+            <Button Name="PartsButton" Access="Public" Text="{Loc rmc-surgery-tab-parts}"
                     HorizontalExpand="True" StyleClasses="OpenBoth" />
-            <Button Name="SurgeriesButton" Access="Public" Text="&lt; Surgeries"
+            <Button Name="SurgeriesButton" Access="Public" Text="{Loc rmc-surgery-tab-surgeries}"
                     HorizontalExpand="True" StyleClasses="OpenBoth" />
-            <Button Name="StepsButton" Access="Public" Text="&lt; Steps"
+            <Button Name="StepsButton" Access="Public" Text="{Loc rmc-surgery-tab-steps}"
                     HorizontalExpand="True" StyleClasses="OpenBoth" />
         </BoxContainer>
         <cc:HSeparator Color="#4972A1" />

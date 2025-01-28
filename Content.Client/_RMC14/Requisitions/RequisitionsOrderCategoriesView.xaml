@@ -4,10 +4,10 @@
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls">
     <BoxContainer Orientation="Vertical">
         <RichTextLabel Name="BudgetLabel" Access="Public" />
-        <Button Name="MainMenuButton" Access="Public" Text="Main Menu" StyleClasses="ButtonSquare" />
+        <Button Name="MainMenuButton" Access="Public" Text="{Loc rmc-requisitions-main-menu}" StyleClasses="ButtonSquare" />
         <cc:HSeparator Color="#4972A1" Margin="0 5" />
         <Control MinWidth="5" />
-        <Button Name="SearchMenuButton" Access="Public" Text="Search item" StyleClasses="ButtonSquare" />
+        <Button Name="SearchMenuButton" Access="Public" Text="{Loc rmc-requisitions-search-item}" StyleClasses="ButtonSquare" />
         <Control MinWidth="5" />
         <RichTextLabel Name="CategoryHeaderLabel" Access="Public" Margin="0 0 0 5" />
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True">

@@ -2,11 +2,11 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Camera"
     xmlns:vp="clr-namespace:Content.Client.Viewport"
-    Title="Ship Security Cameras">
+    Title="{Loc rmc-camera-window-title}">
     <BoxContainer Orientation="Horizontal">
         <BoxContainer Orientation="Vertical" VerticalExpand="True"
                       MinWidth="300">
-            <LineEdit Name="SearchBar" Access="Public" PlaceHolder="Search for a camera"/>
+            <LineEdit Name="SearchBar" Access="Public" PlaceHolder="{Loc rmc-camera-placeholder}"/>
             <ScrollContainer HScrollEnabled="False" VScrollEnabled="True"
                              HorizontalExpand="True" VerticalExpand="True">
                 <BoxContainer Name="CamerasContainer" Access="Public" Orientation="Vertical"

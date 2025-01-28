@@ -12,7 +12,7 @@ public sealed partial class RoadmapWindow : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         var msg = new FormattedMessage();
-        msg.AddMarkupOrThrow("[font size=24]ROADMAP [bold]2025[/bold][/font]");
+        msg.AddMarkupOrThrow(Loc.GetString("rmc-roadmap-window-header"));
         Header.SetMessage(msg);
     }
 }

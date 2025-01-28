@@ -38,11 +38,11 @@ public sealed class OrbitalCannonComputerBui : BoundUserInterface
         if (!EntMan.TryGetComponent(Owner, out OrbitalCannonComputerComponent? computer))
             return;
 
-        _window.WarheadStatusLabel.Text = "No warhead loaded!";
+        _window.WarheadStatusLabel.Text = Loc.GetString("rmc-ob-warhead-status-empty");
         if (computer.Warhead != null)
-            _window.WarheadStatusLabel.Text = $"{computer.Warhead} loaded!";
+            _window.WarheadStatusLabel.Text = Loc.GetString("rmc-ob-warhead-status-loaded", ("warhead", computer.Warhead));
 
-        _window.FuelStatusLabel.Text = $"{computer.Fuel} Fuel Blocks loaded";
+        _window.FuelStatusLabel.Text = Loc.GetString("rmc-ob-fuel-status", ("fuel", computer.Fuel));
 
         var requirements = new StringBuilder();
         foreach (var requirement in computer.FuelRequirements)
@@ -67,7 +67,7 @@ public sealed class OrbitalCannonComputerBui : BoundUserInterface
         switch (computer.Status)
         {
             case OrbitalCannonStatus.Unloaded:
-                _window.TrayButtonOne.Text = "Load tray";
+                _window.TrayButtonOne.Text = Loc.GetString("rmc-ob-tray-button-load");
                 _window.TrayButtonOne.Visible = true;
                 _window.TrayButtonOne.OnPressed += LoadTray;
                 _window.TrayButtonTwo.Visible = false;
@@ -75,10 +75,10 @@ public sealed class OrbitalCannonComputerBui : BoundUserInterface
                 _window.TrayButtonOne.Disabled = computer.Warhead == null || computer.Fuel == 0;
                 break;
             case OrbitalCannonStatus.Loaded:
-                _window.TrayButtonOne.Text = "Unload tray";
+                _window.TrayButtonOne.Text = Loc.GetString("rmc-ob-tray-button-unload");
                 _window.TrayButtonOne.Visible = true;
                 _window.TrayButtonOne.OnPressed += UnloadTray;
-                _window.TrayButtonTwo.Text = "Chamber tray";
+                _window.TrayButtonTwo.Text = Loc.GetString("rmc-ob-tray-button-chamber");
                 _window.TrayButtonTwo.Visible = true;
                 _window.TrayButtonTwo.OnPressed += ChamberTray;
                 _window.TrayButtonLabel.Visible = false;
@@ -86,7 +86,7 @@ public sealed class OrbitalCannonComputerBui : BoundUserInterface
             case OrbitalCannonStatus.Chambered:
                 _window.TrayButtonOne.Visible = false;
                 _window.TrayButtonTwo.Visible = false;
-                _window.TrayButtonLabel.Text = "The tray is chambered, you cannot unchamber it.";
+                _window.TrayButtonLabel.Text = Loc.GetString("rmc-ob-tray-chambered-label");
                 _window.TrayButtonLabel.Visible = true;
                 break;
         }

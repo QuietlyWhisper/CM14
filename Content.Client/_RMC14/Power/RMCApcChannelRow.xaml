@@ -6,7 +6,7 @@
     <RichTextLabel Name="Watts" Access="Public" />
     <Control HorizontalExpand="True" />
     <RichTextLabel Name="Status" Access="Public" Margin="0 0 10 0" />
-    <Button Name="Auto" Access="Public" Text="Auto" StyleClasses="OpenBoth" />
-    <Button Name="On" Access="Public" Text="On" StyleClasses="OpenBoth" />
-    <Button Name="Off" Access="Public" Text="Off" StyleClasses="OpenBoth" />
+    <Button Name="Auto" Access="Public" Text="{Loc rmc-apc-auto}" StyleClasses="OpenBoth" />
+    <Button Name="On" Access="Public" Text="{Loc rmc-apc-on}" StyleClasses="OpenBoth" />
+    <Button Name="Off" Access="Public" Text="{Loc rmc-apc-off}" StyleClasses="OpenBoth" />
 </controls:RMCApcChannelRow>

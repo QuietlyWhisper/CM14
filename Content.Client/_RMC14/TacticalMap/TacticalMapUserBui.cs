@@ -16,7 +16,7 @@ public sealed class TacticalMapUserBui(EntityUid owner, Enum uiKey) : BoundUserI
     {
         _window = this.CreateWindow<TacticalMapWindow>();
 
-        TabContainer.SetTabTitle(_window.MapTab, "Map");
+        TabContainer.SetTabTitle(_window.MapTab, Loc.GetString("rmc-tactical-map-map-tab-title"));
         TabContainer.SetTabVisible(_window.MapTab, true);
 
         if (EntMan.TryGetComponent(Owner, out TacticalMapUserComponent? user) &&
@@ -68,7 +68,7 @@ public sealed class TacticalMapUserBui(EntityUid owner, Enum uiKey) : BoundUserI
 
         if (user?.CanDraw ?? false)
         {
-            TabContainer.SetTabTitle(_window.CanvasTab, "Canvas");
+            TabContainer.SetTabTitle(_window.CanvasTab, Loc.GetString("rmc-tactical-map-canvas-tab-title"));
             TabContainer.SetTabVisible(_window.CanvasTab, true);
         }
         else

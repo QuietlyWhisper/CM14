@@ -2,13 +2,13 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Mentor"
     SetSize="500 300"
-    Title="Mentor Help">
+    Title="{Loc rmc-mentor-window-title}">
     <BoxContainer Orientation="Vertical">
         <OutputPanel Name="Messages" Access="Public" HorizontalExpand="True"
                      VerticalExpand="True" />
         <BoxContainer Orientation="Horizontal">
             <LineEdit Name="Chat" Access="Public" HorizontalExpand="True" />
-            <Button Name="ReMentorButton" Access="Public" Text="Re-mentor" Visible="False"
+            <Button Name="ReMentorButton" Access="Public" Text="{Loc rmc-mentor-remenor}" Visible="False"
                     StyleClasses="OpenBoth" />
         </BoxContainer>
     </BoxContainer>

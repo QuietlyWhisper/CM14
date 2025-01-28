@@ -3,7 +3,7 @@
     xmlns:controls="clr-namespace:Content.Client._RMC14.Power"
     xmlns:ui="clr-namespace:Content.Client._RMC14.UserInterface"
     xmlns:s="clr-namespace:Content.Client.UserInterface.Controls"
-    Title="APC" MinSize="450 450">
+    Title="{Loc rmc-apc-window-title}" MinSize="450 450">
     <BoxContainer Orientation="Vertical">
         <s:StripeBack>
             <RichTextLabel Name="LockedLabel" Access="Public" Visible="True" />
@@ -11,20 +11,20 @@
         <RichTextLabel Name="PowerStatusLabel" Access="Public" Margin="0 10 0 0" />
         <ui:BlueHorizontalSeparator />
         <BoxContainer Orientation="Horizontal" Visible="False">
-            <RichTextLabel Text="[color=#5B88B0]Main Breaker:[/color]" MinWidth="120" />
+            <RichTextLabel Text="{Loc rmc-apc-main-breaker-label}" MinWidth="120" />
             <RichTextLabel Name="MainBreakerStatus" Access="Public" />
             <Control HorizontalExpand="True" />
             <Button Name="MainBreakerButton" Access="Public" StyleClasses="OpenBoth" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <RichTextLabel Text="[color=#5B88B0]Power Cell:[/color]" MinWidth="120" />
+            <RichTextLabel Text="{Loc rmc-apc-power-cell-label}" MinWidth="120" />
             <ProgressBar Name="PowerBar" Access="Public" HorizontalExpand="True">
                 <Label Name="PowerBarLabel" Access="Public" HorizontalAlignment="Right"
                        Margin="0 3 5 3" />
             </ProgressBar>
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" Visible="False">
-            <RichTextLabel Text="[color=#5B88B0]Charge Mode:[/color]" MinWidth="120" />
+            <RichTextLabel Text="{Loc rmc-apc-charge-mode-label}" MinWidth="120" />
             <RichTextLabel Name="ChargeMode" Access="Public" />
             <Control HorizontalExpand="True" />
             <Button Name="ChargeModeButton" Access="Public" StyleClasses="OpenBoth" />
@@ -33,13 +33,13 @@
         <ui:BlueHorizontalSeparator />
         <BoxContainer Name="Channels" Access="Public" Orientation="Vertical" />
         <BoxContainer Orientation="Horizontal">
-            <RichTextLabel Text="[color=#5B88B0]Total Load:[/color]" MinWidth="120" />
+            <RichTextLabel Text="{Loc rmc-apc-total-load-label}" MinWidth="120" />
             <RichTextLabel Name="TotalLoadWatts" Access="Public" />
         </BoxContainer>
         <RichTextLabel Name="MiscLabel" Access="Public" Margin="0 25 0 0" Visible="True" />
         <ui:BlueHorizontalSeparator Visible="True" />
         <BoxContainer Orientation="Horizontal" Visible="True">
-            <RichTextLabel Text="[color=#5B88B0]Cover Lock:[/color]" />
+            <RichTextLabel Text="{Loc rmc-apc-cover-lock-label}" />
             <Control HorizontalExpand="True" />
             <Button Name="CoverButton" Access="Public" StyleClasses="OpenBoth" />
         </BoxContainer>

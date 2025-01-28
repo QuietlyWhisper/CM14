@@ -59,8 +59,8 @@ public sealed class DropshipNavigationBui : BoundUserInterface
 
         _window = new DropshipNavigationWindow();
         _window.OnClose += OnClose;
-        SetFlightHeader("Flight Controls");
-        SetDoorHeader("Lockdown");
+        SetFlightHeader(Loc.GetString("rmc-dropship-navigation-flight-controls"));
+        SetDoorHeader(Loc.GetString("rmc-dropship-navigation-lockdown"));
 
         if (_entities.TryGetComponent(Owner, out TransformComponent? transform) &&
             _entities.TryGetComponent(transform.ParentUid, out MetaDataComponent? metaData))
@@ -102,7 +102,7 @@ public sealed class DropshipNavigationBui : BoundUserInterface
         if (_window == null)
             return;
 
-        SetFlightHeader("Flight Controls");
+        SetFlightHeader(Loc.GetString("rmc-dropship-navigation-flight-controls"));
 
         _window.DestinationsContainer.Visible = true;
         _window.ProgressBarContainer.Visible = false;
@@ -132,14 +132,14 @@ public sealed class DropshipNavigationBui : BoundUserInterface
         }
 
         if (destinations.FlyBy is { } flyBy)
-            _window.DestinationsContainer.AddChild(DestinationButton("Flyby", false, () => _selected = flyBy));
+            _window.DestinationsContainer.AddChild(DestinationButton(Loc.GetString("rmc-dropship-navigation-flyby"), false, () => _selected = flyBy));
 
         _destinations.Clear();
         foreach (var destination in destinations.Destinations)
         {
             var name = destination.Name;
             if (destination.Primary)
-                name += " (Primary)";
+                name += Loc.GetString("rmc-dropship-navigation-primary");
 
             var button = DestinationButton(name, destination.Occupied, () => _selected = destination.Id);
 
@@ -169,23 +169,23 @@ public sealed class DropshipNavigationBui : BoundUserInterface
         switch (travelling.State)
         {
             case FTLState.Starting:
-                SetFlightHeader("Launch in progress");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Launching in T-{time}s to {destination}"));
+                SetFlightHeader(Loc.GetString("rmc-dropship-navigation-launch-in-progress"));
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("rmc-dropship-navigation-launching", ("time", time), ("destination", destination))));
                 _window.LockdownButton.Disabled = false;
                 break;
             case FTLState.Travelling:
-                SetFlightHeader($"In flight: {destination}");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Time until destination: T-{time}s"));
+                SetFlightHeader(Loc.GetString("rmc-dropship-navigation-in-flight", ("destination", destination)));
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("rmc-dropship-navigation-time-until-destination", ("time", time))));
                 _window.LockdownButton.Disabled = true;
                 break;
             case FTLState.Arriving:
-                SetFlightHeader($"Final Approach: {destination}");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Time until landing: T-{time}s"));
+                SetFlightHeader(Loc.GetString("rmc-dropship-navigation-final-approach", ("destination", destination)));
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("rmc-dropship-navigation-time-until-landing", ("time", time))));
                 _window.LockdownButton.Disabled = true;
                 break;
             case FTLState.Cooldown:
-                SetFlightHeader("Refueling in progress");
-                _window.ProgressBarHeader.SetMarkup(Msg($"Ready to launch in T-{time}s"));
+                SetFlightHeader(Loc.GetString("rmc-dropship-navigation-refueling-in-progress"));
+                _window.ProgressBarHeader.SetMarkup(Msg(Loc.GetString("rmc-dropship-navigation-ready-to-launch", ("time", time))));
                 _window.LockdownButton.Disabled = false;
                 break;
             default:

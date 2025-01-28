@@ -13,13 +13,13 @@ public sealed partial class TacticalMapWindow : DefaultWindow
 {
     private readonly List<(string Name, Color Color)> _colors = new()
     {
-        ("Black", Color.Black),
-        ("Red", Color.FromHex("#F40002")),
-        ("Orange", Color.FromHex("#F39504")),
-        ("Blue", Color.FromHex("#015CF5")),
-        ("Purple", Color.FromHex("#BF00F1")),
-        ("Green", Color.FromHex("#00BB48")),
-        ("Brown", Color.FromHex("#5A3121")),
+        (Loc.GetString("rmc-tactical-map-color-black"), Color.Black),
+        (Loc.GetString("rmc-tactical-map-color-red"), Color.FromHex("#F40002")),
+        (Loc.GetString("rmc-tactical-map-color-orange"), Color.FromHex("#F39504")),
+        (Loc.GetString("rmc-tactical-map-color-blue"), Color.FromHex("#015CF5")),
+        (Loc.GetString("rmc-tactical-map-color-purple"), Color.FromHex("#BF00F1")),
+        (Loc.GetString("rmc-tactical-map-color-green"), Color.FromHex("#00BB48")),
+        (Loc.GetString("rmc-tactical-map-color-brown"), Color.FromHex("#5A3121")),
     };
 
     public TimeSpan LastUpdateAt;
@@ -92,6 +92,6 @@ public sealed partial class TacticalMapWindow : DefaultWindow
         CooldownBar.MinValue = (float) LastUpdateAt.TotalSeconds;
         CooldownBar.MaxValue = (float) NextUpdateAt.TotalSeconds;
         CooldownBar.Value = (float) (LastUpdateAt.TotalSeconds + NextUpdateAt.TotalSeconds - time.TotalSeconds);
-        CooldownLabel.Text = $"{(int) cooldown.TotalSeconds} seconds until the canvas changes can be updated";
+        CooldownLabel.Text = Loc.GetString("rmc-tactical-map-seconds-until-update", ("seconds", ((int) cooldown.TotalSeconds)));
     }
 }

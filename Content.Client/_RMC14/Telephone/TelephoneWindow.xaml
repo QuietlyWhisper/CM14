@@ -1,10 +1,10 @@
 <controls:TelephoneWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Telephone"
-    Title="Telephone" MinSize="600 400">
+    Title="{Loc rmc-telephone-window-title}" MinSize="600 400">
     <BoxContainer Orientation="Vertical">
         <TabContainer Name="Tabs" Access="Public" HorizontalExpand="True" VerticalExpand="True" />
-        <Button Name="DialButton" Access="Public" Text="Dial" StyleClasses="OpenBoth" />
-        <!-- <Button Name="DoNotDisturbButton" Access="Public" Text="Do Not Disturb" StyleClasses="OpenBoth" /> -->
+        <Button Name="DialButton" Access="Public" Text="{Loc rmc-telephone-dial-button}" StyleClasses="OpenBoth" />
+        <!-- <Button Name="DoNotDisturbButton" Access="Public" Text="{Loc rmc-telephone-do-not-disturb-button}" StyleClasses="OpenBoth" /> -->
     </BoxContainer>
 </controls:TelephoneWindow>

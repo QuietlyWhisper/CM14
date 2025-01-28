@@ -3,7 +3,7 @@
     xmlns:controls="clr-namespace:Content.Client._RMC14.Dropship"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
-    Title="Flight Computer"
+    Title="{Loc rmc-dropship-navigation-window-title}"
     MinSize="400 200">
     <PanelContainer>
         <PanelContainer.PanelOverride>
@@ -17,11 +17,11 @@
                     <controls:DropshipButton Name="CancelButton" Access="Public"
                                              Margin="1" BackgroundColor="#004E25"
                                              BorderColor="#02E74E" BorderThickness="1"
-                                             Text="Cancel" Disabled="True" />
+                                             Text="{Loc rmc-dropship-navigation-cancel}" Disabled="True" />
                     <controls:DropshipButton Name="LaunchButton" Access="Public"
                                              Margin="1" BackgroundColor="#004E25"
                                              BorderColor="#02E74E" BorderThickness="1"
-                                             Text="Launch" Disabled="True" />
+                                             Text="{Loc rmc-dropship-navigation-launch}" Disabled="True" />
                 </BoxContainer>
             </BoxContainer>
             <cc:HSeparator Color="#02E74E" />
@@ -38,7 +38,7 @@
                 <controls:DropshipButton Name="LockdownButton" Access="Public"
                                          Margin="1" BackgroundColor="#004E25"
                                          BorderColor="#02E74E" BorderThickness="1"
-                                         Text="Lockdown" />
+                                         Text="{Loc rmc-dropship-navigation-lockdown}" />
             </BoxContainer>
             <cc:HSeparator Color="#02E74E" />
         </BoxContainer>

@@ -29,10 +29,10 @@ public sealed partial class RoadmapItem : Control
 
             StateText.Text = _itemState switch
             {
-                RoadmapItemState.Planned => "PLANNED",
-                RoadmapItemState.InProgress => "IN PROGRESS",
-                RoadmapItemState.Partial => "PARTIALLY IMPLEMENTED",
-                RoadmapItemState.Complete => "COMPLETE",
+                RoadmapItemState.Planned => Loc.GetString("rmc-roadmap-item-state-planned"),
+                RoadmapItemState.InProgress => Loc.GetString("rmc-roadmap-item-state-in-progress"),
+                RoadmapItemState.Partial => Loc.GetString("rmc-roadmap-item-state-partial"),
+                RoadmapItemState.Complete => Loc.GetString("rmc-roadmap-item-state-complete"),
                 _ => string.Empty
             };
             StateText.ModulateSelfOverride = panel.BackgroundColor;

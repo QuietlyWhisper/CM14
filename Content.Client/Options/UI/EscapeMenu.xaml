@@ -8,7 +8,7 @@
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
         <Button Access="Public" Name="CreditsButton" Text="{Loc 'server-info-credits-button'}" StyleClasses="Caution" />
         <Button Access="Public" Name="PatronPerksButton" Text="{Loc 'rmc-ui-patron-perks'}" StyleClasses="Caution" Visible="False" />
-        <Button Access="Public" Name="RoadmapButton" Text="{Loc 'cm-ui-roadmap'}" StyleClasses="Caution" />
+        <Button Access="Public" Name="RoadmapButton" Text="{Loc 'rmc-roadmap-window-title'}" StyleClasses="Caution" />
         <changelog:ChangelogButton Access="Public" Name="ChangelogButton"/>
         <ui:VoteCallMenuButton />
         <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" />

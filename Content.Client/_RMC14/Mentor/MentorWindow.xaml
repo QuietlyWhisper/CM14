@@ -3,7 +3,7 @@
     xmlns:controls="clr-namespace:Content.Client._RMC14.Mentor"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     SetSize="900 500"
-    Title="Mentor Help">
+    Title="{Loc rmc-mentor-window-title}">
     <BoxContainer Orientation="Horizontal">
         <PanelContainer HorizontalExpand="True" VerticalExpand="True">
             <PanelContainer.PanelOverride>
@@ -16,7 +16,7 @@
                         <BoxContainer Name="Players" Access="Public" Orientation="Vertical"
                                       VerticalExpand="True" />
                     </ScrollContainer>
-                    <Button Name="DeMentorButton" Access="Public" Text="De-Mentor"
+                    <Button Name="DeMentorButton" Access="Public" Text="{Loc rmc-mentor-demenor}"
                             StyleClasses="OpenBoth" />
                 </BoxContainer>
         </PanelContainer>
@@ -29,7 +29,7 @@
             <BoxContainer Orientation="Horizontal">
                 <LineEdit Name="Chat" Access="Public" HorizontalExpand="True"
                           Editable="False" />
-                <Button Name="ClaimButton" Access="Public" Text="Claim"
+                <Button Name="ClaimButton" Access="Public" Text="{Loc rmc-mentor-claim}"
                         StyleClasses="OpenBoth" Visible="False" />
             </BoxContainer>
         </BoxContainer>

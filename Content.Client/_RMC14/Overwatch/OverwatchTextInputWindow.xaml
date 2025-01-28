@@ -1,12 +1,12 @@
 ﻿<controls:OverwatchTextInputWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.Overwatch"
-    Title="Squad Message" MinSize="480 104">
+    Title="{Loc rmc-overwatch-squad-message-title}" MinSize="480 104">
     <BoxContainer Orientation="Vertical">
         <LineEdit Name="MessageBox" Access="Public" />
         <BoxContainer Orientation="Horizontal">
-            <Button Name="OkButton" Access="Public" Text="Ok" HorizontalExpand="True" StyleClasses="OpenBoth" />
-            <Button Name="CancelButton" Access="Public" Text="Cancel" HorizontalExpand="True" StyleClasses="OpenBoth" />
+            <Button Name="OkButton" Access="Public" Text="{Loc rmc-overwatch-squad-message-ok}" HorizontalExpand="True" StyleClasses="OpenBoth" />
+            <Button Name="CancelButton" Access="Public" Text="{Loc rmc-overwatch-squad-message-cancel}" HorizontalExpand="True" StyleClasses="OpenBoth" />
         </BoxContainer>
     </BoxContainer>
 </controls:OverwatchTextInputWindow>

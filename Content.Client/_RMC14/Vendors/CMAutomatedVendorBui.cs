@@ -41,7 +41,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
     {
         _window = new CMAutomatedVendorWindow();
         _window.OnClose += Close;
-        _window.Title = EntMan.GetComponentOrNull<MetaDataComponent>(Owner)?.EntityName ?? "ColMarTech Vendor";
+        _window.Title = EntMan.GetComponentOrNull<MetaDataComponent>(Owner)?.EntityName ?? Loc.GetString("rmc-automated-vendor-colmartech-vendor");
         _window.ReagentsBar.ForegroundStyleBoxOverride = new StyleBoxFlat(Color.FromHex("#AF7F38"));
 
         var user = EntMan.GetComponentOrNull<CMVendorUserComponent>(_player.LocalEntity);
@@ -94,14 +94,14 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
                         var hoverColor = CMAutomatedVendorPanel.DefaultBorderColor;
                         if (section.TakeAll != null)
                         {
-                            name = $"Mandatory: {name}";
+                            name = Loc.GetString("rmc-automated-vendor-mandatory", ("name", name));
                             color = Color.FromHex("#251A0C");
                             borderColor = Color.FromHex("#805300");
                             hoverColor = Color.FromHex("#805300");
                         }
                         else if (entry.Recommended)
                         {
-                            name = $"Recommended: {name}";
+                            name = Loc.GetString("rmc-automated-vendor-recommended", ("name", name));
                             color = Color.FromHex("#102919");
                             borderColor = Color.FromHex("#3A9B52");
                             hoverColor = Color.FromHex("#3A9B52");
@@ -265,7 +265,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
         _window.ReagentsBar.MinValue = 0;
         _window.ReagentsBar.MaxValue = max.Int();
         _window.ReagentsBar.SetAsRatio((refiller.Current / refiller.Max).Float());
-        _window.ReagentsLabel.Text = $"{current.Int()} units";
+        _window.ReagentsLabel.Text = Loc.GetString("rmc-automated-vendor-units", ("units", current.Int()));
     }
 
     protected override void Dispose(bool disposing)
@@ -297,7 +297,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
             {
                 if (takeAll == null || !takeAll.Contains((section.TakeAll, entry.Id)))
                 {
-                    name.AddText(" (TAKE ALL)");
+                    name.AddText(Loc.GetString("rmc-automated-vendor-take-all-suffix"));
                     break;
                 }
             }
@@ -307,13 +307,13 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
         {
             if (user == null)
             {
-                name.AddText($" (CHOOSE {choices.Amount})");
+                name.AddText(Loc.GetString("rmc-automated-vendor-choose-suffix", ("amount", choices.Amount)));
             }
             else
             {
                 var left = choices.Amount - user.Choices.GetValueOrDefault(choices.Id);
                 if (left > 0)
-                    name.AddText($" (CHOOSE {left})");
+                    name.AddText(Loc.GetString("rmc-automated-vendor-choose-remaining-suffix", ("remaining", left)));
             }
         }
 

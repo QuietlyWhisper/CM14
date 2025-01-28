@@ -2,20 +2,20 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.TacticalMap"
     xmlns:ui="clr-namespace:Content.Client._RMC14.UserInterface"
-    Title="Map" MinSize="600 600">
+    Title="{Loc rmc-tactical-map-map-tab-title}" MinSize="600 600">
     <TabContainer Name="Tabs" Access="Public">
         <BoxContainer Name="MapTab" Access="Public" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
             <controls:TacticalMapControl Name="Map" Access="Public" Stretch="Keep" TextureScale="3 3" />
         </BoxContainer>
         <BoxContainer Name="CanvasTab" Access="Public" Orientation="Vertical" Visible="False"
                       HorizontalExpand="True" VerticalExpand="True">
-            <Label Text="Canvas Options" />
+            <Label Text="{Loc rmc-tactical-map-canvas-options-label}" />
             <BoxContainer Orientation="Horizontal">
-                <Button Name="UpdateCanvasButton" Access="Public" Text="Update Canvas" StyleClasses="OpenBoth"
+                <Button Name="UpdateCanvasButton" Access="Public" Text="{Loc rmc-tactical-map-update-canvas-button}" StyleClasses="OpenBoth"
                         HorizontalExpand="True" />
-                <Button Name="ClearCanvasButton" Access="Public" Text="Clear Canvas" StyleClasses="OpenBoth"
+                <Button Name="ClearCanvasButton" Access="Public" Text="{Loc rmc-tactical-map-clear-canvas-button}" StyleClasses="OpenBoth"
                         HorizontalExpand="True" />
-                <Button Name="UndoButton" Access="Public" Text="Undo" StyleClasses="OpenBoth"
+                <Button Name="UndoButton" Access="Public" Text="{Loc rmc-tactical-map-undo-button}" StyleClasses="OpenBoth"
                         HorizontalExpand="True" />
                 <OptionButton Name="ColorsButton" Access="Public" StyleClasses="OpenBoth"
                               HorizontalExpand="True" />

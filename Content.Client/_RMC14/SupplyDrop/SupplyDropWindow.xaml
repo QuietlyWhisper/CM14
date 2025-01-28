@@ -2,30 +2,30 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client._RMC14.SupplyDrop"
     xmlns:ui="clr-namespace:Content.Client._RMC14.UserInterface"
-    Title="Supply Drop Console"
+    Title="{Loc rmc-supply-drop-window-title}"
     MinSize="350 250">
     <BoxContainer Orientation="Vertical">
-        <RichTextLabel Text="[bold]Supply Drop[/bold]" />
+        <RichTextLabel Text="{Loc rmc-supply-drop-drop-header}" />
         <ui:BlueHorizontalSeparator />
         <BoxContainer Name="TargetXContainer" Orientation="Horizontal">
-            <Label Text="Longitude:" MinWidth="100" />
+            <Label Text="{Loc rmc-supply-drop-longitude-label}" MinWidth="100" />
         </BoxContainer>
         <BoxContainer Name="TargetYContainer" Orientation="Horizontal">
-            <Label Text="Latitude:" MinWidth="100" />
+            <Label Text="{Loc rmc-supply-drop-latitude-label}" MinWidth="100" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
-            <RichTextLabel Text="[bold]Supply Pad Status[/bold]" Margin="0 5 0 0" />
+            <RichTextLabel Text="{Loc rmc-supply-drop-pad-status-header}" Margin="0 5 0 0" />
             <Control HorizontalExpand="True" />
-            <Button Name="UpdateButton" Access="Public" Text="Update"
+            <Button Name="UpdateButton" Access="Public" Text="{Loc rmc-supply-drop-update-button}"
                     StyleClasses="OpenBoth" />
         </BoxContainer>
         <ui:BlueHorizontalSeparator />
         <Label Name="CrateStatusLabel" Access="Public" />
-        <Label Name="LaunchStatusLabel" Access="Public" Text="Ready to fire!" />
+        <Label Name="LaunchStatusLabel" Access="Public" Text="{Loc rmc-supply-drop-ready-to-fire}" />
         <ProgressBar Name="CooldownBar" Access="Public">
             <Label Name="CooldownLabel" Access="Public" HorizontalAlignment="Center" />
         </ProgressBar>
-        <Button Name="LaunchButton" Access="Public" Text="Launch Supply Drop"
+        <Button Name="LaunchButton" Access="Public" Text="{Loc rmc-supply-drop-launch-button}"
                 StyleClasses="OpenBoth" />
     </BoxContainer>
 </controls:SupplyDropWindow>

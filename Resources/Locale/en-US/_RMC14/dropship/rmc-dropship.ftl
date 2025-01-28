@@ -79,3 +79,23 @@ rmc-dropship-fabricator-equipment = [bold]Equipment[/bold]
 rmc-dropship-fabricator-ammo = [bold]Ammo[/bold]
 rmc-dropship-fabricator-fabricate = Fabricate ({$cost})
 rmc-dropship-fabricator-busy = The dropship part fabricator is busy. Please wait for completion of previous operation.
+
+rmc-dropship-navigation-window-title = Flight Computer
+
+rmc-dropship-navigation-cancel = Cancel
+rmc-dropship-navigation-launch = Launch
+rmc-dropship-navigation-lockdown = Lockdown
+rmc-dropship-navigation-flight-controls = Flight Controls
+rmc-dropship-navigation-flyby = Flyby
+rmc-dropship-navigation-primary =  (Primary)
+rmc-dropship-navigation-launch-in-progress = Launch in progress
+rmc-dropship-navigation-launching = Launching in T-{$time}s to {$destination}
+rmc-dropship-navigation-in-flight = In flight: {$destination}
+rmc-dropship-navigation-time-until-destination = Time until destination: T-{$time}s
+rmc-dropship-navigation-final-approach = Final Approach: {$destination}
+rmc-dropship-navigation-time-until-landing = Time until landing: T-{$time}s
+rmc-dropship-navigation-refueling-in-progress = Refueling in progress
+rmc-dropship-navigation-ready-to-launch = Ready to launch in T-{$time}s
+
+rmc-dropship-navigation-hijack-window-title = Dropship Hijack
+rmc-dropship-navigation-hijack-select-place = [bold]Where to 'land'?[/bold]

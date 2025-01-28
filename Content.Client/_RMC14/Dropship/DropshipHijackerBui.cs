@@ -39,7 +39,7 @@ public sealed class DropshipHijackerBui : BoundUserInterface
         {
             _window = new DropshipHijackerWindow();
             _window.OnClose += Close;
-            _window.Header.SetMarkup("[bold]Where to 'land'?[/bold]");
+            _window.Header.SetMarkup(Loc.GetString("rmc-dropship-navigation-hijack-select-place"));
             _window.OpenCentered();
         }
 

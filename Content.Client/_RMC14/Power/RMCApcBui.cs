@@ -47,29 +47,29 @@ public sealed class RMCApcBui(EntityUid owner, Enum uiKey) : BoundUserInterface(
             return;
 
         var lockedMsg = apc.Locked
-            ? "[italic]Swipe an ID card or dogtags to unlock this interface.[/italic]"
-            : "[italic]Swipe an ID card or dogtags to lock this interface.[/italic]";
+            ? Loc.GetString("rmc-apc-locked-swipe-to-unlock")
+            : Loc.GetString("rmc-apc-locked-swipe-to-lock");
         _window.LockedLabel.SetMarkupPermissive(lockedMsg);
 
-        _window.PowerStatusLabel.SetMarkupPermissive(Header("Power Status"));
-        _window.PowerChannelsLabel.SetMarkupPermissive(Header("Power Channels"));
-        _window.MiscLabel.SetMarkupPermissive(Header("Misc"));
+        _window.PowerStatusLabel.SetMarkupPermissive(Header(Loc.GetString("rmc-apc-power-status-header")));
+        _window.PowerChannelsLabel.SetMarkupPermissive(Header(Loc.GetString("rmc-apc-power-channels-header")));
+        _window.MiscLabel.SetMarkupPermissive(Header(Loc.GetString("rmc-apc-power-misc-header")));
 
-        _window.MainBreakerButton.Text = apc.MainBreakerButton ? "On" : "Off";
+        _window.MainBreakerButton.Text = apc.MainBreakerButton ? Loc.GetString("rmc-apc-on") : Loc.GetString("rmc-apc-off");
         if (apc.MainBreakerButton)
         {
-            _window.MainBreakerButton.Text = "On";
+            _window.MainBreakerButton.Text = Loc.GetString("rmc-apc-on");
             _window.MainBreakerButton.Pressed = true;
         }
         else
         {
-            _window.MainBreakerButton.Text = "Off";
+            _window.MainBreakerButton.Text = Loc.GetString("rmc-apc-off");
             _window.MainBreakerButton.Pressed = false;
         }
 
         _window.MainBreakerStatus.SetMarkupPermissive(apc.ExternalPower
-            ? Green("[ External Power ]")
-            : Red("[ No External Power ]")
+            ? Green(Loc.GetString("rmc-apc-external-power"))
+            : Red(Loc.GetString("rmc-apc-no-external-power"))
         );
 
         _window.PowerBar.MinValue = 0;
@@ -79,14 +79,14 @@ public sealed class RMCApcBui(EntityUid owner, Enum uiKey) : BoundUserInterface(
 
         var chargeMode = apc.ChargeStatus switch
         {
-            RMCApcChargeStatus.NotCharging => Red("[ Not Charging ]"),
-            RMCApcChargeStatus.Charging => Orange("[ Charging ]"),
-            RMCApcChargeStatus.FullCharge => Green("[ Fully Charged ]"),
+            RMCApcChargeStatus.NotCharging => Red(Loc.GetString("rmc-apc-charge-status-not-charging")),
+            RMCApcChargeStatus.Charging => Orange(Loc.GetString("rmc-apc-charge-status-charging")),
+            RMCApcChargeStatus.FullCharge => Green(Loc.GetString("rmc-apc-charge-status-full")),
             _ => throw new ArgumentOutOfRangeException(),
         };
 
         _window.ChargeMode.SetMarkupPermissive(chargeMode);
-        _window.ChargeModeButton.Text = apc.ChargeModeButton ? "Auto" : "Off";
+        _window.ChargeModeButton.Text = apc.ChargeModeButton ? Loc.GetString("rmc-apc-auto") : Loc.GetString("rmc-apc-off");
 
         foreach (int channel in Enum.GetValues<RMCPowerChannel>())
         {
@@ -99,9 +99,9 @@ public sealed class RMCApcBui(EntityUid owner, Enum uiKey) : BoundUserInterface(
 
         var multiplier = _config.GetCVar(RMCCVars.RMCPowerLoadMultiplier);
         var totalWatts = apc.Channels.Sum(c => c.Watts);
-        _window.TotalLoadWatts.SetMarkupPermissive($"[bold]{totalWatts / multiplier} W[/bold]");
+        _window.TotalLoadWatts.SetMarkupPermissive(Loc.GetString("rmc-apc-total-load", ("watts", (totalWatts / multiplier))));
 
-        _window.CoverButton.Text = apc.CoverLockedButton ? "Engaged" : "Disengaged";
+        _window.CoverButton.Text = apc.CoverLockedButton ? Loc.GetString("rmc-apc-cover-engaged") : Loc.GetString("rmc-apc-cover-disengaged");
         _window.CoverButton.Disabled = apc.Locked;
     }
 
@@ -132,7 +132,7 @@ public sealed class RMCApcBui(EntityUid owner, Enum uiKey) : BoundUserInterface(
         row.On.Pressed = channel.Button == RMCApcButtonState.On;
         row.On.Visible = false; // TODO RMC14
         row.Off.Pressed = channel.Button == RMCApcButtonState.Off;
-        row.Watts.SetMarkupPermissive($"{channel.Watts / multiplier} W");
-        row.Status.SetMarkupPermissive(channel.On ? $"{Green("On")}" : $"{Red("Off")}");
+        row.Watts.SetMarkupPermissive(Loc.GetString("rmc-apc-total-load", ("watts", (channel.Watts / multiplier))));
+        row.Status.SetMarkupPermissive(channel.On ? $"{Green(Loc.GetString("rmc-apc-on"))}" : $"{Red(Loc.GetString("rmc-apc-off"))}");
     }
 }

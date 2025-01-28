@@ -1,3 +1,14 @@
+# Structure:
+# . Maints
+# . Corridors
+# . Brig
+# . Command
+# . Medical
+# . Auxiliary
+# . Prep
+# . Engi
+# . Other
+
 - type: entity
   parent:
   - RMCAreaProtectionMetal
@@ -77,6 +88,30 @@
     sprite: _RMC14/Areas/savannah.rsi
     state: other
 
+- type: entity
+  parent:
+  - RMCAreaSavannahCorridorAmidship
+  id: RMCAreaSavannahCorridorEngineering
+  name: Engineering Corridor
+
+- type: entity
+  parent:
+  - RMCAreaSavannahCorridorAmidship
+  id: RMCAreaSavannahCorridorEscape
+  name: Escape Pods Corridor
+
+- type: entity
+  parent:
+  - RMCAreaSavannahCorridorAmidship
+  id: RMCAreaSavannahCorridorBriefingStarboard
+  name: Briefing Starboard Corridor
+
+- type: entity
+  parent:
+  - RMCAreaSavannahCorridorAmidship
+  id: RMCAreaSavannahCorridorBriefingPort
+  name: Briefing Port Corridor
+
 # BRIG
 
 - type: entity
@@ -92,14 +127,38 @@
 - type: entity
   parent:
   - RMCAreaSavannahBrig
-  id: RMCAreaSavannahBrigBow
-  name: Brig Bow
+  id: RMCAreaSavannahBrigCMP
+  name: CMP Office
 
 - type: entity
   parent:
   - RMCAreaSavannahBrig
-  id: RMCAreaSavannahBrigCorridors
-  name: Brig Corridors
+  id: RMCAreaSavannahBrigWarden
+  name: Warden Office
+
+- type: entity
+  parent:
+  - RMCAreaSavannahBrig
+  id: RMCAreaSavannahBrigRange
+  name: Brig Shooting Range
+
+- type: entity
+  parent:
+  - RMCAreaSavannahBrig
+  id: RMCAreaSavannahBrigOB
+  name: Orbital Cannon Room
+
+- type: entity
+  parent:
+  - RMCAreaSavannahBrig
+  id: RMCAreaSavannahBrigCorridor
+  name: Brig Main Corridor
+
+- type: entity
+  parent:
+  - RMCAreaSavannahBrig
+  id: RMCAreaSavannahBrigBow
+  name: Brig Bow Corridor
 
 - type: entity
   parent:
@@ -169,14 +228,32 @@
 - type: entity
   parent:
   - RMCAreaSavannahCommand
-  id: RMCAreaSavannahCICCorridor
-  name: CIC Corridor
+  id: RMCAreaSavannahCICCorridorPort
+  name: CIC Port Corridor
+
+- type: entity
+  parent:
+  - RMCAreaSavannahCommand
+  id: RMCAreaSavannahCICCorridorStarboard
+  name: CIC Starboard Corridor
 
 - type: entity
   parent:
   - RMCAreaSavannahCommand
   id: RMCAreaSavannahCIC
   name: Combat Information Centre
+
+- type: entity
+  parent:
+  - RMCAreaSavannahCommand
+  id: RMCAreaSavannahASO
+  name: ASO, IO and Command Cryo
+
+- type: entity
+  parent:
+  - RMCAreaSavannahCommand
+  id: RMCAreaSavannahTComms
+  name: TComms
 
 # MEDICAL
 
@@ -189,6 +266,24 @@
   - type: Sprite
     sprite: _RMC14/Areas/savannah.rsi
     state: medical
+
+- type: entity
+  parent:
+  - RMCAreaSavannahMedical
+  id: RMCAreaSavannahMedicalSurgery
+  name: Surgery Room
+
+- type: entity
+  parent:
+  - RMCAreaSavannahMedical
+  id: RMCAreaSavannahMedicalChemistry
+  name: Chemistry Room
+
+- type: entity
+  parent:
+  - RMCAreaSavannahMedical
+  id: RMCAreaSavannahMedicalPreparation
+  name: Medical Preparation
 
 - type: entity
   parent:
@@ -211,8 +306,14 @@
 - type: entity
   parent:
   - RMCAreaSavannahAuxiliary
-  id: RMCAreaSavannahHangar
-  name: Hangar
+  id: RMCAreaSavannahHangarPort
+  name: Hangar Port
+
+- type: entity
+  parent:
+  - RMCAreaSavannahAuxiliary
+  id: RMCAreaSavannahHangarStarboard
+  name: Hangar Starboard
 
 - type: entity
   parent:
@@ -225,6 +326,12 @@
   - RMCAreaSavannahAuxiliary
   id: RMCAreaSavannahRequisitions
   name: Requisitions
+
+- type: entity
+  parent:
+  - RMCAreaSavannahRequisitions
+  id: RMCAreaSavannahQuartermaster
+  name: Quartermaster Office
 
 - type: entity
   parent:
@@ -317,6 +424,18 @@
 - type: entity
   parent:
   - RMCAreaSavannahEngineering
+  id: RMCAreaSavannahChiefEngineer
+  name: Chief Engineer Room
+
+- type: entity
+  parent:
+  - RMCAreaSavannahEngineering
+  id: RMCAreaSavannahEngineeringPreparations
+  name: Engineering Preparations
+
+- type: entity
+  parent:
+  - RMCAreaSavannahEngineering
   id: RMCAreaSavannahAtmosStarboard
   name: Starboard Atmos
 
@@ -325,6 +444,30 @@
   - RMCAreaSavannahEngineering
   id: RMCAreaSavannahAtmosPort
   name: Port Atmos
+
+- type: entity
+  parent:
+  - RMCAreaSavannahEngineering
+  id: RMCAreaSavannahPumpStarboardBow
+  name: Starboard Bow Pump
+
+- type: entity
+  parent:
+  - RMCAreaSavannahEngineering
+  id: RMCAreaSavannahPumpStarboard Quarter
+  name: Starboard Quarter Pump
+
+- type: entity
+  parent:
+  - RMCAreaSavannahEngineering
+  id: RMCAreaSavannahPumpPortBow
+  name: Port Bow Pump
+
+- type: entity
+  parent:
+  - RMCAreaSavannahEngineering
+  id: RMCAreaSavannahPumpPortQuarter
+  name: Port Quarter Pump
 
 # OTHER
 
@@ -339,3 +482,21 @@
   - RMCAreaSavannah
   id: RMCAreaSavannahBriefing
   name: Briefing
+
+- type: entity
+  parent:
+  - RMCAreaSavannah
+  id: RMCAreaSavannahLifeboatAmidship
+  name: Lifeboat Docking Amidship
+
+- type: entity
+  parent:
+  - RMCAreaSavannahLifeboatAmidship
+  id: RMCAreaSavannahLifeboatStarboard
+  name: Lifeboat Docking Starboard
+  
+- type: entity
+  parent:
+  - RMCAreaSavannahLifeboatAmidship
+  id: RMCAreaSavannahLifeboatPort
+  name: Lifeboat Docking Port

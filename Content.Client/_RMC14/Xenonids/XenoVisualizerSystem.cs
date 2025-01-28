@@ -181,7 +181,7 @@ public sealed class XenoVisualizerSystem : VisualizerSystem<XenoComponent>
         if (!Resolve(xeno, ref xeno.Comp))
             return;
 
-        var ev = new GetDrawDepthEvent(DrawDepth.Mobs);
+        var ev = new GetDrawDepthEvent(DrawDepth.Items);
         RaiseLocalEvent(xeno, ref ev);
 
         xeno.Comp.DrawDepth = (int) ev.DrawDepth;

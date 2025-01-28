@@ -110,7 +110,7 @@
     normalState: Generic_mob_burning
   - type: Sprite
     noRot: true
-    drawdepth: Mobs
+    drawdepth: Items
     layers:
     - map: [ "enum.XenoVisualLayers.Base" ]
       state: alive

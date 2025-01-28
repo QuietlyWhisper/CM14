@@ -5,11 +5,13 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 
 namespace Content.Shared._RMC14.Weapons.Ranged;
 
 public abstract class SharedPumpActionSystem : EntitySystem
 {
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
@@ -66,7 +68,8 @@ public abstract class SharedPumpActionSystem : EntitySystem
 
         args.Handled = true;
 
-        _audio.PlayPredicted(ent.Comp.Sound, ent, args.UserUid);
+        if (_net.IsServer)
+            _audio.PlayPvs(ent.Comp.Sound, args.UserUid);
     }
 
     private void OnEntRemovedFromContainer(Entity<PumpActionComponent> ent, ref EntRemovedFromContainerMessage args)

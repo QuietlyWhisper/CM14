@@ -78,6 +78,8 @@
       map: ["buckledLayer"]
       visible: false
   - type: InteractionOutline
+  - type: HealOnBuckle
+    damage: {}
   - type: Physics
   - type: Fixtures
     fixtures:

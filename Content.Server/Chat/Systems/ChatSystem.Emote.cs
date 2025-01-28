@@ -1,6 +1,8 @@
 using System.Collections.Frozen;
+using Content.Shared._RMC14.Voicelines;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -10,6 +12,8 @@ namespace Content.Server.Chat.Systems;
 public partial class ChatSystem
 {
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
+
+    [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!;
 
     protected override void OnPrototypeReload(PrototypesReloadedEventArgs obj)
     {
@@ -151,7 +155,12 @@ public partial class ChatSystem
 
         // if general params for all sounds set - use them
         var param = proto.GeneralParams ?? sound.Params;
-        _audio.PlayPvs(sound, uid, param);
+
+        var filter = Filter.Pvs(uid).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayVoiceline(uid, s));
+        if (filter.Count == 0)
+            return false;
+
+        _audio.PlayEntity(sound, filter, uid, true, param);
         return true;
     }
     /// <summary>

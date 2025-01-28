@@ -15,6 +15,15 @@
         layer:
         - BulletImpassable
         density: 200
+      xeno_hive_core:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1
+        hard: false
+        mask:
+        - SmallMobLayer
+  - type: CollisionWake
+    enabled: false
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/hive_core.rsi
     state: core
@@ -31,6 +40,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
   - type: RMCNightVisionVisible
     priority: -1
     transparency: 0.2

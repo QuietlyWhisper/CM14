@@ -15,6 +15,7 @@ using Content.Shared.Mobs.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.StepTrigger.Systems;
 
 namespace Content.Server._RMC14.Xenonids.Construction;
 
@@ -41,6 +42,9 @@ public sealed class XenoHiveCoreSystem : SharedXenoHiveCoreSystem
 
         SubscribeLocalEvent<XenoHiveCoreRoleComponent, MapInitEvent>(OnCoreRoleMapInit);
         SubscribeLocalEvent<XenoHiveCoreRoleComponent, GhostRoleSpawnerUsedEvent>(OnCoreRoleSpawnerUsed);
+
+        SubscribeLocalEvent<HiveCoreComponent, StepTriggerAttemptEvent>(OnHiveCoreStepTriggerAttempt);
+        SubscribeLocalEvent<HiveCoreComponent, StepTriggeredOffEvent>(OnHiveCoreStepTriggered);
     }
 
     private void OnDropshipHijackStart(ref DropshipHijackStartEvent ev)
@@ -143,4 +147,29 @@ public sealed class XenoHiveCoreSystem : SharedXenoHiveCoreSystem
             }
         }
     }
+
+    private void OnHiveCoreStepTriggerAttempt(Entity<HiveCoreComponent> core, ref StepTriggerAttemptEvent args)
+    {
+        if (CanTrigger(args.Tripper))
+            args.Continue = true;
+    }
+
+    private bool CanTrigger(EntityUid user)
+    {
+        return TryComp<XenoComponent>(user, out var xeno)
+               && xeno.Role.Id == "CMXenoLarva"
+               && _mobState.IsDead(user);
+    }
+
+    private void OnHiveCoreStepTriggered(Entity<HiveCoreComponent> core, ref StepTriggeredOffEvent args)
+    {
+        var tripper = args.Tripper;
+        if (CanTrigger(tripper))
+        {
+            _hive.IncreaseBurrowedLarva(1);
+            QueueDel(tripper);
+        }
+    }
+
 }
+

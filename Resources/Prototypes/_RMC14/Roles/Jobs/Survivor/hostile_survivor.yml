@@ -1,9 +1,9 @@
 - type: job
   parent: CMJobBase
-  id: CMSurvivor
-  name: cm-job-name-survivor
-  description: cm-job-description-survivor
-  playTimeTracker: CMJobSurvivor
+  id: CMSurvivorHostile
+  name: cm-job-name-survivor-hostile
+  description: cm-job-description-survivor-hostile 
+  playTimeTracker: RMCJobSurvivorHostile
   requirements:
   - !type:DepartmentTimeRequirement
     department: CMSquad
@@ -14,9 +14,7 @@
   - !type:TotalJobsTimeRequirement
     group: CMJobsMedical
     time: 18000 # 5 hours
-  ranks:
-    RMCRankCivilian: []
-  startingGear: RMCGearSurvivor
+  startingGear: RMCGearSurvivorHostile
   icon: "CMJobIconEmpty"
   joinNotifyCrew: false
   supervisors: cm-job-supervisors-nobody
@@ -31,34 +29,39 @@
         RMCSkillEndurance: 2
         RMCSkillFirearms: 1
         RMCSkillFireman: 1
+        RMCSkillPolice: 2
+        RMCSkillCqc: 2
     - type: EquipSurvivorPreset
-      preset: RMCSurvivorPresetCivilian
+      preset: RMCSurvivorPresetCivilianCLF
     - type: Survivor
     - type: MotionDetectorTracked
     - type: UserIFF
       faction: FactionSurvivor
     - type: SurvivorRoleBriefing
-      survivorRoleBriefing: civilian-role-briefing
+      survivorRoleBriefing: clf-civilian-role-briefing
   hasIcon: false
 
 - type: startingGear
-  id: RMCGearSurvivor
+  id: RMCGearSurvivorHostile
   equipment:
-    jumpsuit: CMJumpsuitColonist
+    neck: ClothingNeckCloakCLF
+    jumpsuit: RMCJumpsuitFreelancer
     back: RMCSatchelCivilianFill
     shoes: RMCShoesBlack
-    id: CMIDCardColonist
-    ears: CMHeadsetColony
+    outerClothing: RMCCoatMilitiaBrace
+    id: CMIDCardColonistHostile
+    ears: CMHeadset
     pocket1: RMCPouchSurvivalFill
     pocket2: RMCPouchGeneral
+    gloves: RMCHandsVeteran
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: CMSpawnPointSurvivor
-  name: survivor spawn point
+  id: CMSpawnPointSurvivorHostile
+  name: hostile survivor spawn point
   components:
   - type: SpawnPoint
-    job_id: CMSurvivor
+    job_id: CMSurvivorHostile
   - type: Sprite
     layers:
     - sprite: Markers/jobs.rsi
@@ -66,5 +69,5 @@
     - state: survivor
 
 - type: playTimeTracker
-  id: CMJobSurvivor
+  id: RMCJobSurvivorHostile
   isHumanoid: true

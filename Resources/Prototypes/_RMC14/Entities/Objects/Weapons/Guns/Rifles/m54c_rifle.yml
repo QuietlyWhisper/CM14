@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: CMBaseWeaponRifle
   name: M54C assault rifle MK2
   id: WeaponRifleM54C

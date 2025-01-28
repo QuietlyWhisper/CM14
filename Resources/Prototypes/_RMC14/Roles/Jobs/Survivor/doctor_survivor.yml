@@ -1,9 +1,9 @@
 - type: job
   parent: CMJobBase
-  id: CMSurvivor
-  name: cm-job-name-survivor
-  description: cm-job-description-survivor
-  playTimeTracker: CMJobSurvivor
+  id: RMCMedicalSurvivor
+  name: cm-job-name-medical-survivor
+  description: cm-job-description-survivor-doctor
+  playTimeTracker: RMCJobSurvivorMedical
   requirements:
   - !type:DepartmentTimeRequirement
     department: CMSquad
@@ -14,57 +14,62 @@
   - !type:TotalJobsTimeRequirement
     group: CMJobsMedical
     time: 18000 # 5 hours
-  ranks:
-    RMCRankCivilian: []
-  startingGear: RMCGearSurvivor
+  startingGear: RMCGearSurvivorDoctor
   icon: "CMJobIconEmpty"
   joinNotifyCrew: false
   supervisors: cm-job-supervisors-nobody
   accessGroups:
-  - Colonist
+  - ColonistMedical
+  - CMAccessMedical
+  - CMMedbay #exists so that medical survivors have access to we-ya-meds
   special:
   - !type:AddComponentSpecial
     components:
     - type: Skills
       skills:
-        RMCSkillConstruction: 1
-        RMCSkillEndurance: 2
         RMCSkillFirearms: 1
         RMCSkillFireman: 1
+        RMCSkillMedical: 3
+        RMCSkillSurgery: 2
     - type: EquipSurvivorPreset
-      preset: RMCSurvivorPresetCivilian
+      preset: RMCSurvivorPresetMedical
     - type: Survivor
     - type: MotionDetectorTracked
     - type: UserIFF
       faction: FactionSurvivor
     - type: SurvivorRoleBriefing
-      survivorRoleBriefing: civilian-role-briefing
+      survivorRoleBriefing: doctor-role-briefing
   hasIcon: false
 
+
 - type: startingGear
-  id: RMCGearSurvivor
+  id: RMCGearSurvivorDoctor #RMC TODO Outer clothing: Labcoat, 15 bio armor
   equipment:
-    jumpsuit: CMJumpsuitColonist
-    back: RMCSatchelCivilianFill
-    shoes: RMCShoesBlack
-    id: CMIDCardColonist
+    head: CMHeadCapSurgBlue
+    mask: CMMaskSterile
+    jumpsuit: CMJumpsuitLiaisonBlue 
+    back: CMSatchelMedical
+    gloves: CMHandsLatex
+    shoes: RMCShoesLaceup
+    id: CMIDCardColonistDoctor 
+    eyes: RMCGlassesMedicalHUDGlasses
     ears: CMHeadsetColony
-    pocket1: RMCPouchSurvivalFill
-    pocket2: RMCPouchGeneral
+    pocket1: RMCM5Bayonet
+    pocket2: RMCFlashlight
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: CMSpawnPointSurvivor
-  name: survivor spawn point
+  id: RMCSpawnPointSurvivorDoctor
+  name: survivor doctor spawn point
   components:
   - type: SpawnPoint
-    job_id: CMSurvivor
+    job_id: RMCMedicalSurvivor
   - type: Sprite
     layers:
     - sprite: Markers/jobs.rsi
       state: green
-    - state: survivor
+    - state: doctor
 
 - type: playTimeTracker
-  id: CMJobSurvivor
+  id: RMCJobSurvivorMedical
   isHumanoid: true

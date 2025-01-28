@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: RMCSurvivorPresetCivilian
   name: civilian survivor preset
   components:
@@ -18,4 +18,106 @@
     # TODO RMC14 S&W .38 model 37 revolver
     primaryWeapons:
     - [ CMBeltMarineAR10, WeaponRifleAR10 ]
+    primaryWeaponChance: 0.6
+
+
+# Medical
+
+- type: entity
+  id: RMCSurvivorPresetMedical
+  name: medical survivor preset
+  components:
+  - type: SurvivorPreset
+    randomGear:
+    - [ CMGrenadeHighExplosive ] # TODO RMC14 incendiary molotov
+    - [ CMPackFlare ]
+    - [ WeaponNailgun ]
+    - [ RMCFireAxe ]
+    - [ CMWelder ] # TODO RMC14 industrial welder
+    - [ CMAdvFirstAidKitFilled ]
+    randomWeapon:
+    - [ RMCWeaponPistolB92FS, RMCMagazinePistolB92FS ]
+    # TODO RMC14 CMB revolver
+    - [ RMCWeaponPistolMK45, RMCMagazinePistolMK45 ]
+    - [ CMWeaponPistolM1984, CMMagazinePistolM1984 ]
+    # TODO RMC14 S&W .38 model 37 revolver
+    primaryWeapons:
+    - [ RMCBeltMarineAR10, WeaponRifleAR10 ]
+    primaryWeaponChance: 0.6
+
+
+#Engineer
+
+- type: entity
+  id: RMCSurvivorPresetEngineer
+  name: engineer survivor preset
+  components:
+  - type: SurvivorPreset
+    randomGear:
+    - [ CMGrenadeHighExplosive ] # TODO RMC14 incendiary molotov
+    - [ CMPackFlare ]
+    - [ WeaponNailgun ]
+    - [ RMCFireAxe ]
+    - [ CMWelder ] # TODO RMC14 industrial welder
+    - [ CMAdvFirstAidKitFilled ]
+    randomWeapon:
+    - [ RMCWeaponPistolB92FS, RMCMagazinePistolB92FS ]
+    # TODO RMC14 CMB revolver
+    - [ RMCWeaponPistolMK45, RMCMagazinePistolMK45 ]
+    - [ CMWeaponPistolM1984, CMMagazinePistolM1984 ]
+    # TODO RMC14 S&W .38 model 37 revolver
+    primaryWeapons:
+    - [ RMCBeltMarineAR10, WeaponRifleAR10 ]
+    primaryWeaponChance: 0.6
+    guaranteedGear:
+    - [ WeaponNailgun ]
+    
+
+
+# Security 
+
+- type: entity
+  id: RMCSurvivorPresetSecurity
+  name: security survivor preset
+  components:
+  - type: SurvivorPreset
+    randomGear:
+    - [ CMGrenadeHighExplosive ] # TODO RMC14 incendiary molotov
+    - [ CMPackFlare ]
+    - [ WeaponNailgun ]
+    - [ RMCFireAxe ]
+    - [ CMWelder ] # TODO RMC14 industrial welder
+    - [ CMAdvFirstAidKitFilled ]
+    randomWeapon:
+    - [ RMCWeaponPistolB92FS, RMCMagazinePistolB92FS ]
+    # TODO RMC14 CMB revolver
+    - [ RMCWeaponPistolMK45, RMCMagazinePistolMK45 ]
+    - [ CMWeaponPistolM1984, CMMagazinePistolM1984 ]
+    # TODO RMC14 S&W .38 model 37 revolver
+    primaryWeapons:
+    - [ RMCBeltMarineAR10, WeaponRifleAR10 ]
+    primaryWeaponChance: 0.6
+
+
+- type: entity
+  id: RMCSurvivorPresetCivilianCLF
+  name: hostile civilian survivor preset
+  components:
+  - type: SurvivorPreset
+    randomGear:
+    - [ CMGrenadeHighExplosive ] # TODO RMC14 incendiary molotov
+    - [ CMPackFlare ]
+    - [ WeaponNailgun ]
+    - [ RMCFireAxe ]
+    - [ CMWelder ] # TODO RMC14 industrial welder
+    - [ CMAdvFirstAidKitFilled ]
+    randomWeapon:
+    - [ RMCWeaponPistolB92FS, RMCMagazinePistolB92FS ]
+    # TODO RMC14 CMB revolver
+    - [ RMCWeaponPistolMK45, RMCMagazinePistolMK45 ]
+    - [ CMWeaponPistolM1984, CMMagazinePistolM1984 ]
+    # TODO RMC14 S&W .38 model 37 revolver
+    primaryWeapons:
+    - [ RMCBeltMarineAR10, WeaponRifleAR10]
+    - [ RMCBeltMarineMP5, WeaponSMGMP5 ]
     primaryWeaponChance: 0.6

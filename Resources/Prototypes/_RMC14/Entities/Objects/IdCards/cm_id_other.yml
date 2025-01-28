@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: CMIDCardSilver
   id: CMIDCardSeniorEnlistedAdvisor
   name: senior enlisted advisor ID card
@@ -21,6 +21,58 @@
   components:
   - type: PresetIdCard
     job: CMSurvivor
+  description: A lanyard ID that belongs to a civilian colonist. There's a happy smile on the picture, but it's hard to see. The We-Ya logo is twice the size of the photograph.
+
+- type: entity #added to differentiate doctor survivors from regular
+  parent: CMIDCardBase
+  id: CMIDCardColonistDoctor
+  name: colonist doctor ID card
+  components:
+  - type: PresetIdCard
+    job: RMCMedicalSurvivor
+  - type: Access
+    groups: 
+    - Colony
+    - CMMedbay #There's no reason for medical survivors to have this other than the fact that it is impossible to hack We-Ya-Med vendors right now - until parity this will have to stay to compensate. *
+    extendedAccess:
+    - Chemistry #*
+  description: A spotty, crinkled ID that smells faintly of soap - clearly meticulously maintained by an overworked surgeon. There's something... inspiring about it.
+
+- type: entity #added to differentiate engineer survivors from regular
+  parent: CMIDCardLanyard
+  id: CMIDCardColonistEngineer
+  name: colonist engineer ID card
+  components:
+  - type: PresetIdCard
+    job: RMCEngineerSurvivor
+  - type: Access
+    groups:
+    - Colony
+    - ColonistEngi
+  description: An oily, greasy ID hangs precariously from a lanyard with fabric frazzled to single fibres. You'd assume a hands-on technician was involved somewhere - if the tag didn't outright tell you.
+
+- type: entity
+  parent: CMIDCardSilver
+  id: CMIDCardColonistSecurity
+  name: colonist marshal ID card
+  components:
+  - type: PresetIdCard
+    job: RMCSecuritySurvivor
+  - type: Access
+    groups:
+    - Colony
+    - ColonistSec
+  description: The silver badge which represents that the wearer is a member of the Bureau Deputy. The proud silver coating seems to have been scratched and worn out. A bit sad. Whichever officer this belongs to, it speaks of commitment - or commitments.
+
+- type: entity
+  parent: CMIDCardLanyard
+  id: CMIDCardColonistHostile
+  name: colonist ID card
+  components:
+  - type: PresetIdCard
+    job: CMSurvivorHostile
+  description: A lanyard ID that belongs to a civilian colonist. There are a few scratches and... attempts to cover information. The We-Ya logo is conspicuously missing - and the edges are creased. The more you look... the more ashamed it makes you feel. 
+
 
 - type: entity
   parent: CMIDCardSilver

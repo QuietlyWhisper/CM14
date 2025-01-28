@@ -1,9 +1,9 @@
 - type: job
   parent: CMJobBase
-  id: CMSurvivor
-  name: cm-job-name-survivor
-  description: cm-job-description-survivor
-  playTimeTracker: CMJobSurvivor
+  id: RMCEngineerSurvivor
+  name: cm-job-name-engineer-survivor
+  description: cm-job-description-survivor-engineer
+  playTimeTracker: RMCJobSurvivorEngineer
   requirements:
   - !type:DepartmentTimeRequirement
     department: CMSquad
@@ -14,57 +14,59 @@
   - !type:TotalJobsTimeRequirement
     group: CMJobsMedical
     time: 18000 # 5 hours
-  ranks:
-    RMCRankCivilian: []
-  startingGear: RMCGearSurvivor
+  startingGear: RMCGearSurvivorEngineer
   icon: "CMJobIconEmpty"
   joinNotifyCrew: false
   supervisors: cm-job-supervisors-nobody
   accessGroups:
-  - Colonist
+  - ColonistEngi
   special:
   - !type:AddComponentSpecial
     components:
     - type: Skills
       skills:
-        RMCSkillConstruction: 1
+        RMCSkillConstruction: 3
+        RMCSkillEngineer: 3
         RMCSkillEndurance: 2
         RMCSkillFirearms: 1
         RMCSkillFireman: 1
     - type: EquipSurvivorPreset
-      preset: RMCSurvivorPresetCivilian
+      preset: RMCSurvivorPresetEngineer
     - type: Survivor
     - type: MotionDetectorTracked
     - type: UserIFF
       faction: FactionSurvivor
     - type: SurvivorRoleBriefing
-      survivorRoleBriefing: civilian-role-briefing
+      survivorRoleBriefing: engineer-role-briefing
   hasIcon: false
-
+ 
 - type: startingGear
-  id: RMCGearSurvivor
+  id: RMCGearSurvivorEngineer
   equipment:
-    jumpsuit: CMJumpsuitColonist
-    back: RMCSatchelCivilianFill
-    shoes: RMCShoesBlack
-    id: CMIDCardColonist
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesMeson
+    gloves: CMHandsInsulated
+    jumpsuit: ClothingUniformJumpsuitEngineering
+    back: CMSatchelEngineer
+    shoes: ClothingShoesColorOrange
+    id: CMIDCardColonistEngineer
     ears: CMHeadsetColony
-    pocket1: RMCPouchSurvivalFill
-    pocket2: RMCPouchGeneral
+    pocket1: RMCM5Bayonet
+    pocket2: RMCFlashlight
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: CMSpawnPointSurvivor
-  name: survivor spawn point
+  id: RMCSpawnPointSurvivorEngineer
+  name: survivor engineer spawn point
   components:
   - type: SpawnPoint
-    job_id: CMSurvivor
+    job_id: RMCEngineerSurvivor
   - type: Sprite
     layers:
     - sprite: Markers/jobs.rsi
       state: green
-    - state: survivor
+    - state: maintenance_tech
 
 - type: playTimeTracker
-  id: CMJobSurvivor
+  id: RMCJobSurvivorEngineer
   isHumanoid: true

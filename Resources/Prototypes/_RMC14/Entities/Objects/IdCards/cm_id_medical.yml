@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: CMIDCardSilver
   id: CMIDCardCMO
   name: chief medical officer ID card

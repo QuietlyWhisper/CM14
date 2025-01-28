@@ -1,9 +1,9 @@
 - type: job
   parent: CMJobBase
-  id: CMSurvivor
-  name: cm-job-name-survivor
-  description: cm-job-description-survivor
-  playTimeTracker: CMJobSurvivor
+  id: RMCSecuritySurvivor
+  name: cm-job-name-security-survivor 
+  description: cm-job-description-survivor-security
+  playTimeTracker: RMCJobSurvivorSecurity
   requirements:
   - !type:DepartmentTimeRequirement
     department: CMSquad
@@ -14,14 +14,12 @@
   - !type:TotalJobsTimeRequirement
     group: CMJobsMedical
     time: 18000 # 5 hours
-  ranks:
-    RMCRankCivilian: []
-  startingGear: RMCGearSurvivor
+  startingGear: RMCGearSurvivorSecurity
   icon: "CMJobIconEmpty"
   joinNotifyCrew: false
   supervisors: cm-job-supervisors-nobody
   accessGroups:
-  - Colonist
+  - ColonistSec
   special:
   - !type:AddComponentSpecial
     components:
@@ -31,40 +29,44 @@
         RMCSkillEndurance: 2
         RMCSkillFirearms: 1
         RMCSkillFireman: 1
+        RMCSkillPolice: 2
+        RMCSkillCqc: 2
     - type: EquipSurvivorPreset
-      preset: RMCSurvivorPresetCivilian
+      preset: RMCSurvivorPresetSecurity
     - type: Survivor
     - type: MotionDetectorTracked
     - type: UserIFF
       faction: FactionSurvivor
     - type: SurvivorRoleBriefing
-      survivorRoleBriefing: civilian-role-briefing
+      survivorRoleBriefing: security-role-briefing
   hasIcon: false
 
 - type: startingGear
-  id: RMCGearSurvivor
+  id: RMCGearSurvivorSecurity
   equipment:
-    jumpsuit: CMJumpsuitColonist
-    back: RMCSatchelCivilianFill
-    shoes: RMCShoesBlack
-    id: CMIDCardColonist
+    head: CMHeadBeretRed
+    eyes: CMGlassesSecurity
+    jumpsuit: ClothingUniformJumpsuitSec 
+    back: CMSatchelSecurity
+    shoes: RMCShoesJackboots
+    id: CMIDCardColonistSecurity # Marshalls actually get a badge looking thang
     ears: CMHeadsetColony
-    pocket1: RMCPouchSurvivalFill
-    pocket2: RMCPouchGeneral
+    pocket1: RMCM5Bayonet
+    pocket2: RMCFlashlight
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: CMSpawnPointSurvivor
-  name: survivor spawn point
+  id: RMCSpawnPointSurvivorSecurity
+  name: survivor security spawn point
   components:
   - type: SpawnPoint
-    job_id: CMSurvivor
+    job_id: RMCSecuritySurvivor
   - type: Sprite
     layers:
     - sprite: Markers/jobs.rsi
       state: green
-    - state: survivor
+    - state: military_police
 
 - type: playTimeTracker
-  id: CMJobSurvivor
+  id: RMCJobSurvivorSecurity
   isHumanoid: true

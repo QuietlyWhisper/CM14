@@ -112,7 +112,7 @@
 # Colonial militia
 # TODO: implement storage whitelist for this
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterStorageBase, RMCAllowSuitStorageClothingArmorPMC]
   id: RMCCoatMilitia
   name: colonial militia hauberk
   description: The hauberk of a colonist militia member, created from boiled leather and some modern armored plates. While not the most powerful form of armor, and primitive compared to most modern suits of armor, it gives the wearer almost perfect mobility, which suits the needs of the local colonists. It is also quick to don, easy to hide, and cheap to produce in large workshops.

@@ -45,3 +45,7 @@
           CMCargoTech: [ -1, -1 ]
           CMQuartermaster: [ -1, -1 ]
           CMSurvivor: [ -1, -1 ]
+          CMSurvivorHostile: [ -1, -1 ]
+          RMCMedicalSurvivor: [ -1, -1 ]
+          RMCEngineerSurvivor: [ -1, -1 ]
+          RMCSecuritySurvivor: [ -1, -1 ]

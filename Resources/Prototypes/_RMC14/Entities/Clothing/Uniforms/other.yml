@@ -158,3 +158,39 @@
     sprite: _RMC14/Objects/Clothing/Uniforms/civilian.rsi
   - type: Clothing
     sprite: _RMC14/Objects/Clothing/Uniforms/civilian.rsi
+
+# Copy of the Goliath Cloak from upstream for the purposes of CLF survivors. 
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakCLF
+  name: skirmishers' cowl
+  description: A red cowl made from the hide of one resilient, goliath beast. Carried and worn by distinguished, well-funded CLF operatives on key We-Ya facilities. If you wear this - expect anyone with a gun and uniform to shoot you on sight. 
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/goliathcloak.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCLFCloak
+    requiredSlot:
+    - neck
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+
+#CLFCloak hood
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodCLFCloak
+  name: skirmisher's cowl hood
+  description: The hood of that cloak you're wearing. Does a pretty good job of hiding your identity.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/goliathcloak.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/goliathcloak.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair

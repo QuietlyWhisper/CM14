@@ -156,3 +156,25 @@
     contents:
     - id: RMCMagazineRifleAR10
       amount: 5
+
+- type: entity
+  parent: CMBeltMarine
+  id: RMCBeltMarineMP5
+  suffix: Filled, MP5
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMMagazineSMGMP5
+      amount: 5
+
+
+- type: entity
+  parent: CMBeltMarine
+  id: RMCBeltMarineShells
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMShellShotgunBuckshot
+      amount: 3
+    - id: CMShellShotgunSlugs
+      amount: 2

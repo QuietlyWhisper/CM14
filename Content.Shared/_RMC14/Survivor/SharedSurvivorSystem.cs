@@ -1,10 +1,10 @@
-﻿using Content.Shared.Inventory;
+using Content.Shared.Inventory;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared._RMC14.Survivor;
 
-public sealed class SurvivorSystem : EntitySystem
+public abstract class SharedSurvivorSystem : EntitySystem
 {
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
@@ -16,7 +16,7 @@ public sealed class SurvivorSystem : EntitySystem
         SubscribeLocalEvent<EquipSurvivorPresetComponent, MapInitEvent>(OnPresetMapInit);
     }
 
-    private void OnPresetMapInit(Entity<EquipSurvivorPresetComponent> ent, ref MapInitEvent args)
+    public virtual void OnPresetMapInit(Entity<EquipSurvivorPresetComponent> ent, ref MapInitEvent args)
     {
         ApplyPreset(ent, ent.Comp.Preset);
     }

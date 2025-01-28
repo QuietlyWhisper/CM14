@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: M54CE2 heavy assault rifle
   parent: CMBaseWeaponRifle
   id: WeaponRifleM54CE2

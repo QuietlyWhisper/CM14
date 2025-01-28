@@ -3,7 +3,6 @@ using Content.Shared._RMC14.Armor;
 using Content.Shared._RMC14.Xenonids.Construction.Nest;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle.Components;
-using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
@@ -273,8 +272,6 @@ public sealed class XenoDevourSystem : EntitySystem
             RaiseLocalEvent(xeno, ev);
 
             _stun.TryStun(ent, xeno.Comp.RegurgitationStun, true);
-            if (_net.IsServer)
-                SpawnAttachedTo(xeno.Comp.RegurgitateEffect, ent.ToCoordinates());
         }
     }
 

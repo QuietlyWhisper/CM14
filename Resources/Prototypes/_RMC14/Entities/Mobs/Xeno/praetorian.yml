@@ -179,7 +179,9 @@
   - type: XenoRetrieve
   - type: XenoAid
     componentsRemove:
-    - type: AmmoSlowed
+    - type: RMCSlowdown
+    - type: RMCSuperSlowdown
+    - type: RMCRooted
   - type: XenoSprayAcid
     acid: XenoAcidSprayStrong
     plasmaCost: 130

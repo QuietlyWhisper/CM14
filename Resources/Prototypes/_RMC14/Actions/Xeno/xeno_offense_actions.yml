@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ActionXenoBase
   id: ActionXenoAcidNormal
   name: Corrosive Acid (100)  # TODO RMC14 proper plasma costs
@@ -189,6 +189,8 @@
     range: 3
     useDelay: 6
     deselectOnMiss: false
+  - type: XenoActionPlasma
+    cost: 10
 
 - type: entity
   id: ActionXenoTailSweep
@@ -345,6 +347,8 @@
       state: lurker_inject_neuro
     event: !type:XenoParalyzingSlashActionEvent
     useDelay: 12
+  - type: XenoActionPlasma
+    cost: 50
 
 - type: entity
   parent: ActionXenoBase
@@ -359,6 +363,8 @@
       state: lurker_inject_neuro
     event: !type:XenoCripplingStrikeActionEvent
     useDelay: 10
+  - type: XenoActionPlasma
+    cost: 20
 
 - type: entity
   id: ActionXenoBoneChips
@@ -589,6 +595,8 @@
     deselectOnMiss: false
   - type: XenoOffensiveAction
   - type: ActionBlockIfResting
+  - type: XenoActionPlasma
+    cost: 80
 
 - type: entity
   parent: ActionXenoBase
@@ -606,6 +614,8 @@
     useDelay: 13
     deselectOnMiss: false
   - type: XenoOffensiveAction
+  - type: XenoActionPlasma
+    cost: 30
   - type: ActionBlockIfResting
 
 - type: entity
@@ -623,8 +633,9 @@
     range: 15
     useDelay: 3
     checkCanAccess: false
-  - type: XenoOffensiveAction
   - type: ActionBlockIfResting
+  - type: XenoActionPlasma
+    cost: 50
 
 - type: entity
   parent: ActionXenoDash

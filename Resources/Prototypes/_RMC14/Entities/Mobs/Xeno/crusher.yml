@@ -47,7 +47,6 @@
       types:
         Blunt: 65
     selfEffect: CMEffectSelfStomp
-    effect: CMEffectStomp
   - type: XenoCharge
     damage:
       types:
@@ -75,7 +74,6 @@
   - type: XenoShield
   - type: XenoMeleeSlow
     slowTime: 2
-    effect: RMCEffectCrusherSlow
   - type: Tackle
     chance: 0.25
   - type: MovementSpeedModifier

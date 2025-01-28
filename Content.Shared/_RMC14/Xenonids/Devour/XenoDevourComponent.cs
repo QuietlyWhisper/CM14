@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -25,7 +25,4 @@ public sealed partial class XenoDevourComponent : Component
 
     [DataField, AutoNetworkedField]
     public TimeSpan RegurgitationStun = TimeSpan.FromSeconds(4);
-
-    [DataField, AutoNetworkedField]
-    public EntProtoId RegurgitateEffect = "RMCEffectFreeze";
 }

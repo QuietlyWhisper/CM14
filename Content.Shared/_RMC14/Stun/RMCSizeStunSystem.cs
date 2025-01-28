@@ -1,5 +1,6 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Content.Shared._RMC14.Pulling;
+using Content.Shared._RMC14.Slow;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Movement.Systems;
@@ -28,6 +29,7 @@ public sealed class RMCSizeStunSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly RMCPullingSystem _rmcPulling = default!;
+    [Dependency] private readonly RMCSlowSystem _slow = default!;
 
     public override void Initialize()
     {
@@ -35,21 +37,6 @@ public sealed class RMCSizeStunSystem : EntitySystem
 
         SubscribeLocalEvent<RMCStunOnHitComponent, MapInitEvent>(OnSizeStunMapInit);
         SubscribeLocalEvent<RMCStunOnHitComponent, ProjectileHitEvent>(OnHit);
-
-        SubscribeLocalEvent<AmmoSlowedComponent, RefreshMovementSpeedModifiersEvent>(OnRefresh);
-        SubscribeLocalEvent<AmmoSlowedComponent, ComponentRemove>(OnRemove);
-    }
-
-    private void OnRefresh(Entity<AmmoSlowedComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
-    {
-        var multiplier = (ent.Comp.SlowMultiplier * (ent.Comp.SuperSlowActive ? ent.Comp.SuperSlowMultiplier : 1)).Float();
-        args.ModifySpeed(multiplier, multiplier);
-    }
-
-    private void OnRemove(Entity<AmmoSlowedComponent> ent, ref ComponentRemove args)
-    {
-        if (!TerminatingOrDeleted(ent))
-            _movementSpeed.RefreshMovementSpeedModifiers(ent);
     }
 
     public bool IsHumanoidSized(Entity<RMCSizeComponent> ent)
@@ -125,49 +112,12 @@ public sealed class RMCSizeStunSystem : EntitySystem
             }
 
             _stun.TryParalyze(args.Target, stun, true);
-            Superslow(args.Target, slow, superSlow);
+            _slow.TrySlowdown(args.Target, slow);
+            _slow.TrySuperSlowdown(args.Target, superSlow);
 
             _popup.PopupEntity(Loc.GetString("rmc-xeno-stun-shaken"), args.Target, args.Target, PopupType.MediumCaution);
         }
         else
             _stamina.TakeStaminaDamage(args.Target, args.Damage.GetTotal().Float());
-    }
-
-    public void Superslow(EntityUid ent, TimeSpan slow, TimeSpan superSlow)
-    {
-        EnsureComp<AmmoSlowedComponent>(ent, out var ammoSlowed);
-
-        ammoSlowed.ExpireTime = _timing.CurTime + slow;
-        ammoSlowed.SuperExpireTime = _timing.CurTime + superSlow;
-        ammoSlowed.SuperSlowActive = true;
-
-        Dirty(ent, ammoSlowed);
-        _movementSpeed.RefreshMovementSpeedModifiers(ent);
-    }
-
-    public override void Update(float frameTime)
-    {
-        var time = _timing.CurTime;
-
-        if (_net.IsServer)
-        {
-            var victimQuery = EntityQueryEnumerator<AmmoSlowedComponent>();
-
-            while (victimQuery.MoveNext(out var uid, out var victim))
-            {
-                if (victim.SuperSlowActive && victim.SuperExpireTime <= time)
-                {
-                    victim.SuperSlowActive = false;
-                    _movementSpeed.RefreshMovementSpeedModifiers(uid);
-                    continue;
-                }
-
-                if (victim.ExpireTime > time)
-                    continue;
-
-                RemCompDeferred<AmmoSlowedComponent>(uid);
-                _movementSpeed.RefreshMovementSpeedModifiers(uid);
-            }
-        }
     }
 }

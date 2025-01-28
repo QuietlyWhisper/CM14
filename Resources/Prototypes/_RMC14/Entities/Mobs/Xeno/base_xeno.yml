@@ -293,6 +293,10 @@
       - Marine
   - type: BlockIdExamine
   - type: NoStunOnExit
+  - type: RMCSpeciesSlowdownModifier
+    slowMultiplier: 0.87
+    superSlowMultiplier: 0.75
+    durationMultiplier: 0.666
 
 - type: entity
   abstract: true

@@ -1,4 +1,4 @@
-﻿using Content.Shared._RMC14.Emote;
+using Content.Shared._RMC14.Emote;
 using Content.Shared._RMC14.Shields;
 using Content.Shared._RMC14.Weapons.Melee;
 using Content.Shared._RMC14.Xenonids.Plasma;
@@ -45,9 +45,6 @@ public sealed class XenoPierceSystem : EntitySystem
 
     private void OnXenoPierceAction(Entity<XenoPierceComponent> xeno, ref XenoPierceActionEvent args)
     {
-        if (!_plasma.TryRemovePlasmaPopup(xeno.Owner, xeno.Comp.PlasmaCost))
-            return;
-
         //Note below is mostly all tail stab code
         var transform = Transform(xeno);
 

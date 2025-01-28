@@ -1,4 +1,5 @@
 using Content.Shared._RMC14.Marines;
+using Content.Shared._RMC14.Slow;
 using Content.Shared._RMC14.Standing;
 using Content.Shared._RMC14.Xenonids.Plasma;
 using Content.Shared.Coordinates;
@@ -25,6 +26,7 @@ public sealed class XenoStompSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
+    [Dependency] private readonly RMCSlowSystem _slow = default!;
 
     public override void Initialize()
     {
@@ -66,8 +68,8 @@ public sealed class XenoStompSystem : EntitySystem
                 continue;
 
             _stun.TryParalyze(receiver, xeno.Comp.ParalyzeTime, true);
-            if (_net.IsServer && xeno.Comp.Effect is not null)
-                SpawnAttachedTo(xeno.Comp.Effect, receiver.Owner.ToCoordinates());
+            if (xeno.Comp.Slows)
+                _slow.TrySuperSlowdown(receiver, xeno.Comp.SlowTime, true);
 
             if (xform.Coordinates.TryDistance(EntityManager, receiver.Owner.ToCoordinates(), out var distance) && distance <= xeno.Comp.ShortRange)
             {

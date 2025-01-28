@@ -1,9 +1,8 @@
-﻿using Content.Shared._RMC14.Pulling;
+using Content.Shared._RMC14.Pulling;
 using Content.Shared._RMC14.Xenonids.Animation;
 using Content.Shared._RMC14.Xenonids.Crest;
 using Content.Shared._RMC14.Xenonids.Fortify;
 using Content.Shared._RMC14.Xenonids.Hive;
-using Content.Shared._RMC14.Xenonids.Plasma;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Effects;
@@ -33,7 +32,6 @@ public sealed class XenoHeadbuttSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly XenoAnimationsSystem _xenoAnimations = default!;
     [Dependency] private readonly XenoSystem _xeno = default!;
-    [Dependency] private readonly XenoPlasmaSystem _xenoPlasma = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
@@ -67,9 +65,6 @@ public sealed class XenoHeadbuttSystem : EntitySystem
         RaiseLocalEvent(xeno, ref attempt);
 
         if (attempt.Cancelled)
-            return;
-
-        if (!_xenoPlasma.TryRemovePlasmaPopup(xeno.Owner, xeno.Comp.PlasmaCost))
             return;
 
         _rmcPulling.TryStopAllPullsFromAndOn(xeno);

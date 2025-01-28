@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionXenoTransferPlasma
   parent: ActionXenoBase
   name: Transfer plasma (50) # TODO RMC14 proper plasma costs

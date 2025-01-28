@@ -1,4 +1,4 @@
-﻿using Content.Shared._RMC14.Xenonids.Plasma;
+using Content.Shared._RMC14.Xenonids.Plasma;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
@@ -24,9 +24,6 @@ public sealed class XenoParalyzingSlashSystem : EntitySystem
 
     private void OnXenoParalyzingSlashAction(Entity<XenoParalyzingSlashComponent> xeno, ref XenoParalyzingSlashActionEvent args)
     {
-        if (!_xenoPlasma.TryRemovePlasmaPopup(xeno.Owner, xeno.Comp.PlasmaCost))
-            return;
-
         args.Handled = true;
         var active = EnsureComp<XenoActiveParalyzingSlashComponent>(xeno);
 

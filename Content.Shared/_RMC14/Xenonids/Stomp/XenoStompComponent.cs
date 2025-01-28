@@ -21,6 +21,12 @@ public sealed partial class XenoStompComponent : Component
     public TimeSpan ParalyzeTime = TimeSpan.FromSeconds(0.4);
 
     [DataField, AutoNetworkedField]
+    public bool Slows = true;
+
+    [DataField, AutoNetworkedField]
+    public TimeSpan SlowTime = TimeSpan.FromSeconds(1);
+
+    [DataField, AutoNetworkedField]
     public float ShortRange = 0.5f;
 
     [DataField, AutoNetworkedField]
@@ -28,9 +34,6 @@ public sealed partial class XenoStompComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntProtoId? SelfEffect;
-
-    [DataField, AutoNetworkedField]
-    public EntProtoId? Effect;
 
     // TODO RMC14 bang.ogg
     [DataField, AutoNetworkedField]

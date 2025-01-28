@@ -1,6 +1,6 @@
 using Content.Shared._RMC14.Atmos;
+using Content.Shared._RMC14.Slow;
 using Content.Shared._RMC14.Stun;
-using Content.Shared._RMC14.Xenonids.Fortify;
 using Content.Shared.Body.Systems;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Prototypes;
@@ -27,6 +27,7 @@ public abstract class SharedRMCExplosionSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly RMCSlowSystem _slow = default!;
 
     private static readonly ProtoId<DamageTypePrototype> StructuralDamage = "Structural";
 
@@ -96,9 +97,12 @@ public abstract class SharedRMCExplosionSystem : EntitySystem
             _stun.TryKnockdown(ent, stunTime, true);
 
             if (size < RMCSizes.Big)
-                _sizeStun.Superslow(ent, TimeSpan.FromSeconds(factor), TimeSpan.FromSeconds(factor / 2));
+            {
+                _slow.TrySlowdown(ent, TimeSpan.FromSeconds(factor));
+                _slow.TrySuperSlowdown(ent, TimeSpan.FromSeconds(factor / 2));
+            }
             else
-                _stun.TrySlowdown(ent, TimeSpan.FromSeconds(factor / 3), true);
+                _slow.TrySlowdown(ent, TimeSpan.FromSeconds(factor / 3));
 
             var pos = _transform.GetWorldPosition(ent);
             var dir = pos - args.Epicenter.Position;
@@ -115,9 +119,12 @@ public abstract class SharedRMCExplosionSystem : EntitySystem
             _stun.TryStun(ent, stunTime, true);
             _stun.TryKnockdown(ent, stunTime, true);
             if (size < RMCSizes.Big)
-                _sizeStun.Superslow(ent, TimeSpan.FromSeconds(factor), TimeSpan.FromSeconds(factor / 2));
+            {
+                _slow.TrySlowdown(ent, TimeSpan.FromSeconds(factor));
+                _slow.TrySuperSlowdown(ent, TimeSpan.FromSeconds(factor / 2));
+            }
             else
-                _stun.TrySlowdown(ent, TimeSpan.FromSeconds(factor / 3), true);
+                _slow.TrySlowdown(ent, TimeSpan.FromSeconds(factor / 3));
         }
     }
 

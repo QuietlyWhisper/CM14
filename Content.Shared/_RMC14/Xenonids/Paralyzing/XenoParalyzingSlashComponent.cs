@@ -1,4 +1,4 @@
-﻿using Content.Shared.FixedPoint;
+using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._RMC14.Xenonids.Paralyzing;
@@ -7,9 +7,6 @@ namespace Content.Shared._RMC14.Xenonids.Paralyzing;
 [Access(typeof(XenoParalyzingSlashSystem))]
 public sealed partial class XenoParalyzingSlashComponent : Component
 {
-    [DataField, AutoNetworkedField]
-    public FixedPoint2 PlasmaCost = 50;
-
     [DataField, AutoNetworkedField]
     public TimeSpan ActiveDuration = TimeSpan.FromSeconds(5);
 

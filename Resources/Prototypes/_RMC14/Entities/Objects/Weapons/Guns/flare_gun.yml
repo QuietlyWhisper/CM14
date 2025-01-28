@@ -1,0 +1,79 @@
+- type: entity
+  name: M82-F flare gun
+  parent: [ CMBaseWeaponGun, BaseItem, RMCBaseAttachableHolder ]
+  id: RMCM82FFlareGun
+  description: A flare gun issued to JTAC operators to use with flares. Comes with a miniscope. One shot, one... life saved?
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/m82-f_flare_gun.rsi
+    layers:
+    - state: base
+      map: [ "enum.BreechVisuals.Open" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.BreechVisuals.Open:
+        enum.BreechVisuals.Open:
+          True: { state: bolt-open }
+          False: { state: base }
+  - type: Item
+    size: Small
+  - type: GunIFF
+    enabled: true
+  - type: AmmoCounter
+  - type: Gun
+    projectileSpeed: 40
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/flaregun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    cycleable: true
+    whitelist:
+      tags:
+      - Flare
+    blacklist:
+      tags: 
+      - Trash
+    proto: CMFlare
+    capacity: 1
+    soundInsert:
+      path: /Audio/_RMC14/Weapons/Guns/Reload/grenade_insert.ogg
+      params:
+        volume: -2
+  - type: UniqueAction
+  - type: BreechLoaded
+    needOpenClose: true
+  - type: ShootAtFixedPoint
+    shootArcProj: false
+  - type: Wieldable
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+  - type: RMCNameItemOnVend
+    item: Sidearm
+  - type: Tag
+    tags:
+    - RMCFlareGun
+    - Sidearm
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-rail:
+        locked: true
+        startingAttachable: RMCAttachmentS42xTelescopicMiniscope 
+        whitelist:
+          tags:
+          - RMCAttachmentS42xTelescopicMiniscope
+
+- type: Tag
+  id: RMCFlareGun

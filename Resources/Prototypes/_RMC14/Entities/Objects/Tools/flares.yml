@@ -32,6 +32,9 @@
         visible: false
       - map: [ "enum.ExpendableLightVisualLayers.Overlay" ]
         state: overlay
+  - type: CartridgeAmmo
+    proto: RMCFlareLit
+    deleteOnSpawn: true
   - type: Icon
     sprite: _RMC14/Objects/Misc/flares.rsi
     state: icon
@@ -84,6 +87,9 @@
   - type: Icon
     sprite: _RMC14/Objects/Misc/cas_flares.rsi
     state: flare
+  - type: CartridgeAmmo
+    proto: RMCFlareCASLit
+    deleteOnSpawn: true
   - type: PointLight
     color: "#64FA4B"
   - type: FlareSignal
@@ -101,6 +107,99 @@
       maxDuration: 150
       startValue: 7.0
       endValue: 1.0
+
+# Projectile Versions of Flares
+# TODO: Add Shooting flares into the air, has increased range and lower duration. Does not function in roofed areas
+
+- type: entity
+  parent: BaseItem
+  name: flare
+  suffix: Projectile
+  id: RMCFlareLit 
+  description: A red Marine issued flare. There are instructions on the side, it reads 'pull cord, make light'.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Misc/flares.rsi
+    layers:
+    - state: flare
+    - state: flare_flame
+      color: "#FFA7A7"
+      visible: true
+    - state: overlay
+  - type: Icon
+    sprite: _RMC14/Objects/Misc/flares.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: IgnitionSource
+    ignited: true
+    temperature: 1000
+  - type: TimedDespawn
+    lifetime: 630
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        mask:
+          - BulletImpassable
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Heat: 10
+  - type: IgniteOnProjectileHit
+  - type: AmbientSound
+    enabled: true
+    volume: 0
+    range: 7
+    sound:
+      path: /Audio/Items/Flare/flare_burn.ogg
+      params:
+        loop: true
+        volume: -10
+        maxDistance: 5
+  - type: PointLight
+    color: "#FA644B"
+    radius: 6.0
+    energy: 12.0
+  - type: Tag
+    tags:
+    - Trash
+  - type: InteractedBlacklist
+    blacklist:
+      components:
+      - Xeno
+
+- type: entity
+  parent: RMCFlareLit
+  name: signal flare 
+  suffix: Projectile
+  id: RMCFlareCASLit 
+  description: A green USCM issued signal flare. The telemetry computer works on chemical reaction that releases smoke and light and thus works only while the flare is burning.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Misc/flares.rsi
+    layers:
+    - state: flare
+    - state: flare_flame
+      color: "#A7FFA7"
+      visible: true
+    - state: overlay
+  - type: Icon
+    sprite: _RMC14/Objects/Misc/cas_flares.rsi
+    state: icon
+  - type: TimedDespawn
+    lifetime: 180
+#  - type: ActiveFlareSignal The Signal Flare Projectile is bugged due to ActiveSignalFlare being fucky, invisible from the CAS Monitor and crashing upon spawn
+  - type: PointLight
+    color: "#64FA4B"
+    radius: 6.0
+    energy: 12.0
+  
+# Flare Boxes
 
 - type: entity
   parent: RMCBoxMagazineBase
@@ -218,7 +317,13 @@
       name: Flare
       whitelist:
         tags:
+        - Flare
+      blacklist:
+        tags: 
+        - Trash
+
         - RMCFlare
+        
   - type: Sprite
     sprite: _RMC14/Objects/Storage/boxes.rsi
     layers:

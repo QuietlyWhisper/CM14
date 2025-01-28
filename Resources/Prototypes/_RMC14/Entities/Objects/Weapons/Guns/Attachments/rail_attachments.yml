@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: RMCAttachableBase
   id: RMCRailAttachmentBase
@@ -284,6 +284,11 @@
       sprint: -0.448
   - type: AttachableWieldDelayMods
     modifiers:
+    - conditions:
+        activeOnly: true
+        blacklist:
+          tags:
+          - RMCFlareGun
     - delay: 0.4
   - type: AttachableWeaponRangedMods
     modifiers:
@@ -295,7 +300,6 @@
     - conditions:
         wieldedOnly: true
         inactiveOnly: true
-      accuracyAddMult: -0.05 #TODO: Add flare gun modifiers when it's implemented.
 
 - type: entity
   parent: RMCAttachmentS42xTelescopicMiniscope

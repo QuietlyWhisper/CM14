@@ -46,8 +46,8 @@
         amount: 25
       - id: CMWeaponPistolM1984Empty
         amount: 25
-      #- id: WeaponFlareM82F
-      #  amount: 10
+      - id: RMCM82FFlareGun
+        amount: 10
     - name: Sidearm ammunition
       entries:
       - id: CMMagazinePistolM77AP

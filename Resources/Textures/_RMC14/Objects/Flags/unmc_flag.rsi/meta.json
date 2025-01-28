@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Pole taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/master/icons/obj/structures/plantable_flag.dmi and remade into UNMC by Github KittenColony / Discord kittencolony (297865728374210561)",
+  "size": {
+    "x": 64,
+    "y": 128
+  },
+  "states": [
+    {
+      "name": "unmc_icon"
+    },
+    {
+      "name": "unmc_deploy",
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "unmc_inhand_left",
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "unmc_inhand_right",
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    }
+  ]
+}

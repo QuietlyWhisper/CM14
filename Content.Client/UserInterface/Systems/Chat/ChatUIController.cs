@@ -17,6 +17,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
 using Content.Client.UserInterface.Systems.Gameplay;
+using Content.Shared._RMC14.Marines.Squads;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
@@ -857,7 +858,13 @@ public sealed class ChatUIController : UIController
         {
             var grammar = _ent.GetComponentOrNull<GrammarComponent>(_ent.GetEntity(msg.SenderEntity));
             if (grammar != null && grammar.ProperNoun == true)
-                msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
+            {
+                // RMC change to color the chat message name by the squad they're in, otherwise use the default.
+                var squad = _ent.GetComponentOrNull<SquadMemberComponent>(_ent.GetEntity(msg.SenderEntity));
+                string color = squad?.BackgroundColor.ToHex() ?? GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name"));
+
+                msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", color);
+            }
         }
 
         // Color any codewords for minds that have roles that use them

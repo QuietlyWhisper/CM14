@@ -21,6 +21,18 @@
     {
       "name": "equipped-MASK-reptilian",
       "directions": 4
+    },
+    {
+      "name": "equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "flipped-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "equipped-NECK-reptilian",
+      "directions": 4
     }
   ]
 }

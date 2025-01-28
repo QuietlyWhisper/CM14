@@ -16,6 +16,10 @@
     - state: icon
       map: ["foldedLayer"]
       visible: false
+  - type: Clothing
+    slots:
+      - mask
+      - neck
 
 - type: entity
   parent: RMCBaseScarfMask
@@ -232,6 +236,16 @@
 # Torn Scarf
 - type: entity
   parent: ClothingMaskBaseButcherable
+  id: RMCMaskTornScarfBase
+  abstract: true
+  components:
+  - type: Clothing
+    slots:
+    - mask
+    - neck
+
+- type: entity
+  parent: RMCMaskTornScarfBase
   id: RMCMaskTornScarfBlack
   name: tactical scarf
   description: A tactical scarf used to keep warm in the cold.

@@ -1,0 +1,1 @@
+rmc-overwatch-marine-pronouns = ({SUBJECT($target)}/{OBJECT($target)})

@@ -20,6 +20,7 @@ namespace Content.Client._RMC14.Overwatch;
 public sealed class OverwatchConsoleBui : BoundUserInterface
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly IEntityManager _entity = default!;
 
     private const string GreenColor = "#229132";
     private const string RedColor = "#A42625";
@@ -91,7 +92,7 @@ public sealed class OverwatchConsoleBui : BoundUserInterface
         }
 
         var activeSquad = GetActiveSquad();
-        var margin = new Thickness(2);
+        var margin = new Thickness(2, 0);
         foreach (var squad in s.Squads)
         {
             if (!s.Marines.TryGetValue(squad.Id, out var marines))
@@ -251,16 +252,15 @@ public sealed class OverwatchConsoleBui : BoundUserInterface
                 if (marine.Camera == default)
                 {
                     var watchLabel = new RichTextLabel();
-                    watchLabel.SetMarkupPermissive($"[color={YellowColor}]{name} (NO HELMET)[/color]");
+                    watchLabel.SetMarkupPermissive($"[color={YellowColor}]{name} (NO HELMET)\n{Loc.GetString("rmc-overwatch-marine-pronouns", ("target", _entity.GetEntity(marine.Id)))}[/color]");
                     watchControl = watchLabel;
                 }
                 else
                 {
                     var watchButton = new Button
                     {
-                        Text = marine.Name,
+                        Text = $"{marine.Name} {Loc.GetString("rmc-overwatch-marine-pronouns", ("target", _entity.GetEntity(marine.Id)))}",
                         StyleClasses = { "OpenBoth" },
-                        Margin = new Thickness(2, 0),
                     };
 
                     watchButton.OnPressed += _ => SendPredictedMessage(new OverwatchConsoleWatchBuiMsg(marine.Camera));

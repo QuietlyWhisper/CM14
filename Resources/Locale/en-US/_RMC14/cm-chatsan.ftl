@@ -130,6 +130,12 @@ cm-chatsan-replacement-arachnid = webspitting host
 cm-chatsan-word-arachnids = arachnids
 cm-chatsan-replacement-arachnids = webspitting hosts
 
+cm-chatsan-word-skrell = skrell
+cm-chatsan-replacement-skrell = frog host
+
+cm-chatsan-word-skrells = skrells
+cm-chatsan-replacement-skrells = frog hosts
+
 cm-chatsan-word-dropship = dropship
 cm-chatsan-replacement-dropship = metal bird
 

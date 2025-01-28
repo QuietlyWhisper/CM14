@@ -1,0 +1,55 @@
+# "Hair"
+- type: marking
+  id: RMCHairSkrellLong
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Skrell]
+  sprites:
+    - sprite: _RMC14/Mobs/Skrells/hair.rsi
+      state: skrell_hair_f_s
+
+- type: marking
+  id: RMCHairSkrellShort
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Skrell]
+  sprites:
+    - sprite: _RMC14/Mobs/Skrells/hair.rsi
+      state: skrell_hair_m_s
+
+# Spots
+- type: marking
+  id: RMCSpotsSkrellHairLeft
+  bodyPart: HeadTop
+  markingCategory: Overlay
+  speciesRestriction: [Skrell]
+  sprites:
+    - sprite: _RMC14/Mobs/Skrells/markings.rsi
+      state: spots-hair-left
+
+- type: marking
+  id: RMCSpotsSkrellHairRight
+  bodyPart: HeadTop
+  markingCategory: Overlay
+  speciesRestriction: [Skrell]
+  sprites:
+    - sprite: _RMC14/Mobs/Skrells/markings.rsi
+      state: spots-hair-right
+
+- type: marking
+  id: RMCSpotsSkrellBodyLeft
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [Skrell]
+  sprites:
+    - sprite: _RMC14/Mobs/Skrells/markings.rsi
+      state: spots-left
+
+- type: marking
+  id: RMCSpotsSkrellBodyRight
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [Skrell]
+  sprites:
+    - sprite: _RMC14/Mobs/Skrells/markings.rsi
+      state: spots-right

@@ -172,7 +172,84 @@
     - whined!
     - whining.
 
+# Skrell
 
+- type: emote
+  id: RMCSkrellAnger
+  name: rmc-emote-name-anger
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["rmc-emote-anger"]
+  chatTriggers:
+    - anger
+    - anger.
+    - anger!
+    - angers
+    - angers.
+    - angers!
 
+- type: emote
+  id: RMCSkrellPeep
+  name: rmc-emote-name-peep
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["rmc-emote-peep"]
+  chatTriggers:
+    - peep
+    - peep.
+    - peep!
+    - peeps
+    - peeps.
+    - peeps!
 
+- type: emote
+  id: RMCSkrellTrill
+  name: rmc-emote-name-trill
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["rmc-emote-trill"]
+  chatTriggers:
+    - trill
+    - trill.
+    - trill!
+    - trills
+    - trills.
+    - trills!
 
+- type: emote
+  id: RMCSkrellWarble
+  name: rmc-emote-name-warble
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["rmc-emote-warble"]
+  chatTriggers:
+    - warble
+    - warble.
+    - warble!
+    - warbles
+    - warbles.
+    - warbles!

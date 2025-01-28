@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Baystation12 at https://github.com/Baystation12/Baystation12/blob/0f40ce0385e9ee74005ac5b78e6df3c418969f5c/icons/mob/human_races/species/skrell/hair.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "skrell_hair_f_s",
+      "directions": 4
+    },
+    {
+      "name": "skrell_hair_m_s",
+      "directions": 4
+    }
+  ]
+}

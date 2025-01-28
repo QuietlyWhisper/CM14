@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Baystation12 at https://github.com/Baystation12/Baystation12/blob/8555df0d70aadace9284023848efe303d89b48cf/icons/mob/human_races/species/skrell/body.dmi, https://github.com/Baystation12/Baystation12/blob/0f40ce0385e9ee74005ac5b78e6df3c418969f5c/icons/mob/human_races/species/skrell/eyes.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "preview_shorthair",
+      "directions": 4
+    },
+    {
+      "name": "preview_longhair",
+      "directions": 4
+    },
+    {
+      "name": "r_arm",
+      "directions": 4
+    },
+    {
+      "name": "l_arm",
+      "directions": 4
+    },
+    {
+      "name": "r_hand",
+      "directions": 4
+    },
+    {
+      "name": "l_hand",
+      "directions": 4
+    },
+    {
+      "name": "groin_m",
+      "directions": 4
+    },
+    {
+      "name": "groin_f",
+      "directions": 4
+    },
+    {
+      "name": "r_leg",
+      "directions": 4
+    },
+    {
+      "name": "l_leg",
+      "directions": 4
+    },
+    {
+      "name": "r_foot",
+      "directions": 4
+    },
+    {
+      "name": "l_foot",
+      "directions": 4
+    },
+    {
+      "name": "torso_m",
+      "directions": 4
+    },
+    {
+      "name": "torso_f",
+      "directions": 4
+    },
+    {
+      "name": "head_m",
+      "directions": 4
+    },
+    {
+      "name": "head_f",
+      "directions": 4
+    },
+    {
+      "name": "eyes",
+      "directions": 4
+    }
+  ]
+}

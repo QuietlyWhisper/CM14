@@ -1,0 +1,19 @@
+- type: emoteSounds
+  id: RMCUnisexSkrell
+  sounds:
+    RMCSkrellPeep:
+      path: /Audio/_RMC14/Voice/Skrell/peep1.ogg
+    RMCSkrellAnger:
+      path: /Audio/_RMC14/Voice/Skrell/anger2.ogg
+    RMCSkrellTrill:
+      collection: RMCSkrellTrill
+    RMCSkrellWarble:
+      collection: RMCSkrellWarble
+
+- type: emoteSounds
+  parent: [RMCUnisexSkrell, RMCMaleHuman]
+  id: RMCMaleSkrell
+
+- type: emoteSounds
+  parent: [RMCUnisexSkrell, RMCFemaleHuman]
+  id: RMCFemaleSkrell

@@ -145,6 +145,9 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
         var anchored = _rmcMap.GetAnchoredEntitiesEnumerator(ent);
         while (anchored.MoveNext(out var uid))
         {
+            // This entity should not destroy itself
+            if (uid == ent.Owner)
+                continue;
             if (TerminatingOrDeleted(uid) || EntityManager.IsQueuedForDeletion(uid))
                 continue;
 

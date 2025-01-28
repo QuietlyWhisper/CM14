@@ -1,0 +1,51 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken/modified from cm-ss13 at https://github.com/cmss13-devs/cmss13/commit/9ff2072285d9668073b5bd2219d2ebac0f5281b5",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "icon"
+      },
+      {
+        "name": "base"
+      },
+      {
+        "name": "bolt-open"
+      },
+      {
+        "name": "inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "mag-0"
+      },
+      {
+        "name": "inhand-right",
+        "directions": 4
+      },
+      {
+        "name": "wielded-inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "wielded-inhand-right",
+        "directions": 4
+      },
+      {
+        "name": "equipped-BACKPACK",
+        "directions": 4
+      },
+      {
+        "name": "sling",
+        "directions": 4
+      },
+      {
+        "name": "equipped-SUITSTORAGE",
+        "directions": 4
+      }
+    ]
+  }

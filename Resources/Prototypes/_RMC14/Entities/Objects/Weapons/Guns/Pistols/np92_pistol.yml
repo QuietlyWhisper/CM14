@@ -1,0 +1,146 @@
+- type: entity
+  parent: CMWeaponPistolBase
+  id: RMCWeaponPistolNP92
+  name: NP92 Pistol
+  description: The standard issue sidearm of the UPP. The NP92 is a small but powerful sidearm, well-liked by most it is issued to, although some prefer the weapon it was meant to replace, the Type 73. Takes 12 round magazines. 
+  components:
+  - type: RMCSelectiveFire
+    scatterWielded: 5
+    scatterUnwielded: 5
+    baseFireRate: 10
+    burstScatterMult: 5
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/np92.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/np92.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_mk80_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_88m4_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazinePistolNP92
+          - RMCMagazinePistolNP92-Tranq #tranquilizer rounds?
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentSuppressor
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.71, 0.095
+      rmc-aslot-rail: -0.065, 0.125
+
+- type: entity
+  parent: CMWeaponPistolBase
+  id: RMCWeaponPistolNPZ92
+  name: NPZ92 Pistol
+  description: The NPZ92 is a version of the NP92 that includes an integrated suppressor, issued sparingly to Kommando units. 
+  components:
+  - type: RMCSelectiveFire
+    scatterWielded: 5
+    scatterUnwielded: 5
+    baseFireRate: 10
+    burstScatterMult: 5
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/npz92.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/npz92.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_mk80_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_88m4_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazinePistolNP92
+          - RMCMagazinePistolNP92-Tranq #tranquilizer rounds? Im not gonna do it now
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentSuppressor #DEFAULT
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.71, 0.095
+      rmc-aslot-rail: -0.065, 0.125
+
+- type: entity
+  parent: CMBaseMagazinePistol
+  id: RMCMagazinePistolNP92
+  name: NP92 Magazine
+  components:
+  - type: Tag
+    tags:
+    - CMMagazinePistol
+    - RMCMagazinePistolNP92
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgePistol9x18mm
+    proto: CMCartridgePistol9x18mm
+    capacity: 12
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/np92.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: CMCartridgePistol9x18mm
+  name: cartridge (9x18 Makarov)
+  parent: CMCartridgePistolBase
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridgePistol9x18mm
+  - type: CartridgeAmmo
+    proto: CMBulletPistol9x18mm
+
+- type: entity
+  parent: BaseBullet
+  id: CMBulletPistol9x18mm
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 46
+  - type: RMCProjectileDamageFalloff
+    thresholds:
+    - range: 22
+      falloff: 9999
+      ignoreModifiers: true
+    - range: 1
+      falloff: 4
+  - type: CMArmorPiercing
+    amount: 10
+
+- type: Tag
+  id: RMCMagazinePistolNP92
+
+- type: Tag
+  id: CMCartridgePistol9x18mm

@@ -1,0 +1,107 @@
+- type: entity
+  parent: CMWeaponPistolBase
+  id: RMCWeaponPistolT73
+  name: Type 73 Pistol
+  description: The Type 73 is the once-standard issue sidearm of the UPP. Replaced by the NP92 in UPP use, it remains popular with veteran UPP troops due to familiarity and extra power. Due to an extremely large amount being produced, they tend to end up in the hands of forces attempting to arm themselves on a budget. Users include the Union of Progressive Peoples, Colonial Liberation Front, and just about any mercenary or pirate group out there.
+  components:
+  - type: RMCSelectiveFire
+    scatterWielded: 5
+    scatterUnwielded: 5
+    baseFireRate: 10
+    burstScatterMult: 5
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/type73.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/type73.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_mk80_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_88m4_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazinePistolT73
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentSuppressor
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentLaserSight
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.71, 0.095
+      rmc-aslot-rail: -0.065, 0.125
+      rmc-aslot-underbarrel: 0.312, -0.25
+
+- type: entity
+  parent: CMBaseMagazinePistol
+  id: RMCMagazinePistolT73
+  name: Type 73 Magazine
+  components:
+  - type: Tag
+    tags:
+    - CMMagazinePistol
+    - RMCMagazinePistolT73
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - RCMCartridgeT73762x25mm 
+    proto: RCMCartridgePistol762x25mm
+    capacity: 9
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/t73.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: CMCartridgePistol9mm
+  id: RCMCartridgeT73762x25mm
+  name: cartridge (762x25mm)
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - RCMCartridgeT73762x25mm
+  - type: CartridgeAmmo
+    proto: RCMBulletPistol762x25mm
+
+- type: entity
+  parent: CMBulletBase
+  id: RCMBulletPistol762x25mm
+  name: bullet (762x25mm)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 71
+  - type: RMCProjectileDamageFalloff
+    thresholds:
+    - range: 22
+      falloff: 9999
+      ignoreModifiers: true
+    - range: 1
+      falloff: 1
+  - type: CMArmorPiercing
+    amount: 15
+
+- type: Tag
+  id: RMCMagazinePistolT73
+
+- type: Tag
+  id: RCMCartridgeT73762x25mm

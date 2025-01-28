@@ -1,0 +1,253 @@
+- type: entity
+  parent: CMBaseWeaponRifle
+  name: Type 71 Carbine
+  id: WeaponRifleT71Car
+  description: A carbine variant of the Type 71, intended for use by frontline support roles. A reduced length makes the gun lighter and easier to handle at the cost of muzzle velocity.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Rifles/type71-carbine.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-0
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/Rifles/type71-carbine.rsi
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    soundGunshot:
+      collection: CMM54CShoot
+  - type: RMCSelectiveFire
+    baseFireModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    recoilUnwielded: 2
+    scatterWielded: 6
+    scatterUnwielded: 7
+    baseFireRate: 4
+    burstScatterMult: 1
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/m41_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/m41_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - CMMagazineRifleT71
+          - CMMagazineRifleT71AP
+          - CMMagazineRifleT71HEAP
+  - type: GunDamageModifier
+    multiplier: .88
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentSuppressor
+          - RMCM5Bayonet
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentAngledGrip
+          - RMCAttachmentLaserSight
+          - RMCAttachmentVerticalGrip
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.75, 0.00
+      rmc-aslot-rail: 0.06, 0.185
+      rmc-aslot-underbarrel: 0.25, -0.343
+
+- type: entity
+  parent: CMMagazineRifleBase
+  id: CMMagazineRifleT71
+  name: "Type 71 Magazine"
+  components:
+  - type: Tag
+    tags:
+    - CMMagazineRifle
+    - CMMagazineRifleT71
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgeRifle545x39mm
+    proto: CMCartridgeRifle545x39mm
+    capacity: 60
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/t71.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Appearance
+
+- type: entity
+  parent: CMMagazineRifleBase
+  id: CMMagazineRifleT71AP
+  name: "Type 71 Magazine (AP)"
+  components:
+  - type: Tag
+    tags:
+    - CMMagazineRifle
+    - CMMagazineRifleT71AP
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgeRifle545x39mmAP
+    proto: CMCartridgeRifle545x39mmAP
+    capacity: 60
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/t71.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: ammo_band
+      color: "#1F951F"
+
+- type: entity
+  parent: CMMagazineRifleBase
+  id: CMMagazineRifleT71HEAP
+  name: "Type 71 Magazine (HEAP)"
+  components:
+  - type: Tag
+    tags:
+    - CMMagazineRifle
+    - CMMagazineRifleT71HEAP
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - CMCartridgeRifle545x39mmHEAP
+    proto: CMCartridgeRifle545x39mmHEAP
+    capacity: 60
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/t71.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: ammo_band
+      color: "#1F951F" #IDK the color lmao
+
+- type: entity
+  parent: CMBaseCartridgeRifle
+  id: CMCartridgeRifle545x39mm
+  name: cartridge (5.45x39mm)
+  description: A 5.45x39mm cartridge. Fits in 5.45x39mm magazines.
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridgeRifle545x39mm
+  - type: CartridgeAmmo
+    proto: BulletRifle545x39mm
+
+- type: entity
+  parent: CMCartridgeRifle545x39mm
+  id: CMCartridgeRifle545x39mmAP
+  name: AP cartridge (545x39mm)
+  description: An armor piercing 545x39mm cartridge. Fits in 545x39mm AP magazines.
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridgeRifle545x39mmAP
+  - type: CartridgeAmmo
+    proto: BulletRifle545x39mmAP
+
+- type: entity
+  parent: CMCartridgeRifle545x39mm
+  id: CMCartridgeRifle545x39mmHEAP
+  name: HEAP cartridge (545x39mm)
+  description: A high explosive armor piercing 545x39mm cartridge. Fits in 545x39mm HEAP magazines.
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CMCartridgeRifle545x39mmHEAP
+  - type: CartridgeAmmo
+    proto: BulletRifle545x39mmHEAP
+
+- type: entity
+  parent: BaseBullet
+  id: BulletRifle545x39mm
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 44
+  - type: RMCProjectileDamageFalloff
+    thresholds:
+    - range: 22
+      falloff: 9999
+      ignoreModifiers: true
+    - range: 7
+      falloff: 4
+  - type: CMArmorPiercing
+    amount: 10
+
+- type: entity
+  parent: BulletRifle545x39mm
+  id: BulletRifle545x39mmAP
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+  - type: CMArmorPiercing
+    amount: 50
+
+- type: entity
+  parent: BulletRifle545x39mm
+  id: BulletRifle545x39mmHEAP
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 50
+  - type: CMArmorPiercing
+    amount: 40
+
+- type: Tag
+  id: CMMagazineRifleT71
+
+- type: Tag
+  id: CMMagazineRifleT71AP
+
+- type: Tag
+  id: CMMagazineRifleT71HEAP
+
+- type: Tag
+  id: CMCartridgeRifle545x39mm
+
+- type: Tag
+  id: CMCartridgeRifle545x39mmAP
+
+- type: Tag
+  id: CMCartridgeRifle545x39mmHEAP
+

@@ -258,6 +258,76 @@
   spawn: CMShellShotgunIncendiaryBuckshot
   maxCount: 5
 
+- type: entity
+  parent: CMShellShotgunBase
+  id: CMShellShotgunBuckshotSPP
+  name: 8 gauge Buckshot Shells
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
+    layers:
+    - state: buckshot_shell_1
+      map: [ "base" ]
+  - type: CartridgeAmmo
+    proto: CMPelletShotgunBuckshot
+  - type: Stack
+    count: 4
+    stackType: RMCShellShotgunBuckshot
+    baseLayer: base
+    layerStates:
+    - buckshot_shell_1
+    - buckshot_shell_1
+    - buckshot_shell_2
+    - buckshot_shell_3
+    - buckshot_shell_4
+  - type: Tag
+    tags:
+    - Cartridge
+    - RMCShellShotgun
+    - RMCShellShotgunBuckshotSPP
+
+- type: stack
+  id: RMCShellShotgunBuckshotSPP
+  name: handful of 8 gauge Buckshot Shells
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi, state: buckshot_shell_1 }
+  spawn: CMShellShotgunBuckshot
+  maxCount: 4
+
+- type: entity
+  parent: CMShellShotgunBase
+  id: CMShellShotgunSlugsSPP
+  name: 8 gauge Slug Shells
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
+    layers:
+    - state: slug_shell_1
+      map: [ "base" ]
+  - type: CartridgeAmmo
+    proto: CMPelletShotgunSlug
+  - type: Stack
+    count: 5
+    stackType: RMCShellShotgunSlug
+    baseLayer: base
+    layerStates:
+    - slug_shell_1
+    - slug_shell_1
+    - slug_shell_2
+    - slug_shell_3
+    - slug_shell_4
+  - type: Tag
+    tags:
+    - Cartridge
+    - RMCShellShotgun
+    - RMCShellShotgunSlugsSPP
+
+- type: stack
+  id: RMCShellShotgunSlugSPP
+  name: handful of 8 gauge Slug Shells
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi, state: slug_shell_1 }
+  spawn: CMShellShotgunSlugs
+  maxCount: 4
+
 - type: Tag
   id: RMCHandful
 
@@ -284,3 +354,9 @@
 
 - type: Tag
   id: RMCShellShotgunBreaching
+
+- type: Tag
+  id: RMCShellShotgunSlugSPP
+
+- type: Tag
+  id: RMCShellShotgunBuckshotSPP

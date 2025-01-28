@@ -1,0 +1,108 @@
+- type: entity
+  parent: CMWeaponPistolBase
+  id: RMCWeaponPistolT74
+  name: Type 74 Pistol
+  description: The Type 74 is the designation for a specially modified Type 73 with an integrated laser sight system, multiple lightning cuts to reduce weight in order to allow a higher pressure round to be used with the same recoil sping, and a more comfortable grip. Due to the adoption of the NP92, the Type 74 was produced in limited numbers, because of this it is typically only issued on request to high-ranking officers. 
+  components:
+  - type: RMCSelectiveFire
+    scatterWielded: 3
+    scatterUnwielded: 2
+    baseFireRate: 10
+    burstScatterMult: 5
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/type74.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/Pistols/type74.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_mk80_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_88m4_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazinePistolT73
+          - RMCMagazinePistolT74HI
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentSuppressor
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentLaserSight #DEFAULT
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.71, 0.095
+      rmc-aslot-rail: -0.065, 0.125
+      rmc-aslot-underbarrel: 0.312, -0.25
+
+- type: entity
+  parent: CMBaseMagazinePistol
+  id: RMCMagazinePistolT74HI
+  name: Type 74 Impact Magazine
+  components:
+  - type: Tag
+    tags:
+    - CMMagazinePistol
+    - RMCMagazinePistolT74HI
+  - type: BallisticAmmoProvider
+    mayTransfer: True
+    whitelist:
+      tags:
+      - RCMCartridgePistol762x25mmHI
+    proto: RCMCartridgePistol762x25mmHI
+    capacity: 9
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/t74.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: RCMCartridgePistol762x25mmHI
+  name: cartridge (762x25mm High Impact)
+  parent: CMCartridgePistol9mm
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - RCMCartridgePistol762x25mmHI
+  - type: CartridgeAmmo
+    proto: RCMBulletPistol762x25mmHI
+
+- type: entity
+  parent: CMBulletBase
+  id: RCMBulletPistol762x25mmHI
+  name: bullet (762x25mm High Impact)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 78
+  - type: RMCProjectileDamageFalloff
+    thresholds:
+    - range: 22
+      falloff: 9999
+      ignoreModifiers: true
+    - range: 1
+      falloff: 1
+  - type: CMArmorPiercing
+    amount: 30
+
+- type: Tag
+  id: RMCMagazinePistolT74HI
+
+- type: Tag
+  id: RCMCartridgePistol762x25mmHI

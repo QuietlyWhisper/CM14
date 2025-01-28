@@ -1,11 +1,14 @@
-﻿using Content.Shared._RMC14.Marines.Skills;
+using Content.Shared._RMC14.Marines.Skills;
 using Content.Shared._RMC14.Scoping;
 using Content.Shared._RMC14.Visor;
+using Content.Shared._RMC14.Xenonids;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.IgnitionSource;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rounding;
 using Content.Shared.Toggleable;
@@ -25,6 +28,7 @@ public abstract class SharedNightVisionSystem : EntitySystem
     [Dependency] private readonly SkillsSystem _skills = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly VisorSystem _visor = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -47,6 +51,8 @@ public abstract class SharedNightVisionSystem : EntitySystem
         SubscribeLocalEvent<NightVisionVisorComponent, VisorRelayedEvent<ScopedEvent>>(OnNightVisionScoped);
 
         SubscribeLocalEvent<RMCNightVisionVisibleOnIgniteComponent, IgnitionEvent>(OnNightVisionVisibleIgnition);
+
+        SubscribeLocalEvent<RMCNightVisionVisibleComponent, MobStateChangedEvent>(OnMobConditionChanged);
     }
 
     private void OnNightVisionStartup(Entity<NightVisionComponent> ent, ref ComponentStartup args)
@@ -306,6 +312,15 @@ public abstract class SharedNightVisionSystem : EntitySystem
             return;
 
         ent.Comp.SeeThroughContainers = see;
+        Dirty(ent);
+    }
+
+    private void OnMobConditionChanged(Entity<RMCNightVisionVisibleComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (!_mobState.IsDead(ent) || !HasComp<XenoComponent>(ent))
+            return;
+
+        RemCompDeferred<RMCNightVisionVisibleComponent>(ent);
         Dirty(ent);
     }
 }
